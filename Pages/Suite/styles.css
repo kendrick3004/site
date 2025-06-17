@@ -1,0 +1,232 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 588px;
+    height: 192px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar-img {
+    width: 112px;
+    height: 112px;
+    padding-bottom: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-img img {
+    width: 112px;
+    height: 111px;
+    border-radius: 9999px;
+    border: 1.5px solid #00000080;
+}
+
+.avatar-name {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.avatar-name.link-item {
+    align-self: center;      /* Centraliza e impede de ocupar toda a largura */
+    padding: 4px 12px;       /* Menos espaço interno */
+    margin-top: 4px;
+    font-size: 16px;
+}
+
+/* Deixa o @kendricknicoleti branco no modo claro */
+body:not(.dark-mode) .avatar-name.link-item {
+    color: #fff;
+}
+
+.switch {
+    width: 64px;
+    height: 40px;
+    position: relative;
+    border-radius: 999px;
+    margin-top: -20px;
+}
+
+.switch-bg {
+    width: 64px;
+    height: 24px;
+    position: absolute;
+    top: 8px;
+    background: #0000001a;
+    border-radius: 9999px;
+    border: 1px solid #00000080;
+    backdrop-filter: blur(8px);
+}
+
+.switch-toggle {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: #000000;
+    box-shadow: 0px 2px 8px #00000040;
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.switch-toggle-right {
+    transform: translateX(32px);
+}
+
+.switch-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-sun, .icon-moon {
+    font-size: 16px;
+    display: none;
+}
+
+body:not(.dark-mode) .icon-sun {
+    display: block;
+}
+
+body.dark-mode .icon-moon {
+    display: block;
+}
+
+.links {
+    width: 588px;
+    height: 320px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.link-item {
+    align-self: stretch;
+    padding: 16px 24px;
+    background: #0000001a;
+    border-radius: 8px;
+    border: 1px solid #00000080;
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link-item:active {
+    background: #00000033;
+}
+
+body.dark-mode .link-item:active {
+    background: #ffffff33;
+}
+
+.footer {
+    width: 588px;
+    height: 72px;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-link {
+    text-decoration: underline;
+}
+
+body.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.dark-mode .avatar-img img {
+    border: 1.5px solid #ffffff80;
+}
+
+body.dark-mode .switch-bg {
+    background: #ffffff1a;
+    border: 1px solid #ffffff80;
+}
+
+body.dark-mode .switch-toggle {
+    background: #ffffff;
+    transform: translateX(32px);
+}
+
+body.dark-mode .link-item {
+    background: #ffffff1a;
+    border: 1px solid #ffffff80;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 14px;
+}
+
+input {
+    padding: 8px;
+    font-size: 14px;
+}
+
+button {
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+body:not(.dark-mode) .switch-toggle {
+    transform: translateX(-5px);
+}
+
+@media (max-width: 1000px) {
+    .links {
+        width: 50%;
+        padding: 16px;
+    }
+
+    .link-item {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}

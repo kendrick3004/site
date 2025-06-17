@@ -1,0 +1,22 @@
+/* 
+  Modo Claro:
+  Aplica uma imagem de fundo quando o body NÃO possui a classe 'dark-mode'.
+  O caminho da imagem é relativo a este arquivo.
+*/
+body:not(.dark-mode) {
+    background-image: url('../../templates/light_mode.jpg'); /* Imagem de fundo para modo claro */
+    background-size: cover;        /* Faz a imagem cobrir toda a tela */
+    background-position: center;   /* Centraliza a imagem */
+    background-repeat: no-repeat;  /* Não repete a imagem */
+}
+
+/* 
+  Modo Escuro:
+  Aplica uma imagem de fundo quando o body possui a classe 'dark-mode'.
+*/
+body.dark-mode {
+    background-image: url('../../templates/dark_mode.jpg');  /* Imagem de fundo para modo escuro */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Scripts e estilos padrão -->
+    <script src="../../src/code/js/favicon.js"></script>
+    <link rel="stylesheet" href="../../src/code/css/modes.css">
+    <link rel="stylesheet" href="code/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="login-title">Acesso Restrito</h1>
+        <form id="loginForm" autocomplete="off">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu usuário" required autofocus>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            <button type="submit">Entrar</button>
+            <div id="loginError" class="error"></div>
+        </form>
+    </div>
+    <script src="code/main.js"></script>
+</body>
+</html>

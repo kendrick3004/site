@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite</title>
+    <!-- Content Security Policy aprimorada -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' https://via.placeholder.com;
+        style-src 'self' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        script-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        frame-ancestors 'none';
+    ">
+    <!-- Subresource Integrity para fontes externas -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ysabeau+SC:wght@1..1000&display=swap"
+          integrity="sha384-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          crossorigin="anonymous">
+    <script src="./src/code/js/favicon.js"></script>
+    <link rel="stylesheet" href="./Pages/Suite/styles.css">
+    <link rel="stylesheet" href="./src/code/css/modes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div class="container">
+        <!-- Avatar -->
+        <div class="avatar">
+            <div class="avatar-img">
+                <img src="https://via.placeholder.com/112x111" alt="Avatar" referrerpolicy="no-referrer">
+            </div>
+            <div class="avatar-name link-item">@kendricknicoleti</div>
+        </div>
+
+        <!-- Switch -->
+        <div class="switch">
+            <div class="switch-bg"></div>
+            <div class="switch-toggle">
+                <div class="switch-icon">
+                    <span class="icon-moon">☀️</span>
+                    <span class="icon-sun">🌙</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="links">
+            <div class="link-item">Meu Currículo</div>
+            <div class="link-item">Arquivos para Missas</div>
+            <div class="link-item">Conheça o Explorer</div>
+        </div>
+
+    </div>
+    <script src="./Pages/Suite/script.js"></script>
+</body>
+</html>
