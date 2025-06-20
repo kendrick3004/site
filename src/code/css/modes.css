@@ -4,7 +4,7 @@
   O caminho da imagem é relativo a este arquivo.
 */
 body:not(.dark-mode) {
-    background-image: url('../../templates/light_mode.jpg');
+    background-image: url("../../templates/light_mode.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@ body:not(.dark-mode) {
   Aplica uma imagem de fundo quando o body possui a classe 'dark-mode'.
 */
 body.dark-mode {
-    background-image: url('../../templates/dark_mode.jpg');
+    background-image: url("../../templates/dark_mode.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
