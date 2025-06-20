@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loginButton.className = 'link-item login';
                 loginButton.textContent = 'Login';
                 loginButton.addEventListener('click', () => {
-                    window.location.href = '/Pages/Login/index.html';
+                    window.location.href = '/site/Pages/Login/index.html';
                 });
                 linksContainer.appendChild(loginButton);
             }
