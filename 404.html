@@ -1,25 +1,45 @@
+<!--
+Este é o arquivo 404.html, a página exibida quando o usuário tenta acessar uma URL que não existe no site.
+Ele fornece uma mensagem de erro amigável e um link para a página inicial.
+-->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres para UTF-8, garantindo que os caracteres especiais sejam exibidos corretamente. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para garantir que a página seja responsiva e se adapte a diferentes tamanhos de tela. -->
     <title>404 - Página Não Encontrada</title>
+    <!-- Define o título da página que aparece na aba do navegador. -->
     <link rel="stylesheet" href="src/code/css/modes.css">
-    <link rel="stylesheet" href="./Pages/Error404/styles.css">
+    <!-- Link para o arquivo CSS 'modes.css', que provavelmente contém estilos relacionados a modos de exibição (claro/escuro). -->
+    <link rel="stylesheet" href="./src/Error404/styles.css">
+    <!-- Link para o arquivo CSS específico desta página de erro 404. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <!-- Pré-conecta ao domínio do Google Fonts para otimizar o carregamento das fontes. -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Pré-conecta ao domínio do Google Fonts para otimizar o carregamento das fontes. -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ysabeau+SC:wght@1..1000&display=swap">
+    <!-- Link para importar fontes do Google Fonts ('Oswald' e 'Ysabeau SC'). -->
 </head>
 <body>
     <div class="container">
+        <!-- Contêiner principal para centralizar o conteúdo da página. -->
         <div class="error-container">
+            <!-- Contêiner específico para o conteúdo da mensagem de erro. -->
             <h1 class="error-title">404</h1>
+            <!-- Título principal da página de erro. -->
             <p class="error-message">Oops! A página que você está procurando não foi encontrada.</p>
+            <!-- Mensagem de erro principal. -->
             <p class="error-description">A página pode ter sido movida, deletada ou você digitou o endereço incorretamente.</p>
+            <!-- Descrição adicional sobre o possível motivo do erro. -->
             <a href="./index.html" class="link-item return-link">Voltar para a Página Inicial</a>
+            <!-- Link para retornar à página inicial do site. -->
         </div>
     </div>
     <script src="./src/code/js/favicon.js"></script>
+    <!-- Inclui o arquivo JavaScript 'favicon.js', que provavelmente lida com a dinâmica do favicon. -->
 </body>
 </html>
+

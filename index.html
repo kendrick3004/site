@@ -1,10 +1,18 @@
+<!--
+Este é o arquivo index.html principal do site, que serve como a página inicial ou "Suite".
+Ele exibe um avatar, um alternador de tema (claro/escuro) e uma lista de links.
+-->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres para UTF-8, garantindo que os caracteres especiais sejam exibidos corretamente. -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Garante a compatibilidade com as versões mais recentes do Internet Explorer. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para garantir que a página seja responsiva e se adapte a diferentes tamanhos de tela. -->
     <title>Suite</title>
+    <!-- Define o título da página que aparece na aba do navegador. -->
     <!-- Content Security Policy aprimorada -->
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self';
@@ -16,16 +24,23 @@
         base-uri 'self';
         frame-ancestors 'none';
     ">
+    <!-- Define a Política de Segurança de Conteúdo (CSP) para proteger contra ataques como XSS, especificando as fontes permitidas para diferentes tipos de recursos. -->
     <!-- Subresource Integrity para fontes externas -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ysabeau+SC:wght@1..1000&display=swap"
           integrity="sha384-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           crossorigin="anonymous">
+    <!-- Link para importar fontes do Google Fonts (\'Oswald\' e \'Ysabeau SC\') com Subresource Integrity (SRI) para garantir a integridade do recurso. -->
     <script src="./src/code/js/favicon.js"></script>
+    <!-- Inclui o arquivo JavaScript para o favicon. -->
     <link rel="stylesheet" href="./Pages/Suite/styles.css">
+    <!-- Link para o arquivo CSS específico da página Suite. -->
     <link rel="stylesheet" href="./src/code/css/modes.css">
+    <!-- Link para o arquivo CSS de modos (claro/escuro). -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <!-- Pré-conecta ao domínio do Google Fonts para otimizar o carregamento das fontes. -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Pré-conecta ao domínio do Google Fonts para otimizar o carregamento das fontes. -->
 </head>
 <body>
     <!-- Container principal que centraliza o conteúdo na página -->
@@ -35,9 +50,14 @@
             <!-- Imagem do Avatar -->
             <div class="avatar-img">
                 <img src="./src/icon/avatar.jpg" alt="Avatar" referrerpolicy="no-referrer">
+                <!-- Imagem do avatar do usuário. O atributo referrerpolicy=\
+
+
+no-referrer\" evita que o navegador envie informações de referência ao carregar a imagem. -->
             </div>
             <!-- Nome do usuário/perfil -->
             <div class="avatar-name link-item">@kendricknicoleti</div>
+            <!-- Exibe o nome de usuário ou perfil, estilizado como um item de link. -->
         </div>
 
         <!-- Seção do Switch (alternador de tema) -->
@@ -49,7 +69,9 @@
                 <!-- Ícones de sol e lua para indicar o tema -->
                 <div class="switch-icon">
                     <span class="icon-moon">☀️</span>
+                    <!-- Ícone de sol, visível no modo claro. -->
                     <span class="icon-sun">🌙</span>
+                    <!-- Ícone de lua, visível no modo escuro. -->
                 </div>
             </div>
         </div>
@@ -58,15 +80,19 @@
         <div class="links">
             <!-- Item de link para o currículo -->
             <div class="link-item">Meu Currículo</div>
+            <!-- Um item de link genérico, que pode ser clicável e levar a uma página de currículo. -->
             <!-- Item de link para arquivos de missas -->
             <div class="link-item">Arquivos para Missas</div>
+            <!-- Outro item de link, possivelmente para recursos relacionados a missas. -->
             <!-- Item de link para o Explorer -->
             <div class="link-item">Conheça o Explorer</div>
+            <!-- Mais um item de link, que pode direcionar para uma página de exploração ou descoberta. -->
         </div>
 
     </div>
     <!-- Script JavaScript para a funcionalidade da página, como a alternância de tema -->
     <script src="./Pages/Suite/script.js"></script>
+    <!-- Inclui o arquivo JavaScript que contém a lógica para a funcionalidade da página, como a alternância entre modos claro e escuro. -->
 </body>
 </html>
 

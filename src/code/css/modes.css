@@ -1,14 +1,20 @@
+/*
+Este arquivo CSS (modes.css) é responsável por definir os estilos de fundo para os modos claro e escuro do site.
+Ele aplica diferentes imagens de fundo dependendo da classe presente no elemento <body>.
+Também inclui estilos para otimização em dispositivos móveis.
+*/
+
 /* 
   Modo Claro:
   Aplica uma imagem de fundo quando o body NÃO possui a classe 'dark-mode'.
   O caminho da imagem é relativo a este arquivo.
 */
 body:not(.dark-mode) {
-    background-image: url("../../templates/light_mode.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image: url("../../templates/light_mode.jpg"); /* Define a imagem de fundo para o modo claro */
+    background-size: cover; /* Redimensiona a imagem para cobrir todo o elemento */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Evita que a imagem de fundo se repita */
+    background-attachment: fixed; /* Fixa a imagem de fundo na viewport durante a rolagem */
 }
 
 /* 
@@ -16,33 +22,34 @@ body:not(.dark-mode) {
   Aplica uma imagem de fundo quando o body possui a classe 'dark-mode'.
 */
 body.dark-mode {
-    background-image: url("../../templates/dark_mode.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image: url("../../templates/dark_mode.jpg"); /* Define a imagem de fundo para o modo escuro */
+    background-size: cover; /* Redimensiona a imagem para cobrir todo o elemento */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Evita que a imagem de fundo se repita */
+    background-attachment: fixed; /* Fixa a imagem de fundo na viewport durante a rolagem */
 }
 
 /* Plano de fundo padrão para desktop */
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    background-attachment: fixed;
-    background-size: cover;
-    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Define um gradiente linear como fundo padrão */
+    background-attachment: fixed; /* Fixa o fundo na viewport */
+    background-size: cover; /* Garante que o fundo cubra toda a área */
+    min-height: 100vh; /* Garante que o corpo tenha pelo menos 100% da altura da viewport */
 }
 
 /* Otimização para mobile */
 @media (max-width: 600px) {
     body {
-        background-attachment: scroll; /* Corrige o erro no mobile */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-attachment: scroll; /* Altera o anexo do fundo para rolagem em dispositivos móveis (corrige erro) */
+        background-size: cover; /* Garante que o fundo cubra toda a área */
+        background-position: center; /* Centraliza a imagem de fundo */
+        background-repeat: no-repeat; /* Evita que a imagem de fundo se repita */
     }
     .container {
-        padding: 12px;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
+        padding: 12px; /* Ajusta o preenchimento do contêiner */
+        margin: 0; /* Remove margens do contêiner */
+        border-radius: 0; /* Remove o arredondamento da borda */
+        box-shadow: none; /* Remove a sombra */
     }
 }
+

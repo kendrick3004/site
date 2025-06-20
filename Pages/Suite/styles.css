@@ -1,3 +1,9 @@
+/*
+Este arquivo CSS (styles.css) define os estilos visuais para a página "Suite".
+Ele controla o layout, cores, fontes e a aparência de elementos como o avatar, links e o switch de tema.
+Também inclui estilos para o modo escuro e responsividade.
+*/
+
 /* Estilos globais para o HTML e o corpo da página */
 html, body {
     height: 100%; /* Garante que o HTML e o corpo ocupem 100% da altura da viewport */
