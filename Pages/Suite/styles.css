@@ -1,239 +1,268 @@
+/* Estilos globais para o HTML e o corpo da página */
 html, body {
-    height: 100%;
-    width: 100%;
+    height: 100%; /* Garante que o HTML e o corpo ocupem 100% da altura da viewport */
+    width: 100%;  /* Garante que o HTML e o corpo ocupem 100% da largura da viewport */
 }
 
 body {
-    background-color: #ffffff;
-    color: #000000;
-    font-family: 'Oswald', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    background-color: #ffffff; /* Cor de fundo padrão: branco */
+    color: #000000; /* Cor do texto padrão: preto */
+    font-family: 'Oswald', sans-serif; /* Define a fonte principal para o corpo do texto */
+    display: flex; /* Usa flexbox para layout */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    margin: 0; /* Remove margens padrão do corpo */
 }
 
+/* Estilos para o contêiner principal que envolve todo o conteúdo */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente dentro do contêiner */
 }
 
+/* Estilos para a seção do avatar */
 .avatar {
-    width: 588px;
-    height: 192px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
+    width: 588px; /* Largura fixa para a seção do avatar */
+    height: 192px; /* Altura fixa para a seção do avatar */
+    padding: 24px; /* Preenchimento interno */
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: flex-start; /* Alinha os itens ao início do contêiner */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 8px; /* Espaçamento entre os itens */
 }
 
+/* Estilos para o contêiner da imagem do avatar */
 .avatar-img {
-    width: 112px;
-    height: 112px;
-    padding-bottom: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 112px; /* Largura da imagem */
+    height: 112px; /* Altura da imagem */
+    padding-bottom: 1px; /* Pequeno preenchimento na parte inferior */
+    display: flex; /* Usa flexbox para centralizar a imagem */
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: center; /* Centraliza a imagem verticalmente */
 }
 
+/* Estilos para a imagem do avatar */
 .avatar-img img {
-    width: 112px;
-    height: 111px;
-    border-radius: 9999px;
-    border: 1.5px solid #00000080;
+    width: 112px; /* Largura da imagem */
+    height: 111px; /* Altura da imagem */
+    border-radius: 9999px; /* Torna a imagem completamente circular */
+    border: 1.5px solid #00000080; /* Borda semitransparente preta */
 }
 
+/* Estilos para o nome do avatar */
 .avatar-name {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: 400; /* Peso da fonte */
 }
 
+/* Estilos adicionais para o nome do avatar quando ele também é um item de link */
 .avatar-name.link-item {
     align-self: center;      /* Centraliza e impede de ocupar toda a largura */
     padding: 4px 12px;       /* Menos espaço interno */
-    margin-top: 4px;
-    font-size: 16px;
+    margin-top: 4px; /* Margem superior */
+    font-size: 16px; /* Tamanho da fonte */
 }
 
 /* Deixa o @kendricknicoleti branco no modo claro */
 body:not(.dark-mode) .avatar-name.link-item {
-    color: #fff;
+    color: #fff; /* Cor do texto branco quando não está no modo escuro */
 }
 
+/* Estilos para o componente de switch (alternador de tema) */
 .switch {
-    width: 64px;
-    height: 40px;
-    position: relative;
-    border-radius: 999px;
-    margin-top: -20px;
+    width: 64px; /* Largura do switch */
+    height: 40px; /* Altura do switch */
+    position: relative; /* Posição relativa para posicionar elementos filhos */
+    border-radius: 999px; /* Borda arredondada */
+    margin-top: -20px; /* Ajusta a posição vertical para sobrepor um pouco */
 }
 
+/* Estilos para o fundo do switch */
 .switch-bg {
-    width: 64px;
-    height: 24px;
-    position: absolute;
-    top: 8px;
-    background: #0000001a;
-    border-radius: 9999px;
-    border: 1px solid #00000080;
-    backdrop-filter: blur(8px);
+    width: 64px; /* Largura do fundo */
+    height: 24px; /* Altura do fundo */
+    position: absolute; /* Posição absoluta dentro do switch */
+    top: 8px; /* Posição a partir do topo */
+    background: #0000001a; /* Fundo semitransparente preto */
+    border-radius: 9999px; /* Borda arredondada */
+    border: 1px solid #00000080; /* Borda semitransparente preta */
+    backdrop-filter: blur(8px); /* Efeito de desfoque no fundo */
 }
 
+/* Estilos para o botão de alternância (o círculo que se move) */
 .switch-toggle {
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    background: #000000;
-    box-shadow: 0px 2px 8px #00000040;
-    border-radius: 9999px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s, background-color 0.3s;
+    width: 32px; /* Largura do botão */
+    height: 32px; /* Altura do botão */
+    position: absolute; /* Posição absoluta dentro do switch */
+    top: 4px; /* Posição a partir do topo */
+    left: 4px; /* Posição a partir da esquerda */
+    background: #000000; /* Cor de fundo preta */
+    box-shadow: 0px 2px 8px #00000040; /* Sombra */
+    border-radius: 9999px; /* Borda arredondada (círculo) */
+    display: flex; /* Usa flexbox para centralizar o ícone */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    align-items: center; /* Centraliza o ícone verticalmente */
+    transition: transform 0.3s, background-color 0.3s; /* Transição suave para movimento e cor */
 }
 
+/* Classe para mover o botão de alternância para a direita (modo escuro) */
 .switch-toggle-right {
-    transform: translateX(32px);
+    transform: translateX(32px); /* Move o botão 32px para a direita */
 }
 
+/* Estilos para o contêiner dos ícones de sol e lua */
 .switch-icon {
-    width: 16px;
-    height: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 16px; /* Largura do ícone */
+    height: 16px; /* Altura do ícone */
+    display: flex; /* Usa flexbox para centralizar o ícone */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    align-items: center; /* Centraliza o ícone verticalmente */
 }
 
+/* Estilos para os ícones de sol e lua (escondidos por padrão) */
 .icon-sun, .icon-moon {
-    font-size: 16px;
-    display: none;
+    font-size: 16px; /* Tamanho da fonte do ícone */
+    display: none; /* Esconde ambos os ícones por padrão */
 }
 
+/* Exibe o ícone do sol quando não está no modo escuro */
 body:not(.dark-mode) .icon-sun {
-    display: block;
+    display: block; /* Exibe o ícone do sol */
 }
 
+/* Exibe o ícone da lua quando está no modo escuro */
 body.dark-mode .icon-moon {
-    display: block;
+    display: block; /* Exibe o ícone da lua */
 }
 
+/* Estilos para a seção de links */
 .links {
-    width: 588px;
-    height: 320px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 16px;
+    width: 588px; /* Largura fixa para a seção de links */
+    height: 320px; /* Altura fixa para a seção de links */
+    padding: 24px; /* Preenchimento interno */
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: flex-start; /* Alinha os itens ao início do contêiner */
+    align-items: flex-start; /* Alinha os itens ao início horizontalmente */
+    gap: 16px; /* Espaçamento entre os itens */
 }
 
+/* Estilos para cada item de link */
 .link-item {
-    align-self: stretch;
-    color: #fff !important;
-    padding: 16px 24px;
-    background: #0000001a;
-    border-radius: 8px;
-    border: 1px solid #00000080;
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    word-wrap: break-word;
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
+    align-self: stretch; /* Faz com que o item ocupe toda a largura disponível */
+    color: #fff !important; /* Cor do texto branco (com !important para garantir) */
+    padding: 16px 24px; /* Preenchimento interno */
+    background: #0000001a; /* Fundo semitransparente preto */
+    border-radius: 8px; /* Borda arredondada */
+    border: 1px solid #00000080; /* Borda semitransparente preta */
+    backdrop-filter: blur(8px); /* Efeito de desfoque no fundo */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    gap: 8px; /* Espaçamento entre os itens */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+    line-height: 24px; /* Altura da linha */
+    word-wrap: break-word; /* Quebra de palavra */
+    text-align: center; /* Alinhamento do texto centralizado */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para fundo e cor */
 }
 
+/* Estilos quando um item de link está ativo (clicado) no modo claro */
 .link-item:active {
-    background: #00000033;
+    background: #00000033; /* Fundo mais escuro */
 }
 
+/* Estilos quando um item de link está ativo (clicado) no modo escuro */
 body.dark-mode .link-item:active {
-    background: #ffffff33;
+    background: #ffffff33; /* Fundo mais claro */
 }
 
+/* Estilos para o rodapé (não presente no HTML atual, mas definido no CSS) */
 .footer {
-    width: 588px;
-    height: 72px;
-    padding: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+    width: 588px; /* Largura do rodapé */
+    height: 72px; /* Altura do rodapé */
+    padding: 24px; /* Preenchimento interno */
+    display: flex; /* Usa flexbox para layout */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    gap: 8px; /* Espaçamento entre os itens */
 }
 
+/* Estilos para links no rodapé */
 .footer-link {
-    text-decoration: underline;
+    text-decoration: underline; /* Sublinha o texto */
 }
 
+/* Estilos para o corpo da página quando está no modo escuro */
 body.dark-mode {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000000; /* Fundo preto */
+    color: #ffffff; /* Texto branco */
 }
 
+/* Estilos para a borda da imagem do avatar no modo escuro */
 body.dark-mode .avatar-img img {
-    border: 1.5px solid #ffffff80;
+    border: 1.5px solid #ffffff80; /* Borda semitransparente branca */
 }
 
+/* Estilos para o fundo do switch no modo escuro */
 body.dark-mode .switch-bg {
-    background: #ffffff1a;
-    border: 1px solid #ffffff80;
+    background: #ffffff1a; /* Fundo semitransparente branco */
+    border: 1px solid #ffffff80; /* Borda semitransparente branca */
 }
 
+/* Estilos para o botão de alternância no modo escuro */
 body.dark-mode .switch-toggle {
-    background: #ffffff;
-    transform: translateX(32px);
+    background: #ffffff; /* Fundo branco */
+    transform: translateX(32px); /* Move o botão para a direita */
 }
 
+/* Estilos para os itens de link no modo escuro */
 body.dark-mode .link-item {
-    background: #ffffff1a;
-    border: 1px solid #ffffff80;
+    background: #ffffff1a; /* Fundo semitransparente branco */
+    border: 1px solid #ffffff80; /* Borda semitransparente branca */
 }
 
+/* Estilos básicos para formulários (não presentes no HTML atual, mas definidos no CSS) */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Organiza os itens em coluna */
+    gap: 8px; /* Espaçamento entre os itens */
 }
 
 label {
-    font-size: 14px;
+    font-size: 14px; /* Tamanho da fonte para rótulos */
 }
 
 input {
-    padding: 8px;
-    font-size: 14px;
+    padding: 8px; /* Preenchimento interno para campos de entrada */
+    font-size: 14px; /* Tamanho da fonte para campos de entrada */
 }
 
 button {
-    padding: 8px;
-    font-size: 14px;
-    cursor: pointer;
+    padding: 8px; /* Preenchimento interno para botões */
+    font-size: 14px; /* Tamanho da fonte para botões */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
 }
 
+/* Move o botão do switch para a esquerda no modo claro */
 body:not(.dark-mode) .switch-toggle {
-    transform: translateX(-5px);
+    transform: translateX(-5px); /* Move o botão 5px para a esquerda */
 }
 
+/* Media query para telas com largura máxima de 1000px (responsividade) */
 @media (max-width: 1000px) {
     .links {
-        width: 50%;
-        padding: 16px;
+        width: 50%; /* Reduz a largura da seção de links */
+        padding: 16px; /* Ajusta o preenchimento */
     }
 
     .link-item {
-        padding: 12px 16px;
-        font-size: 14px;
+        padding: 12px 16px; /* Ajusta o preenchimento dos itens de link */
+        font-size: 14px; /* Reduz o tamanho da fonte dos itens de link */
     }
     .container {
         width: 100vw;
@@ -254,3 +283,5 @@ body:not(.dark-mode) .switch-toggle {
         padding-right: 0;
     }
 }
+
+
