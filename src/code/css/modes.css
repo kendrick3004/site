@@ -4,10 +4,11 @@
   O caminho da imagem é relativo a este arquivo.
 */
 body:not(.dark-mode) {
-    background-image: url('../../templates/light_mode.jpg'); /* Imagem de fundo para modo claro */
-    background-size: cover;        /* Faz a imagem cobrir toda a tela */
-    background-position: center;   /* Centraliza a imagem */
-    background-repeat: no-repeat;  /* Não repete a imagem */
+    background-image: url('../../templates/light_mode.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* 
@@ -15,8 +16,33 @@ body:not(.dark-mode) {
   Aplica uma imagem de fundo quando o body possui a classe 'dark-mode'.
 */
 body.dark-mode {
-    background-image: url('../../templates/dark_mode.jpg');  /* Imagem de fundo para modo escuro */
+    background-image: url('../../templates/dark_mode.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Plano de fundo padrão para desktop */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Otimização para mobile */
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll; /* Corrige o erro no mobile */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .container {
+        padding: 12px;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
 }

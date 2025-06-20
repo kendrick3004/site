@@ -2,11 +2,9 @@
 // O ícone será adicionado a todas as páginas do projeto.
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('dark-mode'); // Ativa o modo escuro ao abrir
     const switchToggle = document.querySelector('.switch-toggle');
     let darkModeToggleCount = 0;
-
-    // Ativa o modo escuro automaticamente ao carregar a página
-    // document.body.classList.add('dark-mode');
     switchToggle.classList.add('switch-toggle-right');
 
     // Adiciona um evento de clique ao botão de alternância
