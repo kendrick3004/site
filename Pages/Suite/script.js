@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Adiciona um ouvinte de evento de clique ao botão de login.
                 loginButton.addEventListener("click", () => {
                     // Redireciona o navegador para a página de login.
-                    window.location.href = "/site/Pages/Login/index.html";
+                    window.location.href = "/Pages/Login/index.html";
                 });
                 
                 // Adiciona o botão de login ao contêiner de links.
