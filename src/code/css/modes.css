@@ -10,7 +10,7 @@ Também inclui estilos para otimização em dispositivos móveis.
   O caminho da imagem é relativo a este arquivo.
 */
 body:not(.dark-mode) {
-    background-image: url("../templates/light_mode.jpg"); /* Define a imagem de fundo para o modo claro */
+    background-image: url("../../templates/light_mode.jpg"); /* Define a imagem de fundo para o modo claro */
     background-size: cover; /* Redimensiona a imagem para cobrir todo o elemento */
     background-position: center; /* Centraliza a imagem de fundo */
     background-repeat: no-repeat; /* Evita que a imagem de fundo se repita */
@@ -22,7 +22,7 @@ body:not(.dark-mode) {
   Aplica uma imagem de fundo quando o body possui a classe 'dark-mode'.
 */
 body.dark-mode {
-    background-image: url("../templates/dark_mode.jpg"); /* Define a imagem de fundo para o modo escuro */
+    background-image: url("../../templates/dark_mode.jpg"); /* Define a imagem de fundo para o modo escuro */
     background-size: cover; /* Redimensiona a imagem para cobrir todo o elemento */
     background-position: center; /* Centraliza a imagem de fundo */
     background-repeat: no-repeat; /* Evita que a imagem de fundo se repita */
