@@ -1,0 +1,83 @@
+<!--
+    ARQUIVO: index.html
+    DESCRIÇÃO: Página principal do projeto "Suite".
+    ESTRUTURA: Contém o avatar, switch de tema, card do Santo do Dia, links e widget de clima.
+    COMENTÁRIOS: Este arquivo serve como o esqueleto do site, conectando todos os estilos e scripts.
+-->
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Define o idioma do site como Português do Brasil para acessibilidade e SEO -->
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 para suportar acentos -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Garante compatibilidade com versões antigas do Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a escala inicial para dispositivos móveis -->
+    <title>Suite</title> <!-- Título que aparece na aba do navegador -->
+    
+    <!-- IMPORTAÇÃO DE FONTES EXTERNAS (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- IMPORTAÇÃO DE ESTILOS (CSS) -->
+    <link rel="stylesheet" href="/src/styles/fonts.css"> <!-- Define as famílias de fontes personalizadas -->
+    <script src="/src/scripts/main/config.js"></script> <!-- Script de configuração global (ex: Favicon dinâmico) -->
+    <link rel="stylesheet" href="./pages/suite/suite.css"> <!-- Estilo principal da página (layout, cores, temas) -->
+    <link rel="stylesheet" href="./pages/suite/weather/weather.css"> <!-- Estilo específico do widget de clima -->
+</head>
+<body>
+    <!-- Contêiner principal que centraliza e organiza todo o conteúdo da página -->
+    <div class="container">
+        
+        <!-- SEÇÃO DO AVATAR: Exibe a foto de perfil e o nome do usuário -->
+        <div class="avatar">
+            <div class="avatar-img">
+                <!-- Imagem do perfil carregada da pasta database -->
+                <img src="./database/avatar/avatar.jpg" alt="Avatar" referrerpolicy="no-referrer">
+            </div>
+            <!-- Nome de usuário ou identificador -->
+            <div class="avatar-name link-item">@kendricknicoleti</div>
+        </div>
+
+        <!-- SEÇÃO DO SWITCH: Botão deslizante para alternar entre Modo Claro e Modo Escuro -->
+        <div class="switch">
+            <div class="switch-bg"></div> <!-- Fundo do trilho do botão -->
+            <div class="switch-toggle"> <!-- O círculo que desliza para os lados -->
+                <div class="switch-icon">
+                    <span class="icon-moon">☀️</span> <!-- Ícone visível no modo claro -->
+                    <span class="icon-sun">🌙</span> <!-- Ícone visível no modo escuro -->
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO SANTO DO DIA: Card dinâmico que mostra informações litúrgicas -->
+        <div class="santo-do-dia">
+            <div class="santo-header">
+                <span class="santo-name">Carregando...</span> <!-- Nome do santo (preenchido via JS) -->
+                <span class="santo-ribbon"></span> <!-- Faixa colorida que indica a cor litúrgica do dia -->
+            </div>
+            <div class="santo-type">--</div> <!-- Tipo da celebração (ex: Memória, Festa, Solenidade) -->
+            <div class="santo-description">Aguarde...</div> <!-- Descrição ou biografia breve do santo -->
+        </div>
+
+        <!-- SEÇÃO DE LINKS: Lista de botões para navegação externa ou interna -->
+        <div class="links">
+            <div class="link-item">Meu Currículo</div>
+            <div class="link-item">Arquivos para Missas</div>
+            <div class="link-item">Conheça o Explorer</div>
+        </div>
+
+        <!-- SEÇÃO DE CLIMA: Widget no rodapé que exibe informações meteorológicas -->
+        <div class="weather-footer">
+            <!-- Estado inicial de carregamento -->
+            <div class="weather-loading">
+                <span>Carregando informações de clima...</span>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- IMPORTAÇÃO DE SCRIPTS (JavaScript) -->
+    <!-- Os scripts são carregados no final para não travar a renderização visual da página -->
+    <script src="./pages/suite/suite.js"></script> <!-- Gerencia temas (Dark/Light) e interações básicas -->
+    <script src="./pages/suite/santo-do-dia.js"></script> <!-- Busca e exibe os dados do calendário litúrgico -->
+    <script src="./pages/suite/weather/weather.js"></script> <!-- Integração com a API de clima (WeatherAPI) -->
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!--
+Este é o arquivo 404.html, a página exibida quando o usuário tenta acessar uma URL que não existe no site.
+Ele fornece uma mensagem de erro amigável e um link para a página inicial.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página Não Encontrada</title>
+    
+    <!-- Pré-conecta ao Google Fonts para otimizar carregamento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- ========================================
+         ARQUIVOS CENTRALIZADOS
+         ======================================== -->
+    
+    <!-- Fontes do Google Fonts (centralizado) -->
+    <link rel="stylesheet" href="/src/styles/fonts.css">
+    
+    <!-- Configurações globais: favicon, meta tags e temas (centralizado) -->
+    <script src="/src/scripts/main/config.js"></script>
+    
+    <!-- CSS específico da página de erro -->
+    <link rel="stylesheet" href="./pages/error-pages/error-pages.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Contêiner principal para centralizar o conteúdo da página. -->
+        <div class="error-container">
+            <!-- Contêiner específico para o conteúdo da mensagem de erro. -->
+            <h1 class="error-title">404</h1>
+            <!-- Título principal da página de erro. -->
+            <p class="error-message">Oops! A página que você está procurando não foi encontrada.</p>
+            <!-- Mensagem de erro principal. -->
+            <p class="error-description">A página pode ter sido movida, deletada ou você digitou o endereço incorretamente.</p>
+            <!-- Descrição adicional sobre o possível motivo do erro. -->
+            <a href="./index.html" class="link-item return-link">Voltar para a Página Inicial</a>
+            <!-- Link para retornar à página inicial do site. -->
+        </div>
+    </div>
+</body>
+</html>

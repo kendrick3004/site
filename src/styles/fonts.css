@@ -1,0 +1,144 @@
+/**
+ * ARQUIVO: fonts.css
+ * DESCRIÇÃO: Arquivo Centralizado de Fontes do Google Fonts.
+ * FUNCIONALIDADES: Importa as fontes mais populares e define variáveis CSS para uso em todo o projeto.
+ */
+
+/* ========================================
+   IMPORTAÇÃO DE FONTES PRINCIPAIS
+   ======================================== */
+
+/* Oswald - Fonte display moderna e condensada */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* Ysabeau SC - Fonte elegante com small caps */
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1;100;200;300;400;500;600;700;800;900;1000&display=swap');
+
+/* ========================================
+   IMPORTAÇÃO DE FONTES SANS-SERIF (Sem serifa)
+   ======================================== */
+
+/* Roboto - Fonte sans-serif moderna e versátil */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Open Sans - Fonte humanista legível */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Montserrat - Fonte geométrica moderna */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Lato - Fonte humanista elegante */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* Poppins - Fonte geométrica com personalidade */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Inter - Fonte otimizada para interfaces digitais */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Nunito - Fonte arredondada e amigável */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ========================================
+   IMPORTAÇÃO DE FONTES SERIF (Com serifa)
+   ======================================== */
+
+/* Playfair Display - Fonte serif elegante para títulos */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Merriweather - Fonte serif legível para textos longos */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+/* Lora - Fonte serif moderna e elegante */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* PT Serif - Fonte serif versátil */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ========================================
+   IMPORTAÇÃO DE FONTES MONOESPAÇADAS (Código)
+   ======================================== */
+
+/* Roboto Mono - Fonte monoespaçada moderna */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Source Code Pro - Fonte clássica para código */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Fira Code - Fonte monoespaçada com ligaduras de programação */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+/* ========================================
+   IMPORTAÇÃO DE FONTES DISPLAY E DECORATIVAS
+   ======================================== */
+
+/* Dancing Script - Fonte cursiva elegante */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+/* Pacifico - Fonte script descontraída */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Bebas Neue - Fonte display condensada e impactante */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Righteous - Fonte display geométrica */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+/* ========================================
+   VARIÁVEIS CSS PARA FACILITAR O USO
+   ======================================== */
+
+:root {
+    /* Fontes Sans-Serif */
+    --font-oswald: 'Oswald', sans-serif;
+    --font-ysabeau: 'Ysabeau SC', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    --font-open-sans: 'Open Sans', sans-serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-lato: 'Lato', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    --font-nunito: 'Nunito', sans-serif;
+    
+    /* Fontes Serif */
+    --font-playfair: 'Playfair Display', serif;
+    --font-merriweather: 'Merriweather', serif;
+    --font-lora: 'Lora', serif;
+    --font-pt-serif: 'PT Serif', serif;
+    
+    /* Fontes Monoespaçadas */
+    --font-roboto-mono: 'Roboto Mono', monospace;
+    --font-source-code: 'Source Code Pro', monospace;
+    --font-fira-code: 'Fira Code', monospace;
+    
+    /* Fontes Display */
+    --font-dancing: 'Dancing Script', cursive;
+    --font-pacifico: 'Pacifico', cursive;
+    --font-bebas: 'Bebas Neue', display;
+    --font-righteous: 'Righteous', display;
+}
+
+/* ========================================
+   CLASSES UTILITÁRIAS PARA APLICAÇÃO RÁPIDA
+   ======================================== */
+
+.font-oswald { font-family: var(--font-oswald); }
+.font-ysabeau { font-family: var(--font-ysabeau); }
+.font-roboto { font-family: var(--font-roboto); }
+.font-open-sans { font-family: var(--font-open-sans); }
+.font-montserrat { font-family: var(--font-montserrat); }
+.font-lato { font-family: var(--font-lato); }
+.font-poppins { font-family: var(--font-poppins); }
+.font-inter { font-family: var(--font-inter); }
+.font-nunito { font-family: var(--font-nunito); }
+.font-playfair { font-family: var(--font-playfair); }
+.font-merriweather { font-family: var(--font-merriweather); }
+.font-lora { font-family: var(--font-lora); }
+.font-pt-serif { font-family: var(--font-pt-serif); }
+.font-roboto-mono { font-family: var(--font-roboto-mono); }
+.font-source-code { font-family: var(--font-source-code); }
+.font-fira-code { font-family: var(--font-fira-code); }
+.font-dancing { font-family: var(--font-dancing); }
+.font-pacifico { font-family: var(--font-pacifico); }
+.font-bebas { font-family: var(--font-bebas); }
+.font-righteous { font-family: var(--font-righteous); }

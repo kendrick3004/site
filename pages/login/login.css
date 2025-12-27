@@ -1,0 +1,84 @@
+/*
+Este arquivo CSS (styles.css) define os estilos visuais para a página de login.
+Ele controla o layout, cores, fontes e a aparência dos elementos do formulário de login.
+*/
+
+/* Estilos para o corpo da página */
+body {
+    font-family: var(--font-oswald); /* Define a família da fonte */
+    background: #f5f5f5; /* Cor de fundo clara para a página */
+    margin: 0; /* Remove margens padrão do corpo */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos 100% da altura da viewport */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    align-items: center; /* Centraliza verticalmente os itens flexíveis */
+    justify-content: center; /* Centraliza horizontalmente os itens flexíveis */
+}
+
+/* Estilos para o contêiner principal do formulário de login */
+.login-container {
+    width: 340px; /* Largura fixa do contêiner */
+    padding: 32px 24px; /* Espaçamento interno */
+    background: #fff; /* Cor de fundo branca */
+    border-radius: 12px; /* Borda arredondada */
+    box-shadow: 0 2px 16px #0001; /* Sombra suave para dar profundidade */
+    display: flex; /* Usa flexbox para organizar os elementos internos */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilos para o título do formulário de login */
+.login-title {
+    margin-bottom: 24px; /* Margem inferior */
+    font-size: 1.7em; /* Tamanho da fonte */
+    font-weight: 700; /* Peso da fonte (negrito) */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+}
+
+/* Estilos para o formulário */
+form {
+    width: 100%; /* Ocupa 100% da largura do contêiner pai */
+    display: flex; /* Usa flexbox para organizar os elementos */
+    flex-direction: column; /* Organiza os itens em coluna */
+    gap: 10px; /* Espaçamento entre os elementos do formulário */
+}
+
+/* Estilos para os rótulos (labels) dos campos */
+label {
+    font-size: 1em; /* Tamanho da fonte */
+    margin-bottom: 2px; /* Margem inferior */
+}
+
+/* Estilos para os campos de entrada (inputs) */
+input {
+    padding: 10px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 6px; /* Borda arredondada */
+    border: 1px solid #ccc; /* Borda sólida cinza */
+}
+
+/* Estilos para o botão de submissão */
+button {
+    padding: 10px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 6px; /* Borda arredondada */
+    border: none; /* Remove a borda padrão */
+    background: #222; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto branca */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    transition: background 0.2s; /* Transição suave para a cor de fundo */
+}
+
+/* Estilos para o botão de submissão quando o mouse passa por cima */
+button:hover {
+    background: #444; /* Altera a cor de fundo para um tom mais claro */
+}
+
+/* Estilos para a mensagem de erro */
+.error {
+    color: red; /* Cor do texto vermelha */
+    font-size: 14px; /* Tamanho da fonte */
+    min-height: 18px; /* Altura mínima para evitar que o layout mude quando a mensagem aparece */
+    margin-top: 4px; /* Margem superior */
+    text-align: center; /* Centraliza o texto */
+}
+

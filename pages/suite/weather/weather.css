@@ -1,0 +1,247 @@
+/*
+    ARQUIVO: weather.css
+    DESCRIÇÃO: Estilos visuais para o widget de clima no rodapé.
+    ESTILO: Segue o padrão "Glassmorphism" (vidro fosco) do projeto principal.
+*/
+
+/* 
+   CONTÊINER PRINCIPAL DO WIDGET DE CLIMA 
+   Define o tamanho, bordas, fundo e o efeito de desfoque (blur).
+*/
+.weather-footer {
+    width: 588px; /* Largura fixa para alinhar com os outros elementos da página */
+    padding: 16px 24px;
+    margin-top: 18px;
+    background: #0000001a; /* Fundo preto com 10% de opacidade */
+    border-radius: 8px; /* Cantos arredondados */
+    border: 1px solid #00000080; /* Borda preta semi-transparente */
+    backdrop-filter: blur(4px); /* Efeito de vidro fosco que desfoca o que está atrás */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 160px; /* Altura mínima para garantir espaço para o template de fundo */
+    position: relative;
+    overflow: hidden; /* Garante que nada saia dos limites do widget */
+    transition: background-image 0.5s ease-in-out; /* Transição suave ao mudar o fundo */
+    color: #ffffff; /* Cor do texto branca para contraste */
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6); /* Sombra no texto para facilitar a leitura sobre fundos claros */
+}
+
+/* 
+   CAMADA DE ESCURECIMENTO (OVERLAY)
+   Cria uma película escura sobre a imagem de fundo para garantir que o texto branco seja sempre legível.
+*/
+.weather-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* 20% de escurecimento */
+    z-index: 1; /* Fica atrás do texto, mas na frente da imagem de fundo */
+}
+
+/* 
+   CONTEÚDO DO CLIMA
+   Organiza os elementos internos (cidade, temperatura, detalhes) em coluna.
+*/
+.weather-content {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima do fundo e do overlay */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espaço entre as seções internas */
+}
+
+/* ESTILO DA LOCALIZAÇÃO (Cidade, País) */
+.weather-location {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.8; /* Texto levemente suavizado */
+}
+
+/* SEÇÃO PRINCIPAL: Ícone + Temperatura Atual */
+.weather-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px; /* Espaço entre o ícone e o número */
+}
+
+/* ESTILO DO ÍCONE METEOROLÓGICO */
+.weather-icon {
+    width: 64px;
+    height: 64px;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1)); /* Sombra leve para dar profundidade ao ícone */
+}
+
+/* ESTILO DA TEMPERATURA ATUAL */
+.weather-temp-current {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.weather-temp-line {
+    display: flex;
+    align-items: baseline; /* Alinha o número com o símbolo °C pela base do texto */
+    gap: 4px;
+}
+
+.weather-temp-value {
+    font-size: 32px; /* Destaque para o valor numérico */
+    font-weight: 600;
+    line-height: 1;
+}
+
+.weather-temp-unit {
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.weather-feels-like {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* 
+   SEÇÃO DE DETALHES INFERIORES 
+   Exibe Máxima, Mínima, Umidade, Nuvens e Chuva em uma linha horizontal.
+*/
+.weather-details {
+    display: flex;
+    justify-content: space-around; /* Distribui os itens igualmente ao longo da largura */
+    gap: 12px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Linha divisória sutil no topo da seção */
+}
+
+/* CADA ITEM DE DETALHE INDIVIDUAL */
+.weather-detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1; /* Faz com que todos os itens ocupem o mesmo espaço */
+}
+
+.weather-detail-label {
+    font-size: 10px; /* Tamanho reduzido para os rótulos */
+    font-weight: 500;
+    opacity: 0.7;
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 0.5px;
+}
+
+.weather-detail-value {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ESTILOS PARA MENSAGENS DE ERRO */
+.weather-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+/* ========================================
+   MODO ESCURO - Ajustes de Cores
+   ======================================== */
+
+body.dark-mode .weather-footer {
+    border: 1px solid #ffffff80; /* Borda branca semi-transparente no modo escuro */
+}
+
+body.dark-mode .weather-details {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória clara */
+}
+
+/* ========================================
+   OTIMIZAÇÃO PARA CELULAR (MOBILE)
+   ======================================== */
+
+@media (max-width: 600px) {
+    .weather-footer {
+        width: calc(100% - 20px); /* Ocupa quase toda a largura da tela */
+        max-width: calc(100% - 20px);
+        padding: 16px 2px;
+        min-height: auto;
+        position: fixed; /* Fixa o widget no rodapé da tela do celular */
+        bottom: 10px;
+        z-index: 999;
+        border-radius: 8px;
+    }
+    
+    .weather-content {
+        gap: 8px;
+    }
+
+    .weather-temp-value {
+        font-size: 28px;
+    }
+
+    .weather-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .weather-main {
+        gap: 12px;
+    }
+
+    .weather-details {
+        gap: 4px;
+        padding-top: 6px;
+    }
+
+    .weather-detail-label {
+        font-size: 9px; /* Rótulos ainda menores para caber em telas pequenas */
+    }
+    
+    .weather-location {
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   MENSAGEM DE LOCALIZAÇÃO NEGADA (ESTILO)
+   ======================================== */
+
+.location-denied {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    padding: 20px;
+}
+
+.location-denied-icon {
+    font-size: 48px;
+    opacity: 0.8;
+    filter: grayscale(100%); /* Ícone em tons de cinza para indicar inatividade */
+}
+
+.location-denied-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.location-denied-message {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 0.9;
+    line-height: 1.5;
+}

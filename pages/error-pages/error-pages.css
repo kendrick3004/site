@@ -1,0 +1,121 @@
+/*
+Este arquivo contém os estilos CSS específicos para a página de erro 404.
+Ele define a aparência dos elementos como o contêiner de erro, título, mensagens e o link de retorno.
+Também inclui estilos para o modo escuro e responsividade.
+*/
+
+/* Estilos para o contêiner principal da mensagem de erro */
+.error-container {
+    text-align: center; /* Centraliza o texto dentro do contêiner */
+    padding: 40px; /* Espaçamento interno do contêiner */
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    border-radius: 16px; /* Borda arredondada */
+    border: 1px solid rgba(0, 0, 0, 0.5); /* Borda sólida semi-transparente */
+    backdrop-filter: blur(8px); /* Aplica um efeito de desfoque ao fundo */
+    max-width: 500px; /* Largura máxima do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente na página */
+}
+
+/* Estilos para o título de erro (404) */
+.error-title {
+    font-size: 6em; /* Tamanho da fonte grande para o título */
+    font-weight: 700; /* Peso da fonte (negrito) */
+    margin-bottom: 20px; /* Margem inferior */
+    color: #fff; /* Cor do texto branca */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto para destaque */
+}
+
+/* Estilos para a mensagem de erro principal */
+.error-message {
+    font-size: 1.5em; /* Tamanho da fonte */
+    margin-bottom: 15px; /* Margem inferior */
+    color: #fff; /* Cor do texto branca */
+    font-weight: 500; /* Peso da fonte */
+}
+
+/* Estilos para a descrição adicional do erro */
+.error-description {
+    font-size: 1em; /* Tamanho da fonte */
+    margin-bottom: 30px; /* Margem inferior */
+    color: #fff; /* Cor do texto branca */
+    opacity: 0.9; /* Opacidade do texto */
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+}
+
+/* Estilos para o link de retorno à página inicial */
+.return-link {
+    display: inline-block; /* Exibe como bloco, mas permite que outros elementos fiquem na mesma linha */
+    padding: 16px 32px; /* Espaçamento interno */
+    background: rgba(0, 0, 0, 0.1); /* Fundo semi-transparente */
+    color: #fff !important; /* Cor do texto branca (com !important para sobrescrever outras regras) */
+    border-radius: 8px; /* Borda arredondada */
+    border: 1px solid rgba(0, 0, 0, 0.5); /* Borda sólida semi-transparente */
+    backdrop-filter: blur(8px); /* Efeito de desfoque no fundo */
+    text-decoration: none; /* Remove o sublinhado do link */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+    transition: all 0.3s ease; /* Transição suave para todas as propriedades em 0.3 segundos */
+    margin-top: 10px; /* Margem superior */
+}
+
+/* Estilos para o link de retorno quando o mouse passa por cima */
+.return-link:hover {
+    background: rgba(0, 0, 0, 0.2); /* Altera o fundo para um tom mais escuro */
+    transform: translateY(-2px); /* Move o link ligeiramente para cima */
+}
+
+/* Estilos para modo escuro */
+body.dark-mode .error-container {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente para o contêiner no modo escuro */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda branca semi-transparente no modo escuro */
+}
+
+body.dark-mode .return-link {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente para o link no modo escuro */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda branca semi-transparente para o link no modo escuro */
+}
+
+body.dark-mode .return-link:hover {
+    background: rgba(255, 255, 255, 0.2); /* Altera o fundo do link no hover para um tom mais escuro no modo escuro */
+}
+
+/* Responsividade para telas menores que 600px */
+@media (max-width: 600px) {
+    .error-container {
+        padding: 30px 20px; /* Reduz o espaçamento interno */
+        margin: 20px; /* Adiciona margem para telas menores */
+    }
+    
+    .error-title {
+        font-size: 4em; /* Reduz o tamanho da fonte do título */
+    }
+    
+    .error-message {
+        font-size: 1.2em; /* Reduz o tamanho da fonte da mensagem */
+    }
+    
+    .error-description {
+        font-size: 0.9em; /* Reduz o tamanho da fonte da descrição */
+    }
+    
+    .return-link {
+        padding: 14px 24px; /* Reduz o espaçamento interno do link */
+        font-size: 14px; /* Reduz o tamanho da fonte do link */
+    }
+}
+
+/* Centraliza o contêiner na tela */
+body, html {
+    height: 100%; /* Garante que body e html ocupem 100% da altura da viewport */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimentos padrão */
+}
+
+body {
+    min-height: 100vh; /* Garante que o body tenha pelo menos 100% da altura da viewport */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    align-items: center; /* Centraliza verticalmente os itens flexíveis */
+    justify-content: center; /* Centraliza horizontalmente os itens flexíveis */
+    background: #222; /* Cor de fundo padrão (ajuste conforme o design) */
+}
+
