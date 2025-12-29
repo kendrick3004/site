@@ -224,7 +224,7 @@ body.dark-mode .switch-bg {
 
 body.dark-mode .switch-toggle {
     background: #ffffff;
-    transform: translateX(34px); /* Alinhamento perfeito no modo escuro */
+    transform: translateX(32px); /* Alinhamento perfeito no modo escuro */
 }
 
 body.dark-mode .link-item {

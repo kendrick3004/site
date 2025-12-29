@@ -1,4116 +1,3287 @@
 [
-  {
-    "date": "2025-01-01",
-    "monthDay": "1/1",
-    "saint": {
-      "name": "Santa Maria, Mãe de Deus",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "A Solenidade de Santa Maria, Mãe de Deus, celebra a Maternidade Divina de Maria e é a primeira festa mariana do ano litúrgico."
+    {
+        "date": "2026-01-01",
+        "saint": {
+            "name": "Santa Maria, Mãe de Deus",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-02",
+        "saint": {
+            "name": "Santos Basilio Magno e Gregório de Nazianzo, bispos e doutores da Igreja",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-03",
+        "saint": {
+            "name": "Santíssimo Nome de Jesus",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-04",
+        "saint": {
+            "name": "Epifania do Senhor",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-05",
+        "saint": {
+            "name": "Segunda-Feira depois da Epifania",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-06",
+        "saint": {
+            "name": "Terça-Feira depois da Epifania",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-07",
+        "saint": {
+            "name": "São Raimundo de Peñafort, presbítero",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-08",
+        "saint": {
+            "name": "Quinta-Feira depois da Epifania",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-09",
+        "saint": {
+            "name": "Sexta-Feira depois da Epifania",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-10",
+        "saint": {
+            "name": "Sábado depois da Epifania",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-11",
+        "saint": {
+            "name": "Baptismo do Senhor",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-12",
+        "saint": {
+            "name": "Segunda-Feira da Semana I do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-13",
+        "saint": {
+            "name": "Santo Hilário, bispo e doutor da Igreja",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-14",
+        "saint": {
+            "name": "Quarta-Feira da Semana I do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-15",
+        "saint": {
+            "name": "Quinta-Feira da Semana I do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-16",
+        "saint": {
+            "name": "Sexta-Feira da Semana I do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-17",
+        "saint": {
+            "name": "Santo Antão, abade",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-18",
+        "saint": {
+            "name": "Domingo II do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-19",
+        "saint": {
+            "name": "Segunda-Feira da Semana II do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-20",
+        "saint": {
+            "name": "São Fabião, papa e mártir / São Sebastião, mártir",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-01-21",
+        "saint": {
+            "name": "Santa Inês, virgem e mártir",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-01-22",
+        "saint": {
+            "name": "São Vicente, diácono e mártir",
+            "type": "Memória facultativa",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-01-23",
+        "saint": {
+            "name": "Sexta-Feira da Semana II do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-24",
+        "saint": {
+            "name": "São Francisco de Sales, bispo e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-25",
+        "saint": {
+            "name": "Domingo III do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-26",
+        "saint": {
+            "name": "Santos Timóteo e Tito, bispos",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-27",
+        "saint": {
+            "name": "Santa Ângela Merici, virgem",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-01-28",
+        "saint": {
+            "name": "São Tomás de Aquino, presbítero e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-29",
+        "saint": {
+            "name": "Quinta-Feira da Semana III do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-30",
+        "saint": {
+            "name": "Sexta-Feira da Semana III do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-01-31",
+        "saint": {
+            "name": "São João Bosco, presbítero",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-01",
+        "saint": {
+            "name": "Domingo IV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-02",
+        "saint": {
+            "name": "Apresentação do Senhor",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-03",
+        "saint": {
+            "name": "Santo Anscário, bispo / São Brás, bispo e mártir",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-02-04",
+        "saint": {
+            "name": "Quarta-Feira da Semana IV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-05",
+        "saint": {
+            "name": "Santa Águeda, virgem e mártir",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-02-06",
+        "saint": {
+            "name": "Santos Paulo Miki e Companheiros, mártires",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-02-07",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-02-08",
+        "saint": {
+            "name": "Domingo V do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-09",
+        "saint": {
+            "name": "Segunda-Feira da Semana V do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-10",
+        "saint": {
+            "name": "Santa Escolástica, virgem",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-11",
+        "saint": {
+            "name": "Nossa Senhora de Lurdes",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-02-12",
+        "saint": {
+            "name": "Quinta-Feira da Semana V do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-13",
+        "saint": {
+            "name": "Sexta-Feira da Semana V do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-14",
+        "saint": {
+            "name": "Santos Cirilo, monge, e Metódio, bispo",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-15",
+        "saint": {
+            "name": "Domingo VI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-16",
+        "saint": {
+            "name": "Segunda-Feira da Semana VI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-02-17",
+        "saint": {
+            "name": "Santos Sete Fundadores da Ordem dos Servitas",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-02-18",
+        "saint": {
+            "name": "Quarta-feira de Cinzas",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-02-19",
+        "saint": {
+            "name": "Quinta-Feira depois das Cinzas",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-02-20",
+        "saint": {
+            "name": "Sexta-Feira depois das Cinzas",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-02-21",
+        "saint": {
+            "name": "São Pedro Damião, bispo e doutor da Igreja",
+            "type": "Comemoração",
+            "description": "Sábado do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-02-22",
+        "saint": {
+            "name": "Domingo I da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Domingo do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-02-23",
+        "saint": {
+            "name": "São Policarpo, bispo e mártir",
+            "type": "Comemoração",
+            "description": "Segunda-Feira do Quaresma",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-02-24",
+        "saint": {
+            "name": "Terça-Feira da Semana I da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-02-25",
+        "saint": {
+            "name": "Quarta-Feira da Semana I da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-02-26",
+        "saint": {
+            "name": "Quinta-Feira da Semana I da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-02-27",
+        "saint": {
+            "name": "São Gregório de Narek, abade e doutor da Igreja",
+            "type": "Comemoração",
+            "description": "Sexta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-02-28",
+        "saint": {
+            "name": "Sábado da Semana I da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Sábado do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-01",
+        "saint": {
+            "name": "Domingo II da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Domingo do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-02",
+        "saint": {
+            "name": "Segunda-Feira da Semana II da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-03",
+        "saint": {
+            "name": "Terça-Feira da Semana II da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-04",
+        "saint": {
+            "name": "São Casimiro",
+            "type": "Comemoração",
+            "description": "Quarta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-05",
+        "saint": {
+            "name": "Quinta-Feira da Semana II da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-06",
+        "saint": {
+            "name": "Sexta-Feira da Semana II da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-07",
+        "saint": {
+            "name": "Santas Perpétua e Felicidade, mártires",
+            "type": "Comemoração",
+            "description": "Sábado do Quaresma",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-03-08",
+        "saint": {
+            "name": "Domingo III da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Domingo do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-09",
+        "saint": {
+            "name": "Santa Francisca Romana, religiosa",
+            "type": "Comemoração",
+            "description": "Segunda-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-10",
+        "saint": {
+            "name": "Terça-Feira da Semana III da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-11",
+        "saint": {
+            "name": "Quarta-Feira da Semana III da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-12",
+        "saint": {
+            "name": "Quinta-Feira da Semana III da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-13",
+        "saint": {
+            "name": "Sexta-Feira da Semana III da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-14",
+        "saint": {
+            "name": "Sábado da Semana III da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Sábado do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-15",
+        "saint": {
+            "name": "Domingo IV da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Domingo do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-16",
+        "saint": {
+            "name": "Segunda-Feira da Semana IV da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-17",
+        "saint": {
+            "name": "São Patrício, bispo",
+            "type": "Comemoração",
+            "description": "Terça-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-18",
+        "saint": {
+            "name": "São Cirilo de Jerusalém, bispo e doutor da Igreja",
+            "type": "Comemoração",
+            "description": "Quarta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-19",
+        "saint": {
+            "name": "São José, esposo da Virgem Santa Maria",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-20",
+        "saint": {
+            "name": "Sexta-Feira da Semana IV da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-21",
+        "saint": {
+            "name": "Sábado da Semana IV da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Sábado do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-22",
+        "saint": {
+            "name": "Domingo V da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Domingo do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-23",
+        "saint": {
+            "name": "São Turíbio de Mongrovejo, bispo",
+            "type": "Comemoração",
+            "description": "Segunda-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-24",
+        "saint": {
+            "name": "Terça-Feira da Semana V da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-25",
+        "saint": {
+            "name": "Anunciação do Senhor",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-26",
+        "saint": {
+            "name": "Quinta-Feira da Semana V da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-27",
+        "saint": {
+            "name": "Sexta-Feira da Semana V da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-28",
+        "saint": {
+            "name": "Sábado da Semana V da Quaresma",
+            "type": "Dia de Semana",
+            "description": "Sábado do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-29",
+        "saint": {
+            "name": "Domingo de Ramos e da Paixão do Senhor",
+            "type": "Dia de Semana",
+            "description": "Domingo do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-30",
+        "saint": {
+            "name": "Segunda-feira da Semana Santa",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Quaresma",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-03-31",
+        "saint": {
+            "name": "Terça-feira da Semana Santa",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Semana Santa",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-04-01",
+        "saint": {
+            "name": "Quarta-feira da Semana Santa",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Semana Santa",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-04-02",
+        "saint": {
+            "name": "Quinta-feira da Ceia do Senhor",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tríduo Pascal",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-04-03",
+        "saint": {
+            "name": "Sexta-feira da Paixão do Senhor",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tríduo Pascal",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-04-04",
+        "saint": {
+            "name": "Sábado Santo",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tríduo Pascal",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-04-05",
+        "saint": {
+            "name": "Domingo de Páscoa da Ressurreição do Senhor",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-06",
+        "saint": {
+            "name": "Segunda-Feira na Oitava da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-07",
+        "saint": {
+            "name": "Terça-Feira na Oitava da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-08",
+        "saint": {
+            "name": "Quarta-Feira na Oitava da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-09",
+        "saint": {
+            "name": "Quinta-Feira na Oitava da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-10",
+        "saint": {
+            "name": "Sexta-Feira na Oitava da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-11",
+        "saint": {
+            "name": "Sábado na Oitava da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-12",
+        "saint": {
+            "name": "Domingo II da Páscoa ou da Divina Misericórdia",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-13",
+        "saint": {
+            "name": "São Martinho I, papa e mártir",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Pascal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-04-14",
+        "saint": {
+            "name": "Terça-Feira da Semana II da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-15",
+        "saint": {
+            "name": "Quarta-Feira da Semana II da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-16",
+        "saint": {
+            "name": "Quinta-Feira da Semana II da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-17",
+        "saint": {
+            "name": "Sexta-Feira da Semana II da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-18",
+        "saint": {
+            "name": "Sábado da Semana II da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-19",
+        "saint": {
+            "name": "Domingo III da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-20",
+        "saint": {
+            "name": "Segunda-Feira da Semana III da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-21",
+        "saint": {
+            "name": "Santo Anselmo, bispo e doutor da Igreja",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-22",
+        "saint": {
+            "name": "Quarta-Feira da Semana III da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-23",
+        "saint": {
+            "name": "Santo Adalberto, bispo e mártir / São Jorge, mártir",
+            "type": "Memória facultativa",
+            "description": "Quinta-Feira do Tempo Pascal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-04-24",
+        "saint": {
+            "name": "São Fiel de Sigmaringa, presbítero e mártir",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Pascal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-04-25",
+        "saint": {
+            "name": "São Marcos, evangelista",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-26",
+        "saint": {
+            "name": "Domingo IV da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-27",
+        "saint": {
+            "name": "Segunda-Feira da Semana IV da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-28",
+        "saint": {
+            "name": "São Luís Maria Grignion de Montfort, presbítero / São Pedro Chanel, presbítero e mártir",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Pascal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-04-29",
+        "saint": {
+            "name": "Santa Catarina de Siena, virgem e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-04-30",
+        "saint": {
+            "name": "São Pio V, papa",
+            "type": "Memória facultativa",
+            "description": "Quinta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-01",
+        "saint": {
+            "name": "São José Operário",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-02",
+        "saint": {
+            "name": "Santo Atanasio, bispo e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-03",
+        "saint": {
+            "name": "Domingo V da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-04",
+        "saint": {
+            "name": "Segunda-Feira da Semana V da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-05",
+        "saint": {
+            "name": "Terça-Feira da Semana V da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-06",
+        "saint": {
+            "name": "Quarta-Feira da Semana V da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-07",
+        "saint": {
+            "name": "Quinta-Feira da Semana V da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-08",
+        "saint": {
+            "name": "Sexta-Feira da Semana V da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-09",
+        "saint": {
+            "name": "Sábado da Semana V da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-10",
+        "saint": {
+            "name": "Domingo VI da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-11",
+        "saint": {
+            "name": "Segunda-Feira da Semana VI da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-12",
+        "saint": {
+            "name": "Santos Nereu e Aquileu, mártires / São Pancrácio, mártir",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Pascal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-05-13",
+        "saint": {
+            "name": "Nossa Senhora de Fátima",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-14",
+        "saint": {
+            "name": "São Matias, apóstolo",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-15",
+        "saint": {
+            "name": "Sexta-Feira da Semana VI da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-16",
+        "saint": {
+            "name": "Sábado da Semana VI da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-17",
+        "saint": {
+            "name": "Ascensão do Senhor",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-18",
+        "saint": {
+            "name": "São João I, papa e mártir",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Pascal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-05-19",
+        "saint": {
+            "name": "Terça-Feira da Semana VII da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-20",
+        "saint": {
+            "name": "São Bernardino de Siena, presbítero",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-21",
+        "saint": {
+            "name": "Santos Cristóvão de Magalhães, presbítero, e Companheiros, mártires",
+            "type": "Memória facultativa",
+            "description": "Quinta-Feira do Tempo Pascal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-05-22",
+        "saint": {
+            "name": "Santa Rita de Cássia, religiosa",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-23",
+        "saint": {
+            "name": "Sábado da Semana VII da Páscoa",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-24",
+        "saint": {
+            "name": "Domingo de Pentecostes",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Pascal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-25",
+        "saint": {
+            "name": "Bem-aventurada Virgem Maria, Mãe da Igreja",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-05-26",
+        "saint": {
+            "name": "São Filipe Néri, presbítero",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-05-27",
+        "saint": {
+            "name": "Santo Agostinho de Cantuária, bispo",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-28",
+        "saint": {
+            "name": "Quinta-Feira da Semana VIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-05-29",
+        "saint": {
+            "name": "São Paulo VI, papa",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-30",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-05-31",
+        "saint": {
+            "name": "Santíssima Trindade",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-01",
+        "saint": {
+            "name": "São Justino, mártir",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-06-02",
+        "saint": {
+            "name": "Santos Marcelino e Pedro, mártires",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-06-03",
+        "saint": {
+            "name": "Santos Carlos Lwanga e Companheiros, mártires",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-06-04",
+        "saint": {
+            "name": "Santíssimo Corpo e Sangue de Cristo",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-05",
+        "saint": {
+            "name": "São Bonifácio, bispo e mártir",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-06-06",
+        "saint": {
+            "name": "São Norberto, obispo / Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-06-07",
+        "saint": {
+            "name": "Domingo X do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-08",
+        "saint": {
+            "name": "Santo Efrém, diácono e doutor da Igreja",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-06-09",
+        "saint": {
+            "name": "São José de Anchieta, presbítero",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-10",
+        "saint": {
+            "name": "Quarta-Feira da Semana X do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-11",
+        "saint": {
+            "name": "São Barnabé, apóstolo",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-12",
+        "saint": {
+            "name": "Sagrado Coração de Jesus",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-13",
+        "saint": {
+            "name": "Imaculado Coração da Virgem Santa Maria",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-14",
+        "saint": {
+            "name": "Domingo XI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-15",
+        "saint": {
+            "name": "Segunda-Feira da Semana XI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-16",
+        "saint": {
+            "name": "Terça-Feira da Semana XI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-17",
+        "saint": {
+            "name": "Quarta-Feira da Semana XI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-18",
+        "saint": {
+            "name": "Quinta-Feira da Semana XI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-19",
+        "saint": {
+            "name": "São Romualdo, abade",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-06-20",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-06-21",
+        "saint": {
+            "name": "Domingo XII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-22",
+        "saint": {
+            "name": "Santos João Fisher, bispo, e Tomás Moro, mártires / São Paulino de Nola, bispo",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-06-23",
+        "saint": {
+            "name": "Terça-Feira da Semana XII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-24",
+        "saint": {
+            "name": "Nascimento de São João Batista",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-25",
+        "saint": {
+            "name": "Quinta-Feira da Semana XII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-26",
+        "saint": {
+            "name": "Sexta-Feira da Semana XII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-27",
+        "saint": {
+            "name": "São Cirilo de Alexandria, bispo e doutor da Igreja / Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-06-28",
+        "saint": {
+            "name": "Domingo XIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-29",
+        "saint": {
+            "name": "Segunda-Feira da Semana XIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-06-30",
+        "saint": {
+            "name": "Primeiros Santos Mártires da Igreja de Roma",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-07-01",
+        "saint": {
+            "name": "Quarta-Feira da Semana XIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-02",
+        "saint": {
+            "name": "Quinta-Feira da Semana XIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-03",
+        "saint": {
+            "name": "São Tomé, apóstolo",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-04",
+        "saint": {
+            "name": "Santa Isabel de Portugal / Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-07-05",
+        "saint": {
+            "name": "Santos Pedro e Paulo, apóstolos",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-06",
+        "saint": {
+            "name": "Santa Maria Goretti, virgem e mártir",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-07-07",
+        "saint": {
+            "name": "Terça-Feira da Semana XIV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-08",
+        "saint": {
+            "name": "Santos Agostinho Zao Rong, presbítero, e Companheiros, mártires",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-07-09",
+        "saint": {
+            "name": "Santa Paulina do Coração Agonizante de Jesus, virgem",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-10",
+        "saint": {
+            "name": "Sexta-Feira da Semana XIV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-11",
+        "saint": {
+            "name": "São Bento, abade",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-12",
+        "saint": {
+            "name": "Domingo XV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-13",
+        "saint": {
+            "name": "Santo Henrique",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-07-14",
+        "saint": {
+            "name": "São Camilo de Lellis, presbítero",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-07-15",
+        "saint": {
+            "name": "São Boaventura, bispo e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-16",
+        "saint": {
+            "name": "Nossa Senhora do Carmo",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-17",
+        "saint": {
+            "name": "Beatos Inácio de Azevedo, presbítero, e companheiros, mártires",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-07-18",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-07-19",
+        "saint": {
+            "name": "Domingo XVI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-20",
+        "saint": {
+            "name": "Santo Apolinário, bispo e mártir",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-07-21",
+        "saint": {
+            "name": "São Lourenço de Brindes, presbítero e doutor da Igreja",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-07-22",
+        "saint": {
+            "name": "Santa Maria Madalena",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-23",
+        "saint": {
+            "name": "Santa Brígida, religiosa",
+            "type": "Memória facultativa",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-07-24",
+        "saint": {
+            "name": "São Charbel Makhluf, presbítero",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-07-25",
+        "saint": {
+            "name": "São Tiago, apóstolo",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-26",
+        "saint": {
+            "name": "Domingo XVII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-27",
+        "saint": {
+            "name": "Segunda-Feira da Semana XVII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-28",
+        "saint": {
+            "name": "Terça-Feira da Semana XVII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-29",
+        "saint": {
+            "name": "Santos Marta, Maria e Lázaro",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-07-30",
+        "saint": {
+            "name": "São Pedro Crisólogo, bispo e doutor da Igreja",
+            "type": "Memória facultativa",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-07-31",
+        "saint": {
+            "name": "Santo Inácio de Loiola, presbítero",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-01",
+        "saint": {
+            "name": "Santo Afonso de Ligório, bispo e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-02",
+        "saint": {
+            "name": "Domingo XVIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-03",
+        "saint": {
+            "name": "Segunda-Feira da Semana XVIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-04",
+        "saint": {
+            "name": "São João Maria Vianney, presbítero",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-05",
+        "saint": {
+            "name": "Dedicação da Basílica de Santa Maria Maior",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-08-06",
+        "saint": {
+            "name": "Transfiguração do Senhor",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-07",
+        "saint": {
+            "name": "Santos Sixto II, papa, e Compañeros, mártires / São Caetano, presbítero",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-08-08",
+        "saint": {
+            "name": "São Domingos, presbítero",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-09",
+        "saint": {
+            "name": "Domingo XIX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-10",
+        "saint": {
+            "name": "São Lourenço, diácono e mártir",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-08-11",
+        "saint": {
+            "name": "Santa Clara, virgem",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-12",
+        "saint": {
+            "name": "Santa Joana Francisca de Chantal, religiosa",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-08-13",
+        "saint": {
+            "name": "Santa Dulce Lopes Pontes, virgem",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-14",
+        "saint": {
+            "name": "São Maximiliano Maria Kolbe, presbitero e mártir",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-08-15",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-08-16",
+        "saint": {
+            "name": "Assunção da Nossa Senhora",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-17",
+        "saint": {
+            "name": "Segunda-Feira da Semana XX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-18",
+        "saint": {
+            "name": "Terça-Feira da Semana XX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-19",
+        "saint": {
+            "name": "São João Eudes, presbítero",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-08-20",
+        "saint": {
+            "name": "São Bernardo, abade e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-21",
+        "saint": {
+            "name": "São Pio X, papa",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-22",
+        "saint": {
+            "name": "Virgem Santa Maria, Rainha",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-23",
+        "saint": {
+            "name": "Domingo XXI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-24",
+        "saint": {
+            "name": "São Bartolomeu, apóstolo",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-25",
+        "saint": {
+            "name": "São José de Calasanz, presbítero / São Luis de França",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-08-26",
+        "saint": {
+            "name": "Quarta-Feira da Semana XXI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-27",
+        "saint": {
+            "name": "Santa Mónica",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-28",
+        "saint": {
+            "name": "Santo Agostinho, bispo e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-29",
+        "saint": {
+            "name": "Martírio de São João Batista",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-30",
+        "saint": {
+            "name": "Domingo XXII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-08-31",
+        "saint": {
+            "name": "Segunda-Feira da Semana XXII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-01",
+        "saint": {
+            "name": "Terça-Feira da Semana XXII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-02",
+        "saint": {
+            "name": "Quarta-Feira da Semana XXII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-03",
+        "saint": {
+            "name": "São Gregorio Magno, papa e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-04",
+        "saint": {
+            "name": "Sexta-Feira da Semana XXII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-05",
+        "saint": {
+            "name": "Santa Teresa de Calcutá, virgem / Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-09-06",
+        "saint": {
+            "name": "Domingo XXIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-07",
+        "saint": {
+            "name": "Segunda-Feira da Semana XXIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-08",
+        "saint": {
+            "name": "Natividade da Virgem Santa Maria",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-09",
+        "saint": {
+            "name": "São Pedro Claver, presbítero",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-09-10",
+        "saint": {
+            "name": "Quinta-Feira da Semana XXIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-11",
+        "saint": {
+            "name": "Sexta-Feira da Semana XXIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-12",
+        "saint": {
+            "name": "Santíssimo Nome de Maria",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-09-13",
+        "saint": {
+            "name": "Domingo XXIV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-14",
+        "saint": {
+            "name": "Exaltação da Santa Cruz",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-15",
+        "saint": {
+            "name": "Nossa Senhora das Dores",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-16",
+        "saint": {
+            "name": "Santos Cornélio, papa, e Cipriano, bispo, mártires",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-09-17",
+        "saint": {
+            "name": "Santa Hildegarda de Bingen, virgem e doutora da Igreja / São Roberto Belarmino, bispo e doutor da Igreja",
+            "type": "Memória facultativa",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-09-18",
+        "saint": {
+            "name": "Sexta-Feira da Semana XXIV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-19",
+        "saint": {
+            "name": "São Januário, bispo e mártir / Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-09-20",
+        "saint": {
+            "name": "Domingo XXV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-21",
+        "saint": {
+            "name": "São Mateus, apóstolo e evangelista",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-22",
+        "saint": {
+            "name": "Terça-Feira da Semana XXV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-23",
+        "saint": {
+            "name": "São Pio de Pietrelcina, presbítero",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-24",
+        "saint": {
+            "name": "Quinta-Feira da Semana XXV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-25",
+        "saint": {
+            "name": "Sexta-Feira da Semana XXV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-26",
+        "saint": {
+            "name": "Santos Cosme e Damião, mártires / Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-09-27",
+        "saint": {
+            "name": "Domingo XXVI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-28",
+        "saint": {
+            "name": "Santos Lourenço Ruiz e Companheiros, mártires / São Venceslau, mártir",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-09-29",
+        "saint": {
+            "name": "Santos Miguel, Gabriel e Rafael, Arcanjos",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-09-30",
+        "saint": {
+            "name": "São Jerônimo, presbítero e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-01",
+        "saint": {
+            "name": "Santa Teresa do Menino Jesus, virgem e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-02",
+        "saint": {
+            "name": "Santos Anjos da Guarda",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-03",
+        "saint": {
+            "name": "Santos André de Soveral, Ambrósio Francisco Ferro, presbíteros, e Companheiros, mártires",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-10-04",
+        "saint": {
+            "name": "Domingo XXVII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-05",
+        "saint": {
+            "name": "Santa Faustina Kowalska, virgem / São Benedito, religioso",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-10-06",
+        "saint": {
+            "name": "São Bruno, presbítero",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-10-07",
+        "saint": {
+            "name": "Nossa Senhora do Rosário",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-08",
+        "saint": {
+            "name": "Quinta-Feira da Semana XXVII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-09",
+        "saint": {
+            "name": "Santos Dionísio, bispo, e Companheiros, mártires / São João Leonardo, presbítero",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-10-10",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-10-11",
+        "saint": {
+            "name": "Domingo XXVIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-12",
+        "saint": {
+            "name": "Nossa Senhora da Conceição Aparecida",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-13",
+        "saint": {
+            "name": "Terça-Feira da Semana XXVIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-14",
+        "saint": {
+            "name": "São Calixto I, papa e mártir",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-10-15",
+        "saint": {
+            "name": "Santa Teresa de Jesus, virgem e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-16",
+        "saint": {
+            "name": "Santa Edviges, religiosa / Santa Margarida Maria Alacoque, virgem",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-10-17",
+        "saint": {
+            "name": "Santo Inácio de Antioquia, bispo e mártir",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-10-18",
+        "saint": {
+            "name": "Domingo XXIX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-19",
+        "saint": {
+            "name": "Santos João de Brébeuf, Isaac Jogues, presbíteros, e Companheiros, mártires / São Paulo da Cruz, presbítero / São Pedro de Alcântara, presbítero",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-10-20",
+        "saint": {
+            "name": "Terça-Feira da Semana XXIX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-21",
+        "saint": {
+            "name": "Quarta-Feira da Semana XXIX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-22",
+        "saint": {
+            "name": "São João Paulo II, papa",
+            "type": "Memória facultativa",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-10-23",
+        "saint": {
+            "name": "São João de Capistrano, presbítero",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-10-24",
+        "saint": {
+            "name": "Santo Antônio Maria Claret, bispo / Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-10-25",
+        "saint": {
+            "name": "Domingo XXX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-26",
+        "saint": {
+            "name": "Segunda-Feira da Semana XXX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-27",
+        "saint": {
+            "name": "Terça-Feira da Semana XXX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-28",
+        "saint": {
+            "name": "Santos Simão e Judas Tadeu, apóstolos",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-29",
+        "saint": {
+            "name": "Quinta-Feira da Semana XXX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-30",
+        "saint": {
+            "name": "Sexta-Feira da Semana XXX do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-10-31",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-11-01",
+        "saint": {
+            "name": "Todos os Santos",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-02",
+        "saint": {
+            "name": "Comemoração de Todos os Fiéis Defuntos",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-03",
+        "saint": {
+            "name": "São Martinho de Lima, religioso",
+            "type": "Memória facultativa",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-11-04",
+        "saint": {
+            "name": "São Carlos Borromeu, bispo",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-05",
+        "saint": {
+            "name": "Quinta-Feira da Semana XXXI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-06",
+        "saint": {
+            "name": "Sexta-Feira da Semana XXXI do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-07",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-11-08",
+        "saint": {
+            "name": "Domingo XXXII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-09",
+        "saint": {
+            "name": "Dedicação da Basílica de Latrão",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-10",
+        "saint": {
+            "name": "São Leão Magno, papa e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-11",
+        "saint": {
+            "name": "São Martinho de Tours, bispo",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-12",
+        "saint": {
+            "name": "São Josafá, bispo e mártir",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-11-13",
+        "saint": {
+            "name": "Sexta-Feira da Semana XXXII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-14",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-11-15",
+        "saint": {
+            "name": "Domingo XXXIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-16",
+        "saint": {
+            "name": "Santa Gertrudes, virgem / Santa Margarida da Escócia",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-11-17",
+        "saint": {
+            "name": "Santa Isabel da Hungría, religiosa",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-18",
+        "saint": {
+            "name": "Dedicação das Basílicas dos Santos Pedro e Paulo, apóstolos",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-11-19",
+        "saint": {
+            "name": "Santos Roque González, Afonso Rodríguez e João del Castillo, presbíteros e mártires",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-11-20",
+        "saint": {
+            "name": "Sexta-Feira da Semana XXXIII do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-21",
+        "saint": {
+            "name": "Apresentação de Nossa Senhora",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-22",
+        "saint": {
+            "name": "Nosso Senhor Jesus Cristo, Rei do Universo",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-23",
+        "saint": {
+            "name": "São Clemente I, papa e mártir / São Columbano, abade",
+            "type": "Memória facultativa",
+            "description": "Segunda-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-11-24",
+        "saint": {
+            "name": "Santos André Dũng Lạc, presbítero, e Companheiros, mártires",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-11-25",
+        "saint": {
+            "name": "Santa Catarina de Alexandria, virgem e mártir",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Tempo Comum",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-11-26",
+        "saint": {
+            "name": "Quinta-Feira da Semana XXXIV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-27",
+        "saint": {
+            "name": "Sexta-Feira da Semana XXXIV do Tempo Comum",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo Comum",
+            "color": "#2E8B57"
+        }
+    },
+    {
+        "date": "2026-11-28",
+        "saint": {
+            "name": "Nossa Senhora no Sábado",
+            "type": "Memória facultativa",
+            "description": "Sábado do Tempo Comum",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-11-29",
+        "saint": {
+            "name": "Domingo I do Advento",
+            "type": "Dia de Semana",
+            "description": "Domingo do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-11-30",
+        "saint": {
+            "name": "Santo André, apóstolo",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-01",
+        "saint": {
+            "name": "Terça-Feira da Semana I do Advento",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-02",
+        "saint": {
+            "name": "Quarta-Feira da Semana I do Advento",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-03",
+        "saint": {
+            "name": "São Francisco Xavier, presbítero",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-04",
+        "saint": {
+            "name": "São João Damasceno, presbítero e doutor da Igreja",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Advento",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-12-05",
+        "saint": {
+            "name": "Sábado da Semana I do Advento",
+            "type": "Dia de Semana",
+            "description": "Sábado do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-06",
+        "saint": {
+            "name": "Domingo II do Advento",
+            "type": "Dia de Semana",
+            "description": "Domingo do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-07",
+        "saint": {
+            "name": "Santo Ambrósio, bispo e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-08",
+        "saint": {
+            "name": "Imaculada Conceição de Nossa Senhora",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-09",
+        "saint": {
+            "name": "São João Diego",
+            "type": "Memória facultativa",
+            "description": "Quarta-Feira do Advento",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-12-10",
+        "saint": {
+            "name": "Nossa Senhora de Loreto",
+            "type": "Memória facultativa",
+            "description": "Quinta-Feira do Advento",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-12-11",
+        "saint": {
+            "name": "São Dâmaso I, papa",
+            "type": "Memória facultativa",
+            "description": "Sexta-Feira do Advento",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-12-12",
+        "saint": {
+            "name": "Nossa Senhora de Guadalupe",
+            "type": "Dia de Semana",
+            "description": "Sábado do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-13",
+        "saint": {
+            "name": "Domingo III do Advento",
+            "type": "Dia de Semana",
+            "description": "Domingo do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-14",
+        "saint": {
+            "name": "São João da Cruz, presbítero e doutor da Igreja",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-15",
+        "saint": {
+            "name": "Terça-Feira da Semana III do Advento",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-16",
+        "saint": {
+            "name": "Quarta-Feira da Semana III do Advento",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-17",
+        "saint": {
+            "name": "Féria do Advento (Dezembro 17)",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-18",
+        "saint": {
+            "name": "Féria do Advento (Dezembro 18)",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-19",
+        "saint": {
+            "name": "Féria do Advento (Dezembro 19)",
+            "type": "Dia de Semana",
+            "description": "Sábado do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-20",
+        "saint": {
+            "name": "Domingo IV do Advento",
+            "type": "Dia de Semana",
+            "description": "Domingo do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-21",
+        "saint": {
+            "name": "São Pedro Canísio, presbítero e doutor da Igreja",
+            "type": "Comemoração",
+            "description": "Segunda-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-22",
+        "saint": {
+            "name": "Féria do Advento (Dezembro 22)",
+            "type": "Dia de Semana",
+            "description": "Terça-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-23",
+        "saint": {
+            "name": "São João de Quenty, presbítero",
+            "type": "Comemoração",
+            "description": "Quarta-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-24",
+        "saint": {
+            "name": "Féria do Advento (Dezembro 24)",
+            "type": "Dia de Semana",
+            "description": "Quinta-Feira do Advento",
+            "color": "#9370DB"
+        }
+    },
+    {
+        "date": "2026-12-25",
+        "saint": {
+            "name": "Natal do Senhor",
+            "type": "Dia de Semana",
+            "description": "Sexta-Feira do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-12-26",
+        "saint": {
+            "name": "Santo Estêvão, primeiro mártir",
+            "type": "Dia de Semana",
+            "description": "Sábado do Tempo do Natal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-12-27",
+        "saint": {
+            "name": "Sagrada Familia de Jesus, Maria e José",
+            "type": "Dia de Semana",
+            "description": "Domingo do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-12-28",
+        "saint": {
+            "name": "Santos Inocentes, mártires",
+            "type": "Dia de Semana",
+            "description": "Segunda-Feira do Tempo do Natal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-12-29",
+        "saint": {
+            "name": "São Tomás Becket, bispo e mártir",
+            "type": "Comemoração",
+            "description": "Terça-Feira do Tempo do Natal",
+            "color": "#FF4500"
+        }
+    },
+    {
+        "date": "2026-12-30",
+        "saint": {
+            "name": "6º dia da Oitava do Natal",
+            "type": "Dia de Semana",
+            "description": "Quarta-Feira do Tempo do Natal",
+            "color": "#FFFFFF"
+        }
+    },
+    {
+        "date": "2026-12-31",
+        "saint": {
+            "name": "São Silvestre I, papa",
+            "type": "Comemoração",
+            "description": "Quinta-Feira do Tempo do Natal",
+            "color": "#9370DB"
+        }
     }
-  },
-  {
-    "date": "2025-01-02",
-    "monthDay": "1/2",
-    "saint": {
-      "name": "Santos Basílio Magno e Gregório de Nazianzo, bispos e doutores da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Grandes Padres da Igreja do século IV, defensores da fé nicena contra o arianismo."
-    }
-  },
-  {
-    "date": "2025-01-03",
-    "monthDay": "1/3",
-    "saint": {
-      "name": "Santíssimo Nome de Jesus",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Festa que honra o nome de Jesus, que significa 'Deus salva'."
-    }
-  },
-  {
-    "date": "2025-01-04",
-    "monthDay": "1/4",
-    "saint": {
-      "name": "Sábado do Tempo do Natal",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-05",
-    "monthDay": "1/5",
-    "saint": {
-      "name": "Epifania do Senhor",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "Vimos a sua estrela no Oriente e viemos adorar o Senhor.",
-      "description": "Celebra a manifestação de Jesus como o Messias e Salvador do mundo, simbolizada pela visita dos Reis Magos."
-    }
-  },
-  {
-    "date": "2025-01-06",
-    "monthDay": "1/6",
-    "saint": {
-      "name": "Segunda-Feira depois da Epifania",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-07",
-    "monthDay": "1/7",
-    "saint": {
-      "name": "São Raimundo de Peñafort, presbítero",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Sacerdote dominicano e canonista, famoso por seu trabalho na codificação do Direito Canônico."
-    }
-  },
-  {
-    "date": "2025-01-08",
-    "monthDay": "1/8",
-    "saint": {
-      "name": "Quarta-Feira depois da Epifania",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-09",
-    "monthDay": "1/9",
-    "saint": {
-      "name": "Quinta-Feira depois da Epifania",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-10",
-    "monthDay": "1/10",
-    "saint": {
-      "name": "Sexta-Feira depois da Epifania",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-11",
-    "monthDay": "1/11",
-    "saint": {
-      "name": "Sábado depois da Epifania",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-12",
-    "monthDay": "1/12",
-    "saint": {
-      "name": "Baptismo do Senhor",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra o batismo de Jesus no rio Jordão por João Batista, marcando o início de seu ministério público."
-    }
-  },
-  {
-    "date": "2025-01-13",
-    "monthDay": "1/13",
-    "saint": {
-      "name": "Santo Hilário, bispo e doutor da Igreja",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Bispo de Poitiers e Doutor da Igreja, conhecido como 'Atanásio do Ocidente' por sua defesa da divindade de Cristo."
-    }
-  },
-  {
-    "date": "2025-01-14",
-    "monthDay": "1/14",
-    "saint": {
-      "name": "Terça-Feira da Semana I do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-15",
-    "monthDay": "1/15",
-    "saint": {
-      "name": "Quarta-Feira da Semana I do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-16",
-    "monthDay": "1/16",
-    "saint": {
-      "name": "Quinta-Feira da Semana I do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-17",
-    "monthDay": "1/17",
-    "saint": {
-      "name": "Santo Antão, abade",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Considerado o pai do monaquismo cristão, viveu como eremita no deserto do Egito."
-    }
-  },
-  {
-    "date": "2025-01-18",
-    "monthDay": "1/18",
-    "saint": {
-      "name": "Nossa Senhora no Sábado",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-19",
-    "monthDay": "1/19",
-    "saint": {
-      "name": "Domingo II do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-20",
-    "monthDay": "1/20",
-    "saint": {
-      "name": "São Fabião, papa e mártir",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Papa do século III, martirizado durante a perseguição de Décio."
-    }
-  },
-  {
-    "date": "2025-01-20",
-    "monthDay": "1/20",
-    "saint": {
-      "name": "São Sebastião, mártir",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Mártir romano, padroeiro de diversas cidades e invocado contra a peste."
-    }
-  },
-  {
-    "date": "2025-01-21",
-    "monthDay": "1/21",
-    "saint": {
-      "name": "Santa Inês, virgem e mártir",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": "Jovem mártir romana, padroeira da pureza."
-    }
-  },
-  {
-    "date": "2025-01-22",
-    "monthDay": "1/22",
-    "saint": {
-      "name": "São Vicente, diácono e mártir",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Diácono de Saragoça, martirizado na Espanha durante a perseguição de Diocleciano."
-    }
-  },
-  {
-    "date": "2025-01-23",
-    "monthDay": "1/23",
-    "saint": {
-      "name": "Quinta-Feira da Semana II do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-24",
-    "monthDay": "1/24",
-    "saint": {
-      "name": "São Francisco de Sales, bispo e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Bispo de Genebra e Doutor da Igreja, padroeiro dos jornalistas e da imprensa católica."
-    }
-  },
-  {
-    "date": "2025-01-25",
-    "monthDay": "1/25",
-    "saint": {
-      "name": "Conversão de São Paulo, apóstolo",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra a conversão de Saulo de Tarso no caminho de Damasco."
-    }
-  },
-  {
-    "date": "2025-01-26",
-    "monthDay": "1/26",
-    "saint": {
-      "name": "Domingo III do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-27",
-    "monthDay": "1/27",
-    "saint": {
-      "name": "Santa Ângela Merici, virgem",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundadora da Companhia de Santa Úrsula (Ursulinas)."
-    }
-  },
-  {
-    "date": "2025-01-28",
-    "monthDay": "1/28",
-    "saint": {
-      "name": "São Tomás de Aquino, presbítero e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Sacerdote dominicano, filósofo e teólogo, um dos maiores Doutores da Igreja."
-    }
-  },
-  {
-    "date": "2025-01-29",
-    "monthDay": "1/29",
-    "saint": {
-      "name": "Quarta-Feira da Semana III do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-30",
-    "monthDay": "1/30",
-    "saint": {
-      "name": "Quinta-Feira da Semana III do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-01-31",
-    "monthDay": "1/31",
-    "saint": {
-      "name": "São João Bosco, presbítero",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Fundador da Congregação Salesiana, dedicado à educação da juventude pobre."
-    }
-  },
-  {
-    "date": "2025-02-01",
-    "monthDay": "2/1",
-    "saint": {
-      "name": "Nossa Senhora no Sábado",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-02",
-    "monthDay": "2/2",
-    "saint": {
-      "name": "Apresentação do Senhor",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra a apresentação de Jesus no Templo e a purificação de Maria, 40 dias após o Natal."
-    }
-  },
-  {
-    "date": "2025-02-03",
-    "monthDay": "2/3",
-    "saint": {
-      "name": "Santo Anscário, bispo",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Missionário e bispo, conhecido como o 'Apóstolo do Norte'."
-    }
-  },
-  {
-    "date": "2025-02-03",
-    "monthDay": "2/3",
-    "saint": {
-      "name": "São Brás, bispo e mártir",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Bispo e mártir, invocado contra as doenças da garganta."
-    }
-  },
-  {
-    "date": "2025-02-04",
-    "monthDay": "2/4",
-    "saint": {
-      "name": "Terça-Feira da Semana IV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-05",
-    "monthDay": "2/5",
-    "saint": {
-      "name": "Santa Águeda, virgem e mártir",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": "Mártir siciliana, padroeira contra incêndios e doenças dos seios."
-    }
-  },
-  {
-    "date": "2025-02-06",
-    "monthDay": "2/6",
-    "saint": {
-      "name": "Santos Paulo Miki e Companheiros, mártires",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": "Grupo de 26 mártires crucificados no Japão em 1597."
-    }
-  },
-  {
-    "date": "2025-02-07",
-    "monthDay": "2/7",
-    "saint": {
-      "name": "Sexta-Feira da Semana IV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-08",
-    "monthDay": "2/8",
-    "saint": {
-      "name": "Santa Josefina Bakhita, virgem",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Ex-escrava sudanesa que se tornou freira canossiana, padroeira do Sudão."
-    }
-  },
-  {
-    "date": "2025-02-08",
-    "monthDay": "2/8",
-    "saint": {
-      "name": "São Jerónimo Emiliano",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundador da Congregação dos Clérigos Regulares de Somasca, padroeiro dos órfãos e da juventude abandonada."
-    }
-  },
-  {
-    "date": "2025-02-08",
-    "monthDay": "2/8",
-    "saint": {
-      "name": "Nossa Senhora no Sábado",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-09",
-    "monthDay": "2/9",
-    "saint": {
-      "name": "Domingo V do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-10",
-    "monthDay": "2/10",
-    "saint": {
-      "name": "Santa Escolástica, virgem",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Irmã de São Bento, fundadora do ramo feminino da Ordem Beneditina."
-    }
-  },
-  {
-    "date": "2025-02-11",
-    "monthDay": "2/11",
-    "saint": {
-      "name": "Nossa Senhora de Lurdes",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Comemoração das aparições de Nossa Senhora em Lourdes, França, em 1858."
-    }
-  },
-  {
-    "date": "2025-02-12",
-    "monthDay": "2/12",
-    "saint": {
-      "name": "Quarta-Feira da Semana V do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-13",
-    "monthDay": "2/13",
-    "saint": {
-      "name": "Quinta-Feira da Semana V do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-14",
-    "monthDay": "2/14",
-    "saint": {
-      "name": "Santos Cirilo, monge, e Metódio, bispo",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Apóstolos dos Eslavos, criadores do alfabeto cirílico."
-    }
-  },
-  {
-    "date": "2025-02-15",
-    "monthDay": "2/15",
-    "saint": {
-      "name": "Nossa Senhora no Sábado",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-16",
-    "monthDay": "2/16",
-    "saint": {
-      "name": "Domingo VI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-17",
-    "monthDay": "2/17",
-    "saint": {
-      "name": "Santos Sete Fundadores da Ordem dos Servitas",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Sete homens de Florença que fundaram a Ordem dos Servos de Maria (Servitas)."
-    }
-  },
-  {
-    "date": "2025-02-18",
-    "monthDay": "2/18",
-    "saint": {
-      "name": "Terça-Feira da Semana VI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-19",
-    "monthDay": "2/19",
-    "saint": {
-      "name": "Quarta-Feira da Semana VI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-20",
-    "monthDay": "2/20",
-    "saint": {
-      "name": "Quinta-Feira da Semana VI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-21",
-    "monthDay": "2/21",
-    "saint": {
-      "name": "São Pedro Damião, bispo e doutor da Igreja",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Cardeal-bispo e Doutor da Igreja, reformador da vida monástica."
-    }
-  },
-  {
-    "date": "2025-02-22",
-    "monthDay": "2/22",
-    "saint": {
-      "name": "Cadeira de São Pedro, apóstolo",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra a autoridade de São Pedro e seus sucessores como Bispos de Roma."
-    }
-  },
-  {
-    "date": "2025-02-23",
-    "monthDay": "2/23",
-    "saint": {
-      "name": "Domingo VII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-24",
-    "monthDay": "2/24",
-    "saint": {
-      "name": "Segunda-Feira da Semana VII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-25",
-    "monthDay": "2/25",
-    "saint": {
-      "name": "Terça-Feira da Semana VII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-26",
-    "monthDay": "2/26",
-    "saint": {
-      "name": "Quarta-Feira da Semana VII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-02-27",
-    "monthDay": "2/27",
-    "saint": {
-      "name": "São Gregório de Narek, abade e doutor da Igreja",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Monge armênio, poeta e teólogo, Doutor da Igreja."
-    }
-  },
-  {
-    "date": "2025-02-28",
-    "monthDay": "2/28",
-    "saint": {
-      "name": "Sexta-Feira da Semana VII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-01",
-    "monthDay": "3/1",
-    "saint": {
-      "name": "Nossa Senhora no Sábado",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-02",
-    "monthDay": "3/2",
-    "saint": {
-      "name": "Domingo VIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-03",
-    "monthDay": "3/3",
-    "saint": {
-      "name": "Segunda-Feira da Semana VIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-04",
-    "monthDay": "3/4",
-    "saint": {
-      "name": "São Casimiro",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Príncipe da Polônia, conhecido por sua piedade e caridade."
-    }
-  },
-  {
-    "date": "2025-03-05",
-    "monthDay": "3/5",
-    "saint": {
-      "name": "Quarta-feira de Cinzas",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Início da Quaresma, um tempo de penitência e conversão."
-    }
-  },
-  {
-    "date": "2025-03-06",
-    "monthDay": "3/6",
-    "saint": {
-      "name": "Quinta-Feira depois das Cinzas",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-07",
-    "monthDay": "3/7",
-    "saint": {
-      "name": "Santas Perpétua e Felicidade, mártires",
-      "type": "Comemoração facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Mártires cartaginesas do século III."
-    }
-  },
-  {
-    "date": "2025-03-08",
-    "monthDay": "3/8",
-    "saint": {
-      "name": "São João de Deus, religioso",
-      "type": "Comemoração facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Fundador da Ordem dos Hospitaleiros, dedicada ao cuidado dos doentes."
-    }
-  },
-  {
-    "date": "2025-03-09",
-    "monthDay": "3/9",
-    "saint": {
-      "name": "Domingo I da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-10",
-    "monthDay": "3/10",
-    "saint": {
-      "name": "Segunda-Feira da Semana I da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-11",
-    "monthDay": "3/11",
-    "saint": {
-      "name": "Terça-Feira da Semana I da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-12",
-    "monthDay": "3/12",
-    "saint": {
-      "name": "Quarta-Feira da Semana I da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-13",
-    "monthDay": "3/13",
-    "saint": {
-      "name": "Quinta-Feira da Semana I da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-14",
-    "monthDay": "3/14",
-    "saint": {
-      "name": "Sexta-Feira da Semana I da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-15",
-    "monthDay": "3/15",
-    "saint": {
-      "name": "Sábado da Semana I da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-16",
-    "monthDay": "3/16",
-    "saint": {
-      "name": "Domingo II da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-17",
-    "monthDay": "3/17",
-    "saint": {
-      "name": "São Patrício, bispo",
-      "type": "Comemoração facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Padroeiro da Irlanda, missionário que levou o cristianismo à ilha."
-    }
-  },
-  {
-    "date": "2025-03-18",
-    "monthDay": "3/18",
-    "saint": {
-      "name": "São Cirilo de Jerusalém, bispo e doutor da Igreja",
-      "type": "Comemoração facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Bispo de Jerusalém no século IV, conhecido por suas catequeses."
-    }
-  },
-  {
-    "date": "2025-03-19",
-    "monthDay": "3/19",
-    "saint": {
-      "name": "São José, esposo da Virgem Santa Maria",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Padroeiro da Igreja Universal, pai adotivo de Jesus."
-    }
-  },
-  {
-    "date": "2025-03-20",
-    "monthDay": "3/20",
-    "saint": {
-      "name": "Quinta-Feira da Semana II da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-21",
-    "monthDay": "3/21",
-    "saint": {
-      "name": "Sexta-Feira da Semana II da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-22",
-    "monthDay": "3/22",
-    "saint": {
-      "name": "Sábado da Semana II da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-23",
-    "monthDay": "3/23",
-    "saint": {
-      "name": "Domingo III da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-24",
-    "monthDay": "3/24",
-    "saint": {
-      "name": "Segunda-Feira da Semana III da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-25",
-    "monthDay": "3/25",
-    "saint": {
-      "name": "Anunciação do Senhor",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra o anúncio do Arcanjo Gabriel a Maria de que ela seria a Mãe de Deus."
-    }
-  },
-  {
-    "date": "2025-03-26",
-    "monthDay": "3/26",
-    "saint": {
-      "name": "Quarta-Feira da Semana III da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-27",
-    "monthDay": "3/27",
-    "saint": {
-      "name": "Quinta-Feira da Semana III da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-28",
-    "monthDay": "3/28",
-    "saint": {
-      "name": "Sexta-Feira da Semana III da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-29",
-    "monthDay": "3/29",
-    "saint": {
-      "name": "Sábado da Semana III da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-30",
-    "monthDay": "3/30",
-    "saint": {
-      "name": "Domingo IV da Quaresma",
-      "type": "Dia da semana",
-      "color": "#FAC",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-03-31",
-    "monthDay": "3/31",
-    "saint": {
-      "name": "Segunda-Feira da Semana IV da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-01",
-    "monthDay": "4/1",
-    "saint": {
-      "name": "Terça-Feira da Semana IV da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-02",
-    "monthDay": "4/2",
-    "saint": {
-      "name": "São Francisco de Paula, eremita",
-      "type": "Comemoração facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Fundador da Ordem dos Mínimos."
-    }
-  },
-  {
-    "date": "2025-04-03",
-    "monthDay": "4/3",
-    "saint": {
-      "name": "Quinta-Feira da Semana IV da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-04",
-    "monthDay": "4/4",
-    "saint": {
-      "name": "Santo Isidoro, bispo e doutor da Igreja",
-      "type": "Comemoração facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Bispo de Sevilha, um dos últimos Padres da Igreja."
-    }
-  },
-  {
-    "date": "2025-04-05",
-    "monthDay": "4/5",
-    "saint": {
-      "name": "São Vicente Ferrer, presbítero",
-      "type": "Comemoração facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Sacerdote dominicano, famoso pregador."
-    }
-  },
-  {
-    "date": "2025-04-06",
-    "monthDay": "4/6",
-    "saint": {
-      "name": "Domingo V da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-07",
-    "monthDay": "4/7",
-    "saint": {
-      "name": "São João Batista de La Salle, presbítero",
-      "type": "Comemoração facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Fundador dos Irmãos das Escolas Cristãs, padroeiro dos professores."
-    }
-  },
-  {
-    "date": "2025-04-08",
-    "monthDay": "4/8",
-    "saint": {
-      "name": "Terça-Feira da Semana V da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-09",
-    "monthDay": "4/9",
-    "saint": {
-      "name": "Quarta-Feira da Semana V da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-10",
-    "monthDay": "4/10",
-    "saint": {
-      "name": "Quinta-Feira da Semana V da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-11",
-    "monthDay": "4/11",
-    "saint": {
-      "name": "São Estanislau, bispo e mártir",
-      "type": "Comemoração facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Bispo de Cracóvia, mártir e padroeiro da Polônia."
-    }
-  },
-  {
-    "date": "2025-04-12",
-    "monthDay": "4/12",
-    "saint": {
-      "name": "Sábado da Semana V da Quaresma",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-13",
-    "monthDay": "4/13",
-    "saint": {
-      "name": "Domingo de Ramos da Paixão do Senhor",
-      "type": "Dia da semana",
-      "color": "#F00",
-      "quote": "",
-      "description": "Início da Semana Santa, comemora a entrada triunfal de Jesus em Jerusalém."
-    }
-  },
-  {
-    "date": "2025-04-14",
-    "monthDay": "4/14",
-    "saint": {
-      "name": "Segunda-Feira Santa",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-15",
-    "monthDay": "4/15",
-    "saint": {
-      "name": "Terça-Feira Santa",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-16",
-    "monthDay": "4/16",
-    "saint": {
-      "name": "Quarta-Feira Santa",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-17",
-    "monthDay": "4/17",
-    "saint": {
-      "name": "Quinta-Feira Santa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Início do Tríduo Pascal, comemora a Última Ceia e a instituição da Eucaristia."
-    }
-  },
-  {
-    "date": "2025-04-18",
-    "monthDay": "4/18",
-    "saint": {
-      "name": "Sexta-Feira da Paixão do Senhor",
-      "type": "Dia da semana",
-      "color": "#F00",
-      "quote": "",
-      "description": "Dia de jejum e abstinência, comemora a Paixão e Morte de Jesus."
-    }
-  },
-  {
-    "date": "2025-04-19",
-    "monthDay": "4/19",
-    "saint": {
-      "name": "Sábado Santo",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Dia de silêncio e oração, aguardando a Vigília Pascal."
-    }
-  },
-  {
-    "date": "2025-04-20",
-    "monthDay": "4/20",
-    "saint": {
-      "name": "Domingo da Páscoa da Ressurreição do Senhor",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "A maior festa do ano litúrgico, celebra a Ressurreição de Jesus."
-    }
-  },
-  {
-    "date": "2025-04-21",
-    "monthDay": "4/21",
-    "saint": {
-      "name": "Segunda-Feira da Oitava da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-22",
-    "monthDay": "4/22",
-    "saint": {
-      "name": "Terça-Feira da Oitava da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-23",
-    "monthDay": "4/23",
-    "saint": {
-      "name": "Quarta-Feira da Oitava da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-24",
-    "monthDay": "4/24",
-    "saint": {
-      "name": "Quinta-Feira da Oitava da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-25",
-    "monthDay": "4/25",
-    "saint": {
-      "name": "São Marcos, evangelista",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Autor do segundo Evangelho."
-    }
-  },
-  {
-    "date": "2025-04-26",
-    "monthDay": "4/26",
-    "saint": {
-      "name": "Sábado da Oitava da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-27",
-    "monthDay": "4/27",
-    "saint": {
-      "name": "Domingo II da Páscoa ou da Divina Misericórdia",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-04-28",
-    "monthDay": "4/28",
-    "saint": {
-      "name": "São Pedro Chanel, presbítero e mártir",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Primeiro mártir da Oceania."
-    }
-  },
-  {
-    "date": "2025-04-28",
-    "monthDay": "4/28",
-    "saint": {
-      "name": "São Luís Maria Grignion de Montfort, presbítero",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Grande devoto de Nossa Senhora, autor do 'Tratado da Verdadeira Devoção à Santíssima Virgem'."
-    }
-  },
-  {
-    "date": "2025-04-29",
-    "monthDay": "4/29",
-    "saint": {
-      "name": "Santa Catarina de Sena, virgem e doutora da Igreja",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Mística e Doutora da Igreja, padroeira da Itália e da Europa."
-    }
-  },
-  {
-    "date": "2025-04-30",
-    "monthDay": "4/30",
-    "saint": {
-      "name": "São Pio V, papa",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Papa que reformou a liturgia e a disciplina da Igreja após o Concílio de Trento."
-    }
-  },
-  {
-    "date": "2025-05-01",
-    "monthDay": "5/1",
-    "saint": {
-      "name": "São José Operário",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Festa do trabalho, dedicada a São José."
-    }
-  },
-  {
-    "date": "2025-05-02",
-    "monthDay": "5/2",
-    "saint": {
-      "name": "Santo Atanásio, bispo e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Bispo de Alexandria, defensor da divindade de Cristo."
-    }
-  },
-  {
-    "date": "2025-05-03",
-    "monthDay": "5/3",
-    "saint": {
-      "name": "Santos Filipe e Tiago, apóstolos",
-      "type": "Festa",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-04",
-    "monthDay": "5/4",
-    "saint": {
-      "name": "Domingo IV da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Domingo do Bom Pastor."
-    }
-  },
-  {
-    "date": "2025-05-05",
-    "monthDay": "5/5",
-    "saint": {
-      "name": "Segunda-Feira da Semana IV da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-06",
-    "monthDay": "5/6",
-    "saint": {
-      "name": "Terça-Feira da Semana IV da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-07",
-    "monthDay": "5/7",
-    "saint": {
-      "name": "Quarta-Feira da Semana IV da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-08",
-    "monthDay": "5/8",
-    "saint": {
-      "name": "Quinta-Feira da Semana IV da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-09",
-    "monthDay": "5/9",
-    "saint": {
-      "name": "Sexta-Feira da Semana IV da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-10",
-    "monthDay": "5/10",
-    "saint": {
-      "name": "Sábado da Semana IV da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-11",
-    "monthDay": "5/11",
-    "saint": {
-      "name": "Domingo V da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-12",
-    "monthDay": "5/12",
-    "saint": {
-      "name": "Santos Nereu e Aquileu, mártires",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-12",
-    "monthDay": "5/12",
-    "saint": {
-      "name": "São Pancrácio, mártir",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-13",
-    "monthDay": "5/13",
-    "saint": {
-      "name": "Nossa Senhora de Fátima",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Comemoração das aparições de Nossa Senhora em Fátima, Portugal, em 1917."
-    }
-  },
-  {
-    "date": "2025-05-14",
-    "monthDay": "5/14",
-    "saint": {
-      "name": "São Matias, apóstolo",
-      "type": "Festa",
-      "color": "#F00",
-      "quote": "",
-      "description": "Apóstolo escolhido para substituir Judas Iscariotes."
-    }
-  },
-  {
-    "date": "2025-05-15",
-    "monthDay": "5/15",
-    "saint": {
-      "name": "Quinta-Feira da Semana V da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-16",
-    "monthDay": "5/16",
-    "saint": {
-      "name": "Sexta-Feira da Semana V da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-17",
-    "monthDay": "5/17",
-    "saint": {
-      "name": "Sábado da Semana V da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-18",
-    "monthDay": "5/18",
-    "saint": {
-      "name": "Domingo VI da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-19",
-    "monthDay": "5/19",
-    "saint": {
-      "name": "Segunda-Feira da Semana VI da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-20",
-    "monthDay": "5/20",
-    "saint": {
-      "name": "São Bernardino de Sena, presbítero",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Franciscano, famoso pregador do século XV."
-    }
-  },
-  {
-    "date": "2025-05-21",
-    "monthDay": "5/21",
-    "saint": {
-      "name": "Quarta-Feira da Semana VI da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-22",
-    "monthDay": "5/22",
-    "saint": {
-      "name": "Quinta-Feira da Ascensão do Senhor",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra a subida de Jesus ao céu, 40 dias após a Páscoa."
-    }
-  },
-  {
-    "date": "2025-05-23",
-    "monthDay": "5/23",
-    "saint": {
-      "name": "Sexta-Feira da Semana VI da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-24",
-    "monthDay": "5/24",
-    "saint": {
-      "name": "Sábado da Semana VI da Páscoa",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-25",
-    "monthDay": "5/25",
-    "saint": {
-      "name": "Domingo de Pentecostes",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra a descida do Espírito Santo sobre os Apóstolos, 50 dias após a Páscoa."
-    }
-  },
-  {
-    "date": "2025-05-26",
-    "monthDay": "5/26",
-    "saint": {
-      "name": "São Filipe Néri, presbítero",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Fundador da Congregação do Oratório, conhecido como o 'Apóstolo de Roma'."
-    }
-  },
-  {
-    "date": "2025-05-27",
-    "monthDay": "5/27",
-    "saint": {
-      "name": "Terça-Feira da Semana VII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-28",
-    "monthDay": "5/28",
-    "saint": {
-      "name": "Quarta-Feira da Semana VII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-29",
-    "monthDay": "5/29",
-    "saint": {
-      "name": "Quinta-Feira da Semana VII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-30",
-    "monthDay": "5/30",
-    "saint": {
-      "name": "Sexta-Feira da Semana VII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-05-31",
-    "monthDay": "5/31",
-    "saint": {
-      "name": "Visitação de Nossa Senhora",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra a visita de Maria à sua prima Isabel."
-    }
-  },
-  {
-    "date": "2025-06-01",
-    "monthDay": "6/1",
-    "saint": {
-      "name": "Santíssima Trindade",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra o mistério de Deus em três pessoas: Pai, Filho e Espírito Santo."
-    }
-  },
-  {
-    "date": "2025-06-02",
-    "monthDay": "6/2",
-    "saint": {
-      "name": "Santos Marcelino e Pedro, mártires",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-03",
-    "monthDay": "6/3",
-    "saint": {
-      "name": "São Carlos Lwanga e Companheiros, mártires",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": "Mártires de Uganda do século XIX."
-    }
-  },
-  {
-    "date": "2025-06-04",
-    "monthDay": "6/4",
-    "saint": {
-      "name": "Quarta-Feira da Semana IX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-05",
-    "monthDay": "6/5",
-    "saint": {
-      "name": "São Bonifácio, bispo e mártir",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": "Apóstolo da Alemanha."
-    }
-  },
-  {
-    "date": "2025-06-06",
-    "monthDay": "6/6",
-    "saint": {
-      "name": "Sexta-Feira da Semana IX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-07",
-    "monthDay": "6/7",
-    "saint": {
-      "name": "Sábado da Semana IX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-08",
-    "monthDay": "6/8",
-    "saint": {
-      "name": "Santíssimo Corpo e Sangue de Cristo (Corpus Christi)",
-      "type": "Solenidade",
-      "color": "#F00",
-      "quote": "",
-      "description": "Celebra a presença real de Jesus Cristo na Eucaristia."
-    }
-  },
-  {
-    "date": "2025-06-09",
-    "monthDay": "6/9",
-    "saint": {
-      "name": "Santo Efrém, diácono e doutor da Igreja",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Diácono sírio, poeta e teólogo."
-    }
-  },
-  {
-    "date": "2025-06-10",
-    "monthDay": "6/10",
-    "saint": {
-      "name": "Terça-Feira da Semana X do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-11",
-    "monthDay": "6/11",
-    "saint": {
-      "name": "São Barnabé, apóstolo",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": "Companheiro de São Paulo em suas viagens missionárias."
-    }
-  },
-  {
-    "date": "2025-06-12",
-    "monthDay": "6/12",
-    "saint": {
-      "name": "Quinta-Feira da Semana X do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-13",
-    "monthDay": "6/13",
-    "saint": {
-      "name": "Santo Antônio de Pádua, presbítero e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Franciscano português, famoso pregador e padroeiro dos pobres."
-    }
-  },
-  {
-    "date": "2025-06-14",
-    "monthDay": "6/14",
-    "saint": {
-      "name": "Sábado da Semana X do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-15",
-    "monthDay": "6/15",
-    "saint": {
-      "name": "Domingo XI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-16",
-    "monthDay": "6/16",
-    "saint": {
-      "name": "Segunda-Feira da Semana XI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-17",
-    "monthDay": "6/17",
-    "saint": {
-      "name": "Terça-Feira da Semana XI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-18",
-    "monthDay": "6/18",
-    "saint": {
-      "name": "Quarta-Feira da Semana XI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-19",
-    "monthDay": "6/19",
-    "saint": {
-      "name": "Quinta-Feira da Semana XI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-20",
-    "monthDay": "6/20",
-    "saint": {
-      "name": "Sexta-Feira do Sagrado Coração de Jesus",
-      "type": "Solenidade",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Celebra o amor de Jesus Cristo pela humanidade."
-    }
-  },
-  {
-    "date": "2025-06-21",
-    "monthDay": "6/21",
-    "saint": {
-      "name": "São Luís Gonzaga, religioso",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Jesuíta, padroeiro da juventude."
-    }
-  },
-  {
-    "date": "2025-06-22",
-    "monthDay": "6/22",
-    "saint": {
-      "name": "Domingo XII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-23",
-    "monthDay": "6/23",
-    "saint": {
-      "name": "Segunda-Feira da Semana XII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-24",
-    "monthDay": "6/24",
-    "saint": {
-      "name": "Nascimento de São João Batista",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra o nascimento do precursor de Jesus."
-    }
-  },
-  {
-    "date": "2025-06-25",
-    "monthDay": "6/25",
-    "saint": {
-      "name": "Quarta-Feira da Semana XII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-26",
-    "monthDay": "6/26",
-    "saint": {
-      "name": "Quinta-Feira da Semana XII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-27",
-    "monthDay": "6/27",
-    "saint": {
-      "name": "Sexta-Feira da Semana XII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-06-28",
-    "monthDay": "6/28",
-    "saint": {
-      "name": "Santo Irineu, bispo e mártir",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Bispo de Lyon, um dos Padres da Igreja."
-    }
-  },
-  {
-    "date": "2025-06-29",
-    "monthDay": "6/29",
-    "saint": {
-      "name": "São Pedro e São Paulo, apóstolos",
-      "type": "Solenidade",
-      "color": "#F00",
-      "quote": "",
-      "description": "Celebra os dois pilares da Igreja."
-    }
-  },
-  {
-    "date": "2025-06-30",
-    "monthDay": "6/30",
-    "saint": {
-      "name": "Primeiros Mártires da Santa Igreja Romana",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-01",
-    "monthDay": "7/1",
-    "saint": {
-      "name": "Terça-Feira da Semana XIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-02",
-    "monthDay": "7/2",
-    "saint": {
-      "name": "Quarta-Feira da Semana XIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-03",
-    "monthDay": "7/3",
-    "saint": {
-      "name": "São Tomé, apóstolo",
-      "type": "Festa",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-04",
-    "monthDay": "7/4",
-    "saint": {
-      "name": "Sexta-Feira da Semana XIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-05",
-    "monthDay": "7/5",
-    "saint": {
-      "name": "Sábado da Semana XIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-06",
-    "monthDay": "7/6",
-    "saint": {
-      "name": "Domingo XIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-07",
-    "monthDay": "7/7",
-    "saint": {
-      "name": "Segunda-Feira da Semana XIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-08",
-    "monthDay": "7/8",
-    "saint": {
-      "name": "Terça-Feira da Semana XIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-09",
-    "monthDay": "7/9",
-    "saint": {
-      "name": "Quarta-Feira da Semana XIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-10",
-    "monthDay": "7/10",
-    "saint": {
-      "name": "Quinta-Feira da Semana XIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-11",
-    "monthDay": "7/11",
-    "saint": {
-      "name": "São Bento, abade",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Pai do monaquismo ocidental, padroeiro da Europa."
-    }
-  },
-  {
-    "date": "2025-07-12",
-    "monthDay": "7/12",
-    "saint": {
-      "name": "Sábado da Semana XIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-13",
-    "monthDay": "7/13",
-    "saint": {
-      "name": "Domingo XV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-14",
-    "monthDay": "7/14",
-    "saint": {
-      "name": "São Camilo de Lellis, presbítero",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundador dos Ministros dos Enfermos (Camilianos)."
-    }
-  },
-  {
-    "date": "2025-07-15",
-    "monthDay": "7/15",
-    "saint": {
-      "name": "São Boaventura, bispo e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Franciscano, Doutor Seráfico da Igreja."
-    }
-  },
-  {
-    "date": "2025-07-16",
-    "monthDay": "7/16",
-    "saint": {
-      "name": "Nossa Senhora do Carmo",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-17",
-    "monthDay": "7/17",
-    "saint": {
-      "name": "Quinta-Feira da Semana XV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-18",
-    "monthDay": "7/18",
-    "saint": {
-      "name": "Sexta-Feira da Semana XV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-19",
-    "monthDay": "7/19",
-    "saint": {
-      "name": "Sábado da Semana XV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-20",
-    "monthDay": "7/20",
-    "saint": {
-      "name": "Domingo XVI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-21",
-    "monthDay": "7/21",
-    "saint": {
-      "name": "São Lourenço de Brindisi, presbítero e doutor da Igreja",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Capuchinho, Doutor Apostólico da Igreja."
-    }
-  },
-  {
-    "date": "2025-07-22",
-    "monthDay": "7/22",
-    "saint": {
-      "name": "Santa Maria Madalena",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Primeira testemunha da Ressurreição de Cristo."
-    }
-  },
-  {
-    "date": "2025-07-23",
-    "monthDay": "7/23",
-    "saint": {
-      "name": "Santa Brígida, religiosa",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Padroeira da Europa."
-    }
-  },
-  {
-    "date": "2025-07-24",
-    "monthDay": "7/24",
-    "saint": {
-      "name": "São Charbel Makhlouf, presbítero",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Eremita maronita do Líbano."
-    }
-  },
-  {
-    "date": "2025-07-25",
-    "monthDay": "7/25",
-    "saint": {
-      "name": "São Tiago, apóstolo",
-      "type": "Festa",
-      "color": "#F00",
-      "quote": "",
-      "description": "Apóstolo, irmão de São João Evangelista."
-    }
-  },
-  {
-    "date": "2025-07-26",
-    "monthDay": "7/26",
-    "saint": {
-      "name": "Santos Joaquim e Ana, pais da Virgem Maria",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-27",
-    "monthDay": "7/27",
-    "saint": {
-      "name": "Domingo XVII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-28",
-    "monthDay": "7/28",
-    "saint": {
-      "name": "Segunda-Feira da Semana XVII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-07-29",
-    "monthDay": "7/29",
-    "saint": {
-      "name": "Santa Marta",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Irmã de Maria e Lázaro, amiga de Jesus."
-    }
-  },
-  {
-    "date": "2025-07-30",
-    "monthDay": "7/30",
-    "saint": {
-      "name": "São Pedro Crisólogo, bispo e doutor da Igreja",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Bispo de Ravena, conhecido por sua eloquência."
-    }
-  },
-  {
-    "date": "2025-07-31",
-    "monthDay": "7/31",
-    "saint": {
-      "name": "Santo Inácio de Loyola, presbítero",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Fundador da Companhia de Jesus (Jesuítas)."
-    }
-  },
-  {
-    "date": "2025-08-01",
-    "monthDay": "8/1",
-    "saint": {
-      "name": "Santo Afonso Maria de Ligório, bispo e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Fundador da Congregação do Santíssimo Redentor (Redentoristas)."
-    }
-  },
-  {
-    "date": "2025-08-02",
-    "monthDay": "8/2",
-    "saint": {
-      "name": "Sábado da Semana XVII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-03",
-    "monthDay": "8/3",
-    "saint": {
-      "name": "Domingo XVIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-04",
-    "monthDay": "8/4",
-    "saint": {
-      "name": "São João Maria Vianney, presbítero",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Cura d'Ars, padroeiro dos párocos."
-    }
-  },
-  {
-    "date": "2025-08-05",
-    "monthDay": "8/5",
-    "saint": {
-      "name": "Dedicação da Basílica de Santa Maria Maior",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-06",
-    "monthDay": "8/6",
-    "saint": {
-      "name": "Transfiguração do Senhor",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra a manifestação da glória de Jesus no Monte Tabor."
-    }
-  },
-  {
-    "date": "2025-08-07",
-    "monthDay": "8/7",
-    "saint": {
-      "name": "São Caetano, presbítero",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundador da Ordem dos Clérigos Regulares (Teatinos)."
-    }
-  },
-  {
-    "date": "2025-08-08",
-    "monthDay": "8/8",
-    "saint": {
-      "name": "São Domingos, presbítero",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Fundador da Ordem dos Pregadores (Dominicanos)."
-    }
-  },
-  {
-    "date": "2025-08-09",
-    "monthDay": "8/9",
-    "saint": {
-      "name": "Santa Teresa Benedita da Cruz (Edith Stein), virgem e mártir",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Filósofa judia convertida ao catolicismo, mártir do nazismo."
-    }
-  },
-  {
-    "date": "2025-08-10",
-    "monthDay": "8/10",
-    "saint": {
-      "name": "São Lourenço, diácono e mártir",
-      "type": "Festa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Um dos sete diáconos de Roma, martirizado no século III."
-    }
-  },
-  {
-    "date": "2025-08-11",
-    "monthDay": "8/11",
-    "saint": {
-      "name": "Santa Clara, virgem",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Fundadora da Ordem das Clarissas, seguidora de São Francisco de Assis."
-    }
-  },
-  {
-    "date": "2025-08-12",
-    "monthDay": "8/12",
-    "saint": {
-      "name": "Santa Joana Francisca de Chantal, religiosa",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundadora da Ordem da Visitação de Santa Maria."
-    }
-  },
-  {
-    "date": "2025-08-13",
-    "monthDay": "8/13",
-    "saint": {
-      "name": "São Ponciano, papa, e Hipólito, presbítero, mártires",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-14",
-    "monthDay": "8/14",
-    "saint": {
-      "name": "São Maximiliano Maria Kolbe, presbítero e mártir",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": "Franciscano polonês, mártir em Auschwitz."
-    }
-  },
-  {
-    "date": "2025-08-15",
-    "monthDay": "8/15",
-    "saint": {
-      "name": "Assunção de Nossa Senhora",
-      "type": "Solenidade",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Celebra a elevação de Maria em corpo e alma à glória celestial."
-    }
-  },
-  {
-    "date": "2025-08-16",
-    "monthDay": "8/16",
-    "saint": {
-      "name": "Santo Estêvão da Hungria",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Primeiro rei cristão da Hungria."
-    }
-  },
-  {
-    "date": "2025-08-17",
-    "monthDay": "8/17",
-    "saint": {
-      "name": "Domingo XX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-18",
-    "monthDay": "8/18",
-    "saint": {
-      "name": "Segunda-Feira da Semana XX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-19",
-    "monthDay": "8/19",
-    "saint": {
-      "name": "São João Eudes, presbítero",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundador da Congregação de Jesus e Maria (Eudistas)."
-    }
-  },
-  {
-    "date": "2025-08-20",
-    "monthDay": "8/20",
-    "saint": {
-      "name": "São Bernardo, abade e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Abade cisterciense, Doutor Melífluo da Igreja."
-    }
-  },
-  {
-    "date": "2025-08-21",
-    "monthDay": "8/21",
-    "saint": {
-      "name": "São Pio X, papa",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Papa da Eucaristia, conhecido por sua reforma litúrgica."
-    }
-  },
-  {
-    "date": "2025-08-22",
-    "monthDay": "8/22",
-    "saint": {
-      "name": "Nossa Senhora Rainha",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-23",
-    "monthDay": "8/23",
-    "saint": {
-      "name": "Santa Rosa de Lima, virgem",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Primeira santa da América, padroeira da América Latina."
-    }
-  },
-  {
-    "date": "2025-08-24",
-    "monthDay": "8/24",
-    "saint": {
-      "name": "São Bartolomeu, apóstolo",
-      "type": "Festa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-25",
-    "monthDay": "8/25",
-    "saint": {
-      "name": "São Luís, rei da França",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-25",
-    "monthDay": "8/25",
-    "saint": {
-      "name": "São José de Calasanz, presbítero",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundador das Escolas Pias (Escolápios)."
-    }
-  },
-  {
-    "date": "2025-08-26",
-    "monthDay": "8/26",
-    "saint": {
-      "name": "Terça-Feira da Semana XXI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-27",
-    "monthDay": "8/27",
-    "saint": {
-      "name": "Santa Mônica",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Mãe de Santo Agostinho, padroeira das mães."
-    }
-  },
-  {
-    "date": "2025-08-28",
-    "monthDay": "8/28",
-    "saint": {
-      "name": "Santo Agostinho, bispo e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Um dos maiores Padres e Doutores da Igreja."
-    }
-  },
-  {
-    "date": "2025-08-29",
-    "monthDay": "8/29",
-    "saint": {
-      "name": "Martírio de São João Batista",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-30",
-    "monthDay": "8/30",
-    "saint": {
-      "name": "Sábado da Semana XXI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-08-31",
-    "monthDay": "8/31",
-    "saint": {
-      "name": "Domingo XXII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-01",
-    "monthDay": "9/1",
-    "saint": {
-      "name": "Segunda-Feira da Semana XXII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-02",
-    "monthDay": "9/2",
-    "saint": {
-      "name": "Terça-Feira da Semana XXII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-03",
-    "monthDay": "9/3",
-    "saint": {
-      "name": "São Gregório Magno, papa e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Um dos quatro grandes Doutores da Igreja Ocidental."
-    }
-  },
-  {
-    "date": "2025-09-04",
-    "monthDay": "9/4",
-    "saint": {
-      "name": "Quinta-Feira da Semana XXII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-05",
-    "monthDay": "9/5",
-    "saint": {
-      "name": "Sexta-Feira da Semana XXII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-06",
-    "monthDay": "9/6",
-    "saint": {
-      "name": "Sábado da Semana XXII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-07",
-    "monthDay": "9/7",
-    "saint": {
-      "name": "Domingo XXIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-08",
-    "monthDay": "9/8",
-    "saint": {
-      "name": "Nascimento da Virgem Maria",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-09",
-    "monthDay": "9/9",
-    "saint": {
-      "name": "São Pedro Claver, presbítero",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Missionário jesuíta, apóstolo dos escravos na Colômbia."
-    }
-  },
-  {
-    "date": "2025-09-10",
-    "monthDay": "9/10",
-    "saint": {
-      "name": "Quarta-Feira da Semana XXIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-11",
-    "monthDay": "9/11",
-    "saint": {
-      "name": "Quinta-Feira da Semana XXIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-12",
-    "monthDay": "9/12",
-    "saint": {
-      "name": "Santíssimo Nome de Maria",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-13",
-    "monthDay": "9/13",
-    "saint": {
-      "name": "São João Crisóstomo, bispo e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Bispo de Constantinopla, conhecido como 'Boca de Ouro'."
-    }
-  },
-  {
-    "date": "2025-09-14",
-    "monthDay": "9/14",
-    "saint": {
-      "name": "Exaltação da Santa Cruz",
-      "type": "Festa",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-15",
-    "monthDay": "9/15",
-    "saint": {
-      "name": "Nossa Senhora das Dores",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-16",
-    "monthDay": "9/16",
-    "saint": {
-      "name": "Santos Cornélio, papa, e Cipriano, bispo, mártires",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-17",
-    "monthDay": "9/17",
-    "saint": {
-      "name": "São Roberto Belarmino, bispo e doutor da Igreja",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Jesuíta, cardeal e Doutor da Igreja."
-    }
-  },
-  {
-    "date": "2025-09-18",
-    "monthDay": "9/18",
-    "saint": {
-      "name": "Quinta-Feira da Semana XXIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-19",
-    "monthDay": "9/19",
-    "saint": {
-      "name": "São Januário, bispo e mártir",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Padroeiro de Nápoles."
-    }
-  },
-  {
-    "date": "2025-09-20",
-    "monthDay": "9/20",
-    "saint": {
-      "name": "Santos André Kim Taegon, presbítero, Paulo Chong Hasang e Companheiros, mártires",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": "Mártires da Coreia."
-    }
-  },
-  {
-    "date": "2025-09-21",
-    "monthDay": "9/21",
-    "saint": {
-      "name": "São Mateus, apóstolo e evangelista",
-      "type": "Festa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Autor do primeiro Evangelho."
-    }
-  },
-  {
-    "date": "2025-09-22",
-    "monthDay": "9/22",
-    "saint": {
-      "name": "Segunda-Feira da Semana XXV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-23",
-    "monthDay": "9/23",
-    "saint": {
-      "name": "São Pio de Pietrelcina, presbítero",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Frade capuchinho, conhecido como Padre Pio."
-    }
-  },
-  {
-    "date": "2025-09-24",
-    "monthDay": "9/24",
-    "saint": {
-      "name": "Quarta-Feira da Semana XXV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-25",
-    "monthDay": "9/25",
-    "saint": {
-      "name": "Quinta-Feira da Semana XXV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-26",
-    "monthDay": "9/26",
-    "saint": {
-      "name": "Santos Cosme e Damião, mártires",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Padroeiros dos médicos."
-    }
-  },
-  {
-    "date": "2025-09-27",
-    "monthDay": "9/27",
-    "saint": {
-      "name": "São Vicente de Paulo, presbítero",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Padroeiro das obras de caridade."
-    }
-  },
-  {
-    "date": "2025-09-28",
-    "monthDay": "9/28",
-    "saint": {
-      "name": "Domingo XXVI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-29",
-    "monthDay": "9/29",
-    "saint": {
-      "name": "Santos Arcanjos Miguel, Gabriel e Rafael",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-09-30",
-    "monthDay": "9/30",
-    "saint": {
-      "name": "São Jerônimo, presbítero e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Tradutor da Bíblia para o latim (Vulgata)."
-    }
-  },
-  {
-    "date": "2025-10-01",
-    "monthDay": "10/1",
-    "saint": {
-      "name": "Santa Teresinha do Menino Jesus, virgem e doutora da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Carmelita descalça, conhecida como a 'Pequena Flor'."
-    }
-  },
-  {
-    "date": "2025-10-02",
-    "monthDay": "10/2",
-    "saint": {
-      "name": "Santos Anjos da Guarda",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-03",
-    "monthDay": "10/3",
-    "saint": {
-      "name": "Sexta-Feira da Semana XXVI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-04",
-    "monthDay": "10/4",
-    "saint": {
-      "name": "São Francisco de Assis",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Fundador da Ordem dos Frades Menores (Franciscanos)."
-    }
-  },
-  {
-    "date": "2025-10-05",
-    "monthDay": "10/5",
-    "saint": {
-      "name": "Domingo XXVII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-06",
-    "monthDay": "10/6",
-    "saint": {
-      "name": "São Bruno, presbítero",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundador da Ordem dos Cartuxos."
-    }
-  },
-  {
-    "date": "2025-10-07",
-    "monthDay": "10/7",
-    "saint": {
-      "name": "Nossa Senhora do Rosário",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-08",
-    "monthDay": "10/8",
-    "saint": {
-      "name": "Quarta-Feira da Semana XXVII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-09",
-    "monthDay": "10/9",
-    "saint": {
-      "name": "São Dionísio, bispo, e Companheiros, mártires",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Padroeiro de Paris."
-    }
-  },
-  {
-    "date": "2025-10-09",
-    "monthDay": "10/9",
-    "saint": {
-      "name": "São João Leonardo, presbítero",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundador dos Clérigos Regulares da Mãe de Deus."
-    }
-  },
-  {
-    "date": "2025-10-10",
-    "monthDay": "10/10",
-    "saint": {
-      "name": "Sexta-Feira da Semana XXVII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-11",
-    "monthDay": "10/11",
-    "saint": {
-      "name": "São João XXIII, papa",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Convocou o Concílio Vaticano II."
-    }
-  },
-  {
-    "date": "2025-10-12",
-    "monthDay": "10/12",
-    "saint": {
-      "name": "Nossa Senhora Aparecida, padroeira do Brasil",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Padroeira do Brasil."
-    }
-  },
-  {
-    "date": "2025-10-13",
-    "monthDay": "10/13",
-    "saint": {
-      "name": "Segunda-Feira da Semana XXVIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-14",
-    "monthDay": "10/14",
-    "saint": {
-      "name": "São Calisto I, papa e mártir",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-15",
-    "monthDay": "10/15",
-    "saint": {
-      "name": "Santa Teresa de Jesus, virgem e doutora da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Reformadora do Carmelo, Doutora da Igreja."
-    }
-  },
-  {
-    "date": "2025-10-16",
-    "monthDay": "10/16",
-    "saint": {
-      "name": "Santa Edviges, religiosa",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-16",
-    "monthDay": "10/16",
-    "saint": {
-      "name": "Santa Margarida Maria Alacoque, virgem",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Promotora da devoção ao Sagrado Coração de Jesus."
-    }
-  },
-  {
-    "date": "2025-10-17",
-    "monthDay": "10/17",
-    "saint": {
-      "name": "Santo Inácio de Antioquia, bispo e mártir",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-18",
-    "monthDay": "10/18",
-    "saint": {
-      "name": "São Lucas, evangelista",
-      "type": "Festa",
-      "color": "#F00",
-      "quote": "",
-      "description": "Autor do terceiro Evangelho e dos Atos dos Apóstolos."
-    }
-  },
-  {
-    "date": "2025-10-19",
-    "monthDay": "10/19",
-    "saint": {
-      "name": "Domingo XXIX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-20",
-    "monthDay": "10/20",
-    "saint": {
-      "name": "Segunda-Feira da Semana XXIX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-21",
-    "monthDay": "10/21",
-    "saint": {
-      "name": "Terça-Feira da Semana XXIX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-22",
-    "monthDay": "10/22",
-    "saint": {
-      "name": "São João Paulo II, papa",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-23",
-    "monthDay": "10/23",
-    "saint": {
-      "name": "São João de Capistrano, presbítero",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-24",
-    "monthDay": "10/24",
-    "saint": {
-      "name": "Santo Antônio Maria Claret, bispo",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": "Fundador dos Missionários Filhos do Imaculado Coração de Maria (Claretianos)."
-    }
-  },
-  {
-    "date": "2025-10-25",
-    "monthDay": "10/25",
-    "saint": {
-      "name": "Sábado da Semana XXIX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-26",
-    "monthDay": "10/26",
-    "saint": {
-      "name": "Domingo XXX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-27",
-    "monthDay": "10/27",
-    "saint": {
-      "name": "Segunda-Feira da Semana XXX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-28",
-    "monthDay": "10/28",
-    "saint": {
-      "name": "Santos Simão e Judas, apóstolos",
-      "type": "Festa",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-29",
-    "monthDay": "10/29",
-    "saint": {
-      "name": "Quarta-Feira da Semana XXX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-30",
-    "monthDay": "10/30",
-    "saint": {
-      "name": "Quinta-Feira da Semana XXX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-10-31",
-    "monthDay": "10/31",
-    "saint": {
-      "name": "Sexta-Feira da Semana XXX do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-01",
-    "monthDay": "11/1",
-    "saint": {
-      "name": "Todos os Santos",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra todos os santos, conhecidos e desconhecidos."
-    }
-  },
-  {
-    "date": "2025-11-02",
-    "monthDay": "11/2",
-    "saint": {
-      "name": "Comemoração de Todos os Fiéis Defuntos",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-03",
-    "monthDay": "11/3",
-    "saint": {
-      "name": "Segunda-Feira da Semana XXXI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-04",
-    "monthDay": "11/4",
-    "saint": {
-      "name": "São Carlos Borromeu, bispo",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Arcebispo de Milão, reformador da Igreja."
-    }
-  },
-  {
-    "date": "2025-11-05",
-    "monthDay": "11/5",
-    "saint": {
-      "name": "Quarta-Feira da Semana XXXI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-06",
-    "monthDay": "11/6",
-    "saint": {
-      "name": "Quinta-Feira da Semana XXXI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-07",
-    "monthDay": "11/7",
-    "saint": {
-      "name": "Sexta-Feira da Semana XXXI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-08",
-    "monthDay": "11/8",
-    "saint": {
-      "name": "Sábado da Semana XXXI do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-09",
-    "monthDay": "11/9",
-    "saint": {
-      "name": "Dedicação da Basílica de Latrão",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra a 'Mãe e Cabeça de todas as Igrejas da Cidade e do Mundo'."
-    }
-  },
-  {
-    "date": "2025-11-10",
-    "monthDay": "11/10",
-    "saint": {
-      "name": "São Leão Magno, papa e doutor da Igreja",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-11",
-    "monthDay": "11/11",
-    "saint": {
-      "name": "São Martinho de Tours, bispo",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-12",
-    "monthDay": "11/12",
-    "saint": {
-      "name": "São Josafá, bispo e mártir",
-      "type": "Memória facultativa",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-13",
-    "monthDay": "11/13",
-    "saint": {
-      "name": "Quinta-Feira da Semana XXXII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-14",
-    "monthDay": "11/14",
-    "saint": {
-      "name": "Sexta-Feira da Semana XXXII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-15",
-    "monthDay": "11/15",
-    "saint": {
-      "name": "Santo Alberto Magno, bispo e doutor da Igreja",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-16",
-    "monthDay": "11/16",
-    "saint": {
-      "name": "Domingo XXXIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-17",
-    "monthDay": "11/17",
-    "saint": {
-      "name": "Santa Isabel da Hungria, religiosa",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-18",
-    "monthDay": "11/18",
-    "saint": {
-      "name": "Dedicação das Basílicas de São Pedro e São Paulo, apóstolos",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-19",
-    "monthDay": "11/19",
-    "saint": {
-      "name": "Quarta-Feira da Semana XXXIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-20",
-    "monthDay": "11/20",
-    "saint": {
-      "name": "Quinta-Feira da Semana XXXIII do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-21",
-    "monthDay": "11/21",
-    "saint": {
-      "name": "Apresentação de Nossa Senhora",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-22",
-    "monthDay": "11/22",
-    "saint": {
-      "name": "Santa Cecília, virgem e mártir",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": "Padroeira dos músicos."
-    }
-  },
-  {
-    "date": "2025-11-23",
-    "monthDay": "11/23",
-    "saint": {
-      "name": "Nosso Senhor Jesus Cristo Rei do Universo",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Último domingo do Tempo Comum."
-    }
-  },
-  {
-    "date": "2025-11-24",
-    "monthDay": "11/24",
-    "saint": {
-      "name": "Segunda-Feira da Semana XXXIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-25",
-    "monthDay": "11/25",
-    "saint": {
-      "name": "Santa Catarina de Alexandria, virgem e mártir",
-      "type": "Memória facultativa",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-26",
-    "monthDay": "11/26",
-    "saint": {
-      "name": "Quarta-Feira da Semana XXXIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-27",
-    "monthDay": "11/27",
-    "saint": {
-      "name": "Quinta-Feira da Semana XXXIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-28",
-    "monthDay": "11/28",
-    "saint": {
-      "name": "Sexta-Feira da Semana XXXIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-29",
-    "monthDay": "11/29",
-    "saint": {
-      "name": "Sábado da Semana XXXIV do Tempo Comum",
-      "type": "Dia da semana",
-      "color": "#2A3",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-11-30",
-    "monthDay": "11/30",
-    "saint": {
-      "name": "Primeiro Domingo do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": "Início do Ano Litúrgico."
-    }
-  },
-  {
-    "date": "2025-12-01",
-    "monthDay": "12/1",
-    "saint": {
-      "name": "Segunda-Feira da Semana I do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-02",
-    "monthDay": "12/2",
-    "saint": {
-      "name": "Terça-Feira da Semana I do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-03",
-    "monthDay": "12/3",
-    "saint": {
-      "name": "São Francisco Xavier, presbítero",
-      "type": "Memória obrigatória",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Missionário jesuíta, um dos fundadores da Companhia de Jesus."
-    }
-  },
-  {
-    "date": "2025-12-04",
-    "monthDay": "12/4",
-    "saint": {
-      "name": "São João Damasceno, presbítero e doutor da Igreja",
-      "type": "Memória facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-05",
-    "monthDay": "12/5",
-    "saint": {
-      "name": "Sexta-Feira da Semana I do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-06",
-    "monthDay": "12/6",
-    "saint": {
-      "name": "São Nicolau, bispo",
-      "type": "Memória facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-07",
-    "monthDay": "12/7",
-    "saint": {
-      "name": "Segundo Domingo do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-08",
-    "monthDay": "12/8",
-    "saint": {
-      "name": "Imaculada Conceição de Nossa Senhora",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-09",
-    "monthDay": "12/9",
-    "saint": {
-      "name": "Terça-Feira da Semana II do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-10",
-    "monthDay": "12/10",
-    "saint": {
-      "name": "Quarta-Feira da Semana II do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-11",
-    "monthDay": "12/11",
-    "saint": {
-      "name": "São Dâmaso I, papa",
-      "type": "Memória facultativa",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-12",
-    "monthDay": "12/12",
-    "saint": {
-      "name": "Nossa Senhora de Guadalupe",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-13",
-    "monthDay": "12/13",
-    "saint": {
-      "name": "Santa Luzia, virgem e mártir",
-      "type": "Memória obrigatória",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-14",
-    "monthDay": "12/14",
-    "saint": {
-      "name": "Terceiro Domingo do Advento",
-      "type": "Dia da semana",
-      "color": "#FAC",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-15",
-    "monthDay": "12/15",
-    "saint": {
-      "name": "Segunda-Feira da Semana III do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-16",
-    "monthDay": "12/16",
-    "saint": {
-      "name": "Terça-Feira da Semana III do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-17",
-    "monthDay": "12/17",
-    "saint": {
-      "name": "Quarta-Feira da Semana III do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-18",
-    "monthDay": "12/18",
-    "saint": {
-      "name": "Quinta-Feira da Semana III do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-19",
-    "monthDay": "12/19",
-    "saint": {
-      "name": "Sexta-Feira da Semana III do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-20",
-    "monthDay": "12/20",
-    "saint": {
-      "name": "Sábado da Semana III do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-21",
-    "monthDay": "12/21",
-    "saint": {
-      "name": "Quarto Domingo do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-22",
-    "monthDay": "12/22",
-    "saint": {
-      "name": "Segunda-Feira da Semana IV do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-23",
-    "monthDay": "12/23",
-    "saint": {
-      "name": "Terça-Feira da Semana IV do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-24",
-    "monthDay": "12/24",
-    "saint": {
-      "name": "Quarta-Feira da Semana IV do Advento",
-      "type": "Dia da semana",
-      "color": "#C0C",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-25",
-    "monthDay": "12/25",
-    "saint": {
-      "name": "Natal do Senhor",
-      "type": "Solenidade",
-      "color": "#FFF",
-      "quote": "",
-      "description": "Celebra o nascimento de Jesus Cristo."
-    }
-  },
-  {
-    "date": "2025-12-26",
-    "monthDay": "12/26",
-    "saint": {
-      "name": "Santo Estêvão, primeiro mártir",
-      "type": "Festa",
-      "color": "#F00",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-27",
-    "monthDay": "12/27",
-    "saint": {
-      "name": "São João, apóstolo e evangelista",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-28",
-    "monthDay": "12/28",
-    "saint": {
-      "name": "Sagrada Família de Jesus, Maria e José",
-      "type": "Festa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-29",
-    "monthDay": "12/29",
-    "saint": {
-      "name": "Domingo da Oitava do Natal",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-30",
-    "monthDay": "12/30",
-    "saint": {
-      "name": "Sexta-Feira da Oitava do Natal",
-      "type": "Dia da semana",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  },
-  {
-    "date": "2025-12-31",
-    "monthDay": "12/31",
-    "saint": {
-      "name": "São Silvestre I, papa",
-      "type": "Memória facultativa",
-      "color": "#FFF",
-      "quote": "",
-      "description": ""
-    }
-  }
 ]

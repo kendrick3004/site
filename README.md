@@ -1,40 +1,37 @@
-# 🚀 Projeto Suite - Central de Links & Clima
+# 🚀 Projeto Suite - Dashboard Pessoal & Litúrgico
 
-Bem-vindo ao **Projeto Suite**! Esta é uma aplicação web moderna, elegante e funcional, desenvolvida para servir como uma central de links personalizada, integrando informações litúrgicas e meteorológicas em tempo real.
+Bem-vindo ao **Projeto Suite**! Esta é uma aplicação web moderna, elegante e funcional, desenvolvida para servir como um dashboard pessoal, integrando informações litúrgicas e meteorológicas em tempo real com alta precisão e robustez.
 
 ---
 
-## 🌟 Funcionalidades Principais
+## ✨ Funcionalidades Principais
 
-### 1. 🌡️ Widget de Clima Inteligente (Jacinto Machado)
+### 1. 🌦️ Widget de Clima Inteligente (Jacinto Machado)
 O widget de clima foi desenvolvido para ser preciso e visualmente atraente:
 - **Localização Fixa**: Configurado para exibir sempre os dados de **Jacinto Machado**, garantindo que você veja o clima da sua cidade sem erros de localização por IP.
 - **Dados Completos**: Exibe temperatura atual, sensação térmica, **máxima e mínima do dia**, umidade, cobertura de nuvens e precipitação (chuva).
 - **Templates Dinâmicos**: O fundo do widget e os ícones mudam automaticamente de acordo com o tempo (sol, chuva, nublado, tempestade) e o período do dia (dia ou noite).
 - **Atualização Automática**: Os dados são renovados a cada 15 minutos via WeatherAPI.
 
-### 2. ⛪ Santo do Dia & Liturgia
+### 2. ⛪ Calendário Litúrgico 2026 (Fiel ao GCatholic)
 Uma seção dedicada à espiritualidade que se atualiza sozinha:
-- **Calendário Litúrgico**: Busca dados de um arquivo JSON local para exibir o santo do dia e a biografia breve.
-- **Cores Litúrgicas**: Uma "fitinha" lateral muda de cor (Verde, Roxo, Branco, Vermelho) automaticamente seguindo o calendário da Igreja.
-- **Lógica de Vésperas**: Aos sábados após as 15h, o sistema já adianta a liturgia para o domingo, seguindo a tradição católica.
+- **Base de Dados Completa**: Contém todos os **365 dias de 2026**, extraídos fielmente do calendário litúrgico oficial para o Brasil (GCatholic).
+- **Múltiplos Santos**: Suporte para exibir vários santos no mesmo dia, organizados com quebras de linha automáticas.
+- **Lógica de Virada Litúrgica**: Aos domingos, a partir das **15h**, o widget já antecipa a liturgia da segunda-feira.
+- **Cores Litúrgicas**: Fitinha lateral dinâmica que muda de cor (Verde, Branco, Roxo, Vermelho) conforme a celebração do dia.
+- **Mensagens Amigáveis**: Caso um dia não seja encontrado, exibe uma mensagem neutra com cor branca.
 
-### 3. 🌓 Sistema de Temas (Dark/Light Mode)
-- **Modo Escuro Nativo**: O site conta com um modo escuro elegante que preserva a visão e economiza bateria.
-- **Alternância Suave**: Um botão de switch personalizado permite trocar de tema com animações fluidas.
-- **Persistência**: O site lembra qual tema você escolheu, mesmo se você fechar o navegador.
+### 3. 🎨 Interface e Design
+- **Glassmorphism**: Estilo visual moderno com efeitos de desfoque (blur) e transparências elegantes.
+- **Modo Escuro/Claro**: Alternância suave de temas com um switch milimetricamente ajustado para encostar nas extremidades do trilho.
+- **Easter Egg**: Botão de login secreto que se revela após alternar o tema para o modo escuro exatamente 2 vezes.
+- **Responsividade**: Design adaptável que funciona em computadores e celulares, mantendo a elegância original.
 
-### 4. 🔗 Central de Links & Easter Egg
-- **Links Rápidos**: Botões estilizados para acesso fácil a currículos, arquivos de missa e outros projetos.
-- **Segredo (Easter Egg)**: Ao alternar o tema para o modo escuro duas vezes, um botão de **Login** secreto é revelado na lista de links!
-
----
-
-## 🎨 Design & Tecnologia
-
-- **Glassmorphism**: O projeto utiliza o estilo "vidro fosco", com transparências e desfoques de fundo (backdrop-filter) para um visual premium.
-- **Responsividade Total**: O site se adapta perfeitamente a computadores, tablets e celulares. No mobile, o widget de clima fica fixo no rodapé para facilitar o acesso.
-- **Código Documentado**: Todos os arquivos (HTML, CSS, JS) estão 100% comentados em português, explicando cada função e regra de estilo.
+### 4. 🛡️ Robustez e Segurança
+- **Módulos Protegidos (IIFE)**: Código JavaScript encapsulado para evitar conflitos globais.
+- **Sanitização XSS**: Todos os dados dinâmicos são limpos antes de serem inseridos no HTML para evitar ataques de injeção.
+- **Tratamento de Erros**: Logs profissionais no console e fallbacks visuais para garantir que o site nunca "quebre" para o usuário.
+- **Meta Tags Modernas**: Configurado com as tags mais recentes para Web Apps, eliminando avisos de depreciação no console.
 
 ---
 
@@ -52,8 +49,8 @@ Uma seção dedicada à espiritualidade que se atualiza sozinha:
 
 1. Extraia o conteúdo do arquivo ZIP.
 2. Abra o arquivo `index.html` em qualquer navegador moderno (Chrome, Edge, Safari, Firefox).
-3. Aproveite sua central de links personalizada com o clima de Jacinto Machado!
+3. Aproveite seu dashboard pessoal com o clima de Jacinto Machado!
 
 ---
 
-**Desenvolvido com foco em precisão, elegância e funcionalidade.** 🚀
+**Desenvolvido com foco em precisão, fé e tecnologia.** 🚀
