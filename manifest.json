@@ -1,12 +1,13 @@
 {
   "name": "Suite",
   "short_name": "Suite",
-  "description": "Página pessoal com informações de clima, santo do dia e links úteis",
+  "description": "Dashboard pessoal com informações de clima, calendário litúrgico e links úteis.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "orientation": "portrait-primary",
+  "categories": ["productivity", "utilities"],
   "icons": [
     {
       "src": "/database/favicon/icon-192.png",

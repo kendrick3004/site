@@ -1,0 +1,5 @@
+{
+  "version": "1.1.1",
+  "date": "2025-12-29",
+  "notes": "### Melhorias no Aplicativo\n\n- **Ícones do Android**: Corrigidos para aparecerem completos e sem cortes na tela inicial.\n- **Aviso de Novidades**: Agora você será avisado apenas uma vez quando houver melhorias importantes.\n- **Estabilidade**: Ajustes internos para garantir que o aplicativo abra mais rápido.\n- **Design**: Otimização do efeito de vidro (Glassmorphism) para melhor legibilidade."
+}

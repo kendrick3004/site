@@ -2,6 +2,7 @@
     ARQUIVO: suite.css
     DESCRIÇÃO: Define os estilos visuais para a página "Suite".
     FUNCIONALIDADES: Controla layout, cores, fontes, avatar, links, switch de tema e responsividade.
+    COMENTÁRIOS: Este arquivo gerencia toda a estética Glassmorphism do projeto.
 */
 
 /* 
@@ -250,7 +251,6 @@ body.dark-mode .link-item {
     font-size: 14px;
     line-height: 20px;
     color: #fff;
-    font-family: var(--font-oswald); /* Fonte específica para esta seção */
 }
 
 .santo-header {
