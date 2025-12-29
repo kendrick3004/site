@@ -29,34 +29,36 @@ body.dark-mode {
 }
 
 /* 
-  ESTILO PADRÃO DO CORPO (Desktop):
-  Define um gradiente de segurança caso as imagens de fundo falhem.
+  ESTILO PADRÃO DO CORPO:
+  Define o comportamento de rolagem e fundo para ambos os modos.
 */
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Gradiente suave */
-    background-attachment: fixed;
+    background-attachment: fixed; /* Garante que o fundo fique parado enquanto o conteúdo rola */
     background-size: cover;
-    min-height: 100vh; /* Garante que o fundo ocupe pelo menos a altura total da tela */
+    min-height: 100vh;
+    overflow-y: auto; /* Permite a rolagem vertical se o conteúdo for maior que a tela */
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
 /* 
   OTIMIZAÇÃO PARA DISPOSITIVOS MÓVEIS (Mobile):
-  Ajustes para telas com largura máxima de 600 pixels.
+  Ajustes para telas com largura máxima de 1000 pixels (alinhado com suite.css).
 */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     body {
-        /* Em celulares, o fundo fixo pode causar lentidão, então mudamos para 'scroll' */
-        background-attachment: scroll; 
+        /* Mantemos o 'fixed' para o fundo não subir com a foto, conforme desejado */
+        background-attachment: fixed; 
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
     
-    /* Ajustes de espaçamento no contêiner principal para telas pequenas */
+    /* Garante que o contêiner não trave a rolagem */
     .container {
-        padding: 12px; /* Reduz o preenchimento interno */
-        margin: 0; /* Remove margens externas */
-        border-radius: 0; /* Remove arredondamento das bordas se houver */
-        box-shadow: none; /* Remove sombras para economizar processamento */
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

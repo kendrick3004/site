@@ -22,8 +22,9 @@ body {
     display: flex; /* Ativa Flexbox para centralizar o conteúdo */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    height: 100vh; /* Ocupa 100% da altura da tela visível */
+    min-height: 100vh; /* Alterado de height: 100vh para permitir rolagem se necessário */
     margin: 0; /* Remove margens indesejadas do navegador */
+    overflow-x: hidden; /* Evita scroll horizontal */
 }
 
 /* 
@@ -210,7 +211,7 @@ body.dark-mode .link-item:active {
    Inverte as cores de fundo, texto e bordas.
 */
 body.dark-mode {
-    background-color: #000000;
+    background-color: #1a1a1a; /* Cinza escuro elegante do painel principal */
     color: #ffffff;
 }
 

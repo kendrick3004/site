@@ -75,7 +75,7 @@
     // Esta cor será usada para a barra de status e outras elementos da interface
     const metaTheme = document.createElement("meta");
     metaTheme.name = "theme-color";
-    metaTheme.content = "#000000";
+    metaTheme.content = "#1a1a1a";
     document.head.appendChild(metaTheme);
 
     // ========================================
