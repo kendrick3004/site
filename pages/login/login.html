@@ -19,28 +19,29 @@ Também faz a inclusão dos arquivos CSS e JavaScript necessários para o funcio
          ======================================== -->
     
     <!-- Fontes do Google Fonts (centralizado) -->
-    <link rel="stylesheet" href="/src/styles/fonts.css">
+    <link rel="stylesheet" href="../../src/styles/fonts.css">
     
     <!-- Configurações globais: favicon, meta tags e temas (centralizado) -->
-    <script src="/src/scripts/main/config.js"></script>
+    <script src="../../src/scripts/main/config.js"></script>
     
     <!-- CSS específico da página de login -->
     <link rel="stylesheet" href="./login.css">
 </head>
-<body>
+<body class="dark-mode">
     <div class="login-container">
         <!-- Contêiner principal para o formulário de login. -->
         <h1 class="login-title">Acesso Restrito</h1>
         <!-- Título da página de login. -->
         <form id="loginForm" autocomplete="off">
             <!-- Formulário de login com ID para manipulação via JavaScript e autocomplete desativado. -->
-            <label for="username">Usuário</label>
-            <!-- Rótulo para o campo de usuário. -->
-            <input type="text" id="username" name="username" placeholder="Digite seu usuário" required autofocus>
-            <!-- Campo de entrada para o nome de usuário, com placeholder, obrigatório e com foco automático. -->
-            <label for="password">Senha</label>
-            <!-- Rótulo para o campo de senha. -->
-            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" placeholder="Digite seu usuário" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            </div>
             <!-- Campo de entrada para a senha, com placeholder e obrigatório. -->
             <button type="submit">Entrar</button>
             <!-- Botão de submissão do formulário. -->

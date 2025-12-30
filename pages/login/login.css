@@ -1,84 +1,149 @@
 /*
-Este arquivo CSS (styles.css) define os estilos visuais para a página de login.
-Ele controla o layout, cores, fontes e a aparência dos elementos do formulário de login.
-*/
+ * ARQUIVO: login.css
+ * DESCRIÇÃO: Estilos para a página de login integrados ao sistema de temas global.
+ * TEMA: Forçado para Modo Escuro (Dark Mode) conforme solicitado.
+ */
 
-/* Estilos para o corpo da página */
+:root {
+    --container-bg: rgba(15, 15, 15, 0.8);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --input-border: rgba(255, 255, 255, 0.1);
+    --button-bg: #ffffff;
+    --button-text: #000000;
+    --error-color: #ff5555;
+}
+
+/* O fundo é gerenciado pelo modes.css através da classe .dark-mode no body */
 body {
-    font-family: var(--font-oswald); /* Define a família da fonte */
-    background: #f5f5f5; /* Cor de fundo clara para a página */
-    margin: 0; /* Remove margens padrão do corpo */
-    min-height: 100vh; /* Garante que o corpo ocupe pelo menos 100% da altura da viewport */
-    display: flex; /* Usa flexbox para centralizar o conteúdo */
-    align-items: center; /* Centraliza verticalmente os itens flexíveis */
-    justify-content: center; /* Centraliza horizontalmente os itens flexíveis */
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    
+    /* Força a imagem da igreja no fundo com overlay escuro */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('../../database/templates/dark_mode.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Estilos para o contêiner principal do formulário de login */
 .login-container {
-    width: 340px; /* Largura fixa do contêiner */
-    padding: 32px 24px; /* Espaçamento interno */
-    background: #fff; /* Cor de fundo branca */
-    border-radius: 12px; /* Borda arredondada */
-    box-shadow: 0 2px 16px #0001; /* Sombra suave para dar profundidade */
-    display: flex; /* Usa flexbox para organizar os elementos internos */
-    flex-direction: column; /* Organiza os itens em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
+    width: 100%;
+    max-width: 340px;
+    padding: 40px 30px;
+    background: var(--container-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Estilos para o título do formulário de login */
 .login-title {
-    margin-bottom: 24px; /* Margem inferior */
-    font-size: 1.7em; /* Tamanho da fonte */
-    font-weight: 700; /* Peso da fonte (negrito) */
-    letter-spacing: 1px; /* Espaçamento entre as letras */
+    margin-bottom: 35px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-align: center;
 }
 
-/* Estilos para o formulário */
 form {
-    width: 100%; /* Ocupa 100% da largura do contêiner pai */
-    display: flex; /* Usa flexbox para organizar os elementos */
-    flex-direction: column; /* Organiza os itens em coluna */
-    gap: 10px; /* Espaçamento entre os elementos do formulário */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-/* Estilos para os rótulos (labels) dos campos */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 label {
-    font-size: 1em; /* Tamanho da fonte */
-    margin-bottom: 2px; /* Margem inferior */
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-left: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
-/* Estilos para os campos de entrada (inputs) */
 input {
-    padding: 10px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    border-radius: 6px; /* Borda arredondada */
-    border: 1px solid #ccc; /* Borda sólida cinza */
+    padding: 14px 18px;
+    font-size: 1rem;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Estilos para o botão de submissão */
+input:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.15);
+}
+
 button {
-    padding: 10px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    border-radius: 6px; /* Borda arredondada */
-    border: none; /* Remove a borda padrão */
-    background: #222; /* Cor de fundo escura */
-    color: #fff; /* Cor do texto branca */
-    cursor: pointer; /* Altera o cursor para indicar que é clicável */
-    transition: background 0.2s; /* Transição suave para a cor de fundo */
+    margin-top: 12px;
+    padding: 15px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 12px;
+    border: none;
+    background: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Estilos para o botão de submissão quando o mouse passa por cima */
 button:hover {
-    background: #444; /* Altera a cor de fundo para um tom mais claro */
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
 
-/* Estilos para a mensagem de erro */
+button:active {
+    transform: translateY(0);
+}
+
 .error {
-    color: red; /* Cor do texto vermelha */
-    font-size: 14px; /* Tamanho da fonte */
-    min-height: 18px; /* Altura mínima para evitar que o layout mude quando a mensagem aparece */
-    margin-top: 4px; /* Margem superior */
-    text-align: center; /* Centraliza o texto */
+    color: var(--error-color);
+    font-size: 0.8rem;
+    min-height: 20px;
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
+/* Ajustes para Mobile */
+@media (max-width: 400px) {
+    .login-container {
+        max-width: 80%;
+        padding: 35px 25px;
+    }
+    .login-title {
+        font-size: 1.5rem;
+    }
+}
