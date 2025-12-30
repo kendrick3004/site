@@ -2,33 +2,33 @@
   "name": "Suite",
   "short_name": "Suite",
   "description": "Dashboard pessoal com informações de clima, calendário litúrgico e links úteis.",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#1a1a1a",
   "theme_color": "#1a1a1a",
-  "orientation": "portrait-primary",
+  "orientation": "portrait",
   "categories": ["productivity", "utilities"],
   "icons": [
     {
-      "src": "/database/favicon/icon-192.png",
+      "src": "database/favicon/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/database/favicon/icon-512.png",
+      "src": "database/favicon/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/database/favicon/icon-192-maskable.png",
+      "src": "database/favicon/icon-192-maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/database/favicon/icon-512-maskable.png",
+      "src": "database/favicon/icon-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

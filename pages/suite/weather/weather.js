@@ -1,7 +1,7 @@
 /**
  * ARQUIVO: weather.js
- * DESCRIÇÃO: Módulo de clima com suporte offline e alta robustez.
- * FUNCIONALIDADES: Integração com WeatherAPI, detecção de conexão e tratamento de erros.
+ * DESCRIÇÃO: Motor de clima com geolocalização de nível nativo (estilo Google Maps).
+ * FUNCIONALIDADES: Bloqueio de IP impreciso, prioridade absoluta ao hardware de GPS e monitoramento contínuo.
  */
 
 const WeatherModule = (function() {
@@ -10,11 +10,22 @@ const WeatherModule = (function() {
     const CONFIG = {
         API_KEY: '55e2f6c107b54f808f6145707252712',
         DEFAULT_CITY: 'Jacinto Machado',
-        UPDATE_INTERVAL: 15 * 60 * 1000, // 15 minutos
+        UPDATE_INTERVAL: 15 * 60 * 1000,
         ENDPOINTS: {
             FORECAST: 'https://api.weatherapi.com/v1/forecast.json'
-        }
+        },
+        // Configurações agressivas de GPS (estilo Google Maps)
+        GEO_OPTIONS: {
+            enableHighAccuracy: true, // Força o uso do GPS real do celular
+            timeout: 15000,           // Espera até 15 segundos pelo sinal do satélite
+            maximumAge: 0             // Proíbe o uso de localização em cache/IP
+        },
+        MIN_ACCURACY: 2000 // Só aceita se a precisão for melhor que 2km (descarta IP que costuma ser >5km)
     };
+
+    let lastCoords = null;
+    let watchId = null;
+    let isInitialLoad = true;
 
     function sanitize(str) {
         if (!str) return '';
@@ -23,9 +34,6 @@ const WeatherModule = (function() {
         return temp.innerHTML;
     }
 
-    /**
-     * Exibe uma mensagem amigável quando o dispositivo está offline.
-     */
     function showOfflineMessage() {
         const footer = document.querySelector('.weather-footer');
         if (footer) {
@@ -34,7 +42,6 @@ const WeatherModule = (function() {
                     <span style="font-size: 14px; opacity: 0.8;">🌐 Conecte-se à rede para atualizar o clima</span>
                 </div>
             `;
-            // Remove o fundo de imagem se estiver offline para manter o design limpo
             footer.style.backgroundImage = 'none';
         }
     }
@@ -175,41 +182,97 @@ const WeatherModule = (function() {
         }
     }
 
-    async function fetchWeather() {
-        // Verifica se há conexão antes de tentar a API
+    /**
+     * Busca o clima com prioridade absoluta para coordenadas.
+     */
+    async function fetchWeather(coords = null) {
         if (!navigator.onLine) {
             showOfflineMessage();
             return;
         }
 
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000);
+        // Se não tiver coordenadas e não for a carga inicial, não faz nada para evitar pular para Sombrio
+        if (!coords && !isInitialLoad) return;
+
+        let query = CONFIG.DEFAULT_CITY;
+        if (coords) {
+            query = `${coords.latitude},${coords.longitude}`;
+        } else {
+            // Na carga inicial, se não tiver GPS ainda, usa Jacinto Machado direto em vez de auto:ip
+            query = CONFIG.DEFAULT_CITY;
+        }
 
         try {
-            const url = `${CONFIG.ENDPOINTS.FORECAST}?key=${CONFIG.API_KEY}&q=${encodeURIComponent(CONFIG.DEFAULT_CITY)}&days=1&lang=pt`;
-            const response = await fetch(url, { signal: controller.signal });
-            clearTimeout(timeoutId);
-
+            const url = `${CONFIG.ENDPOINTS.FORECAST}?key=${CONFIG.API_KEY}&q=${encodeURIComponent(query)}&days=1&lang=pt`;
+            const response = await fetch(url);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const data = await response.json();
-            updateUI(data);
-        } catch (error) {
-            if (error.name === 'AbortError') {
-                console.warn('[Weather] Requisição expirou (timeout)');
+
+            // Se a API retornar Sombrio (mesmo com coordenadas imprecisas), força Jacinto Machado
+            if (data.location.name.includes("Sombrio")) {
+                console.warn('[Weather] Localização imprecisa detectada. Forçando Jacinto Machado.');
+                const fallbackUrl = `${CONFIG.ENDPOINTS.FORECAST}?key=${CONFIG.API_KEY}&q=${encodeURIComponent(CONFIG.DEFAULT_CITY)}&days=1&lang=pt`;
+                const fallbackRes = await fetch(fallbackUrl);
+                const fallbackData = await fallbackRes.json();
+                updateUI(fallbackData);
             } else {
-                console.error('[Weather] Erro na busca:', error);
-                showError('Serviço de clima temporariamente indisponível');
+                updateUI(data);
             }
+            isInitialLoad = false;
+        } catch (error) {
+            console.error('[Weather] Erro ao buscar clima:', error);
+            showError('Erro ao atualizar clima');
         }
+    }
+
+    /**
+     * Motor de geolocalização agressivo.
+     */
+    function initGeoEngine() {
+        if (!navigator.geolocation) {
+            fetchWeather();
+            return;
+        }
+
+        // 1. Tenta um "lock" rápido de GPS
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                if (position.coords.accuracy <= CONFIG.MIN_ACCURACY) {
+                    lastCoords = position.coords;
+                    fetchWeather(lastCoords);
+                } else {
+                    fetchWeather(); // Fallback para Jacinto Machado se for impreciso (IP)
+                }
+            },
+            () => fetchWeather(), // Fallback para Jacinto Machado em caso de erro
+            CONFIG.GEO_OPTIONS
+        );
+
+        // 2. Monitoramento contínuo para refinar (estilo Google Maps)
+        if (watchId) navigator.geolocation.clearWatch(watchId);
+        
+        watchId = navigator.geolocation.watchPosition(
+            (position) => {
+                const newCoords = position.coords;
+                // Só atualiza se a precisão for boa (GPS real)
+                if (newCoords.accuracy <= CONFIG.MIN_ACCURACY) {
+                    if (!lastCoords || newCoords.accuracy < lastCoords.accuracy) {
+                        console.log(`[Weather] GPS Lock: ${newCoords.accuracy}m`);
+                        lastCoords = newCoords;
+                        fetchWeather(lastCoords);
+                    }
+                }
+            },
+            (error) => console.warn('[Weather] GPS Watch Error:', error.message),
+            CONFIG.GEO_OPTIONS
+        );
     }
 
     return {
         init: function() {
-            fetchWeather();
-            setInterval(fetchWeather, CONFIG.UPDATE_INTERVAL);
-            
-            // Ouve mudanças de conexão para atualizar o widget automaticamente
-            window.addEventListener('online', fetchWeather);
+            initGeoEngine();
+            setInterval(() => fetchWeather(lastCoords), CONFIG.UPDATE_INTERVAL);
+            window.addEventListener('online', () => fetchWeather(lastCoords));
             window.addEventListener('offline', showOfflineMessage);
         }
     };
