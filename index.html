@@ -19,11 +19,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- IMPORTAÇÃO DE ESTILOS (CSS) -->
-    <link rel="stylesheet" href="/src/styles/fonts.css"> <!-- Define as famílias de fontes personalizadas -->
-    <script src="/src/scripts/main/config.js"></script> <!-- Script de configuração global (ex: Favicon dinâmico) -->
-    <link rel="stylesheet" href="./pages/suite/suite.css"> <!-- Estilo principal da página (layout, cores, temas) -->
-    <link rel="stylesheet" href="./pages/suite/weather/weather.css"> <!-- Estilo específico do widget de clima -->
-    <link rel="stylesheet" href="/src/app/update.css"> <!-- Estilo do sistema de atualização (App) -->
+    <link rel="stylesheet" href="src/styles/fonts.css"> <!-- Define as famílias de fontes personalizadas -->
+    <script src="src/scripts/main/config.js"></script> <!-- Script de configuração global (ex: Favicon dinâmico) -->
+    <link rel="stylesheet" href="pages/suite/suite.css"> <!-- Estilo principal da página (layout, cores, temas) -->
+    <link rel="stylesheet" href="pages/suite/weather/weather.css"> <!-- Estilo específico do widget de clima -->
+    <link rel="stylesheet" href="src/app/update.css"> <!-- Estilo do sistema de atualização (App) -->
 </head>
 <body>
     <!-- Contêiner principal que centraliza e organiza todo o conteúdo da página -->
@@ -33,7 +33,7 @@
         <div class="avatar">
             <div class="avatar-img">
                 <!-- Imagem do perfil carregada da pasta database -->
-                <img src="./database/avatar/avatar.jpg" alt="Avatar" referrerpolicy="no-referrer">
+                <img src="database/avatar/avatar.jpg" alt="Avatar" referrerpolicy="no-referrer">
             </div>
             <!-- Nome de usuário ou identificador -->
             <div class="avatar-name link-item">@kendricknicoleti</div>
@@ -44,8 +44,8 @@
             <div class="switch-bg"></div> <!-- Fundo do trilho do botão -->
             <div class="switch-toggle"> <!-- O círculo que desliza para os lados -->
                 <div class="switch-icon">
-                    <span class="icon-moon">☀️</span> <!-- Ícone visível no modo claro -->
-                    <span class="icon-sun">🌙</span> <!-- Ícone visível no modo escuro -->
+                    <span class="icon-sun">☀️</span> <!-- Ícone visível no modo claro -->
+                    <span class="icon-moon">🌙</span> <!-- Ícone visível no modo escuro -->
                 </div>
             </div>
         </div>
@@ -79,9 +79,28 @@
     
     <!-- IMPORTAÇÃO DE SCRIPTS (JavaScript) -->
     <!-- Os scripts são carregados no final para não travar a renderização visual da página -->
-    <script src="./pages/suite/suite.js"></script> <!-- Gerencia temas (Dark/Light) e interações básicas -->
-    <script src="./pages/suite/santo-do-dia.js"></script> <!-- Busca e exibe os dados do calendário litúrgico -->
-    <script src="./pages/suite/weather/weather.js"></script> <!-- Integração com a API de clima (WeatherAPI) -->
-    <script src="/src/app/update.js"></script> <!-- Sistema de atualização (App) -->
+    <script src="pages/suite/suite.js"></script> <!-- Gerencia temas (Dark/Light) e interações básicas -->
+    <script src="pages/suite/santo-do-dia.js"></script> <!-- Busca e exibe os dados do calendário litúrgico -->
+    <script src="pages/suite/weather/weather.js"></script> <!-- Integração com a API de clima (WeatherAPI) -->
+    <script src="src/app/update.js"></script> <!-- Sistema de atualização (App) -->
+
+    <!-- REGISTRO DO SERVICE WORKER (Sistema de Cache) -->
+    <script>
+        /**
+         * Registra o Service Worker para habilitar funcionalidades de PWA (Cache/Offline).
+         * O registro é feito de forma segura, verificando se o navegador suporta a tecnologia.
+         */
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then((registration) => {
+                        console.log('[PWA] Service Worker registrado com sucesso:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.error('[PWA] Falha ao registrar o Service Worker:', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>

@@ -1,14 +1,12 @@
 /**
  * ARQUIVO: weather.js
- * DESCRIÇÃO: Módulo de clima com alta robustez e segurança.
- * FUNCIONALIDADES: Integração com WeatherAPI, tratamento de erros e exibição de dados.
- * OBSERVAÇÃO: Travado em Jacinto Machado conforme solicitação do usuário.
+ * DESCRIÇÃO: Módulo de clima com suporte offline e alta robustez.
+ * FUNCIONALIDADES: Integração com WeatherAPI, detecção de conexão e tratamento de erros.
  */
 
 const WeatherModule = (function() {
     'use strict';
 
-    // Configurações privadas encapsuladas para segurança
     const CONFIG = {
         API_KEY: '55e2f6c107b54f808f6145707252712',
         DEFAULT_CITY: 'Jacinto Machado',
@@ -18,9 +16,6 @@ const WeatherModule = (function() {
         }
     };
 
-    /**
-     * Sanitiza strings para evitar ataques XSS ao inserir dados dinâmicos no DOM.
-     */
     function sanitize(str) {
         if (!str) return '';
         const temp = document.createElement('div');
@@ -29,8 +24,21 @@ const WeatherModule = (function() {
     }
 
     /**
-     * Mapeia códigos de condição da WeatherAPI para ícones e templates locais.
+     * Exibe uma mensagem amigável quando o dispositivo está offline.
      */
+    function showOfflineMessage() {
+        const footer = document.querySelector('.weather-footer');
+        if (footer) {
+            footer.innerHTML = `
+                <div class="weather-error">
+                    <span style="font-size: 14px; opacity: 0.8;">🌐 Conecte-se à rede para atualizar o clima</span>
+                </div>
+            `;
+            // Remove o fundo de imagem se estiver offline para manter o design limpo
+            footer.style.backgroundImage = 'none';
+        }
+    }
+
     function getCustomAssets(conditionCode, isDay) {
         const moment = isDay ? 'Day' : 'Night';
         let iconFile = 'Sun.svg';
@@ -98,9 +106,6 @@ const WeatherModule = (function() {
         };
     }
 
-    /**
-     * Atualiza a interface com tratamento de erros e segurança.
-     */
     function updateUI(data) {
         const footer = document.querySelector('.weather-footer');
         if (!footer) return;
@@ -116,7 +121,6 @@ const WeatherModule = (function() {
             footer.style.backgroundSize = 'cover';
             footer.style.backgroundPosition = 'center';
 
-            // Template seguro usando strings sanitizadas
             footer.innerHTML = `
                 <div class="weather-content custom-theme">
                     <div class="weather-location">
@@ -171,10 +175,13 @@ const WeatherModule = (function() {
         }
     }
 
-    /**
-     * Busca dados da API com AbortController para evitar requisições pendentes.
-     */
     async function fetchWeather() {
+        // Verifica se há conexão antes de tentar a API
+        if (!navigator.onLine) {
+            showOfflineMessage();
+            return;
+        }
+
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 10000);
 
@@ -196,16 +203,18 @@ const WeatherModule = (function() {
         }
     }
 
-    // API Pública do Módulo
     return {
         init: function() {
             fetchWeather();
             setInterval(fetchWeather, CONFIG.UPDATE_INTERVAL);
+            
+            // Ouve mudanças de conexão para atualizar o widget automaticamente
+            window.addEventListener('online', fetchWeather);
+            window.addEventListener('offline', showOfflineMessage);
         }
     };
 })();
 
-// Inicialização segura
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', WeatherModule.init);
 } else {

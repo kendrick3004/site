@@ -1,64 +1,36 @@
 /**
  * ARQUIVO: modes.css
  * DESCRIÇÃO: Gerencia os planos de fundo e estilos específicos para os modos Claro e Escuro.
- * FUNCIONALIDADES: Aplica imagens de fundo dinâmicas e otimiza o layout para dispositivos móveis.
  */
 
-/* 
-  MODO CLARO:
-  Aplica uma imagem de fundo quando o elemento <body> NÃO possui a classe 'dark-mode'.
-*/
 body:not(.dark-mode) {
-    background-image: url("../../database/templates/light_mode.jpg"); /* Imagem de fundo clara */
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
-}
-
-/* 
-  MODO ESCURO:
-  Aplica uma imagem de fundo quando o elemento <body> possui a classe 'dark-mode'.
-*/
-body.dark-mode {
-    background-image: url("../../database/templates/dark_mode.jpg"); /* Imagem de fundo escura */
+    background-image: url("../../database/templates/light_mode.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-/* 
-  ESTILO PADRÃO DO CORPO:
-  Define o comportamento de rolagem e fundo para ambos os modos.
-*/
-body {
-    background-attachment: fixed; /* Garante que o fundo fique parado enquanto o conteúdo rola */
+body.dark-mode {
+    background-image: url("../../database/templates/dark_mode.jpg");
     background-size: cover;
-    min-height: 100vh;
-    overflow-y: auto; /* Permite a rolagem vertical se o conteúdo for maior que a tela */
-    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* 
-  OTIMIZAÇÃO PARA DISPOSITIVOS MÓVEIS (Mobile):
-  Ajustes para telas com largura máxima de 1000 pixels (alinhado com suite.css).
-*/
+body {
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 @media (max-width: 1000px) {
     body {
-        /* Mantemos o 'fixed' para o fundo não subir com a foto, conforme desejado */
         background-attachment: fixed; 
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
-    }
-    
-    /* Garante que o contêiner não trave a rolagem */
-    .container {
-        width: 100%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 }

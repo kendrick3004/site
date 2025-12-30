@@ -49,6 +49,7 @@ Mantenha a organização profissional:
 - **Comentários**: Todo código deve ser 100% comentado em português, explicando o "porquê" de cada função.
 - **Standalone**: O sistema de notificação de melhorias deve funcionar **apenas** no modo atalho instalado.
 - **Memória**: Use `localStorage` para garantir que avisos de atualização apareçam apenas uma vez por versão.
+- **Cache (PWA)**: O arquivo `sw.js` na raiz gerencia o cache. Mantenha a lógica de limpeza de cache antigo ao atualizar a versão (`CACHE_NAME`).
 
 ---
 

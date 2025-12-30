@@ -7,9 +7,8 @@
 const UpdateSystem = (function() {
     'use strict';
 
-    // IMPORTANTE: Para testar agora, a CURRENT_VERSION deve ser menor que a do version.json
     const CURRENT_VERSION = '1.1.0'; 
-    const VERSION_CHECK_URL = '/src/app/version.json';
+    const VERSION_CHECK_URL = 'src/app/version.json'; // Caminho relativo corrigido
     const STORAGE_KEY = 'suite_last_seen_version';
 
     function isStandalone() {
@@ -17,10 +16,7 @@ const UpdateSystem = (function() {
     }
 
     function init() {
-        // Para fins de teste, se você quiser ver no navegador também, comente a linha abaixo
         if (!isStandalone()) return;
-
-        // Aparece 1 segundo após o carregamento para ser rápido no teste
         setTimeout(checkVersion, 1000);
     }
 
@@ -32,9 +28,6 @@ const UpdateSystem = (function() {
             const data = await response.json();
             const lastSeenVersion = localStorage.getItem(STORAGE_KEY);
 
-            console.log(`[App] Versão Local: ${CURRENT_VERSION} | Servidor: ${data.version} | Vista: ${lastSeenVersion}`);
-
-            // Lógica: Se a versão do servidor for maior que a local E maior que a última que o usuário viu
             if (isNewerVersion(data.version, CURRENT_VERSION) && isNewerVersion(data.version, lastSeenVersion || '0.0.0')) {
                 showUpdateModal(data);
             }
@@ -83,10 +76,7 @@ const UpdateSystem = (function() {
         requestAnimationFrame(() => overlay.classList.add('active'));
 
         document.getElementById('btn-close-update').onclick = () => {
-            // GRAVA NA MEMÓRIA: O usuário já viu esta versão
             localStorage.setItem(STORAGE_KEY, data.version);
-            console.log(`[App] Versão ${data.version} marcada como vista.`);
-            
             overlay.classList.remove('active');
             setTimeout(() => overlay.remove(), 400);
         };
