@@ -7,7 +7,7 @@
 const UpdateSystem = (function() {
     'use strict';
 
-    const CURRENT_VERSION = '1.1.0'; 
+    const CURRENT_VERSION = '1.8.2'; 
     const VERSION_CHECK_URL = 'src/app/version.json'; // Caminho relativo corrigido
     const STORAGE_KEY = 'suite_last_seen_version';
 

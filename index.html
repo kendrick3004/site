@@ -3,15 +3,35 @@
     DESCRIÇÃO: Página principal do projeto "Suite".
     ESTRUTURA: Contém o avatar, switch de tema, card do Santo do Dia, links e widget de clima.
     COMENTÁRIOS: Este arquivo serve como o esqueleto do site, conectando todos os estilos e scripts.
+    VERSÃO: 1.8.0
 -->
 <!DOCTYPE html>
 <html lang="pt-br"> <!-- Define o idioma do site como Português do Brasil para acessibilidade e SEO -->
 <head>
     <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 para suportar acentos -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Garante compatibilidade com versões antigas do Internet Explorer -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a escala inicial para dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Configura a escala inicial para dispositivos móveis -->
+    
+    <!-- METADADOS PROFISSIONAIS E SEO -->
+    <meta name="description" content="Suite - Dashboard pessoal com informações de clima, calendário litúrgico e links úteis. Desenvolvido com foco em precisão e tecnologia.">
+    <meta name="author" content="Kendrick Nicoleti">
+    <meta name="keywords" content="Suite, Dashboard, Clima, Santo do Dia, PWA, Produtividade">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OPEN GRAPH (Redes Sociais) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Suite">
+    <meta property="og:description" content="Dashboard pessoal com informações de clima, calendário litúrgico e links úteis.">
+    <meta property="og:image" content="database/favicon/Favicon.png">
+    <meta property="og:url" content="https://kendricknicoleti.com/">
+    
+    <!-- CONFIGURAÇÕES DE WEB APP -->
     <meta name="mobile-web-app-capable" content="yes"> <!-- Padrão moderno para Web Apps -->
     <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Compatibilidade com iOS antigo -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Suite">
+    <meta name="format-detection" content="telephone=no">
+    
     <title>Suite</title> <!-- Título que aparece na aba do navegador -->
     
     <!-- IMPORTAÇÃO DE FONTES EXTERNAS (Google Fonts) -->

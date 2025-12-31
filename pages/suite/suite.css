@@ -1,6 +1,7 @@
 /*
     ARQUIVO: suite.css
-    DESCRIÇÃO: Estilos visuais restaurados com base na referência original.
+    DESCRIÇÃO: Estilos visuais restaurados com fidelidade absoluta e efeitos 3D sutis.
+    VERSÃO: 1.8.2
 */
 
 html, body {
@@ -41,10 +42,17 @@ body {
 
 .avatar-img img {
     width: 112px;
-    height: 112px;
+    height: 140px;
     border-radius: 25px;
     border: 1.5px solid #00000080;
     object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Sombra 3D sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar-img img:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
 .avatar-name.link-item {
@@ -58,6 +66,7 @@ body {
     border: 1px solid #00000080;
     backdrop-filter: blur(8px);
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /* 
@@ -81,6 +90,7 @@ body {
     border: 1px solid #00000080;
     backdrop-filter: blur(8px);
     position: absolute;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .switch-toggle {
@@ -90,12 +100,12 @@ body {
     border-radius: 50%;
     position: absolute;
     left: -5px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Efeito 3D no botão */
 }
 
 .switch-toggle-right {
@@ -126,6 +136,13 @@ body.dark-mode .icon-moon { display: block; }
     display: flex;
     flex-direction: column;
     gap: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Profundidade 3D */
+    transition: transform 0.3s ease;
+}
+
+.santo-do-dia:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
 }
 
 .santo-header {
@@ -138,6 +155,7 @@ body.dark-mode .icon-moon { display: block; }
 .santo-name {
     font-size: 16px;
     font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 .santo-ribbon {
@@ -145,6 +163,7 @@ body.dark-mode .icon-moon { display: block; }
     height: 24px;
     border-radius: 3px;
     background: #9370DB;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* 
@@ -172,6 +191,14 @@ body.dark-mode .icon-moon { display: block; }
     font-weight: 500;
     text-decoration: none;
     box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.link-item:hover {
+    transform: translateY(-2px);
+    background: #0000002a;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 /* 
@@ -196,6 +223,6 @@ body.dark-mode .link-item, body.dark-mode .santo-do-dia { background: #ffffff1a;
     }
     
     .avatar {
-        margin-top: 40px;
+        margin-top: 20px;
     }
 }

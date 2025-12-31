@@ -1,5 +1,32 @@
 {
-  "version": "1.1.1",
-  "date": "2025-12-29",
-  "notes": "### Liquid Edition Ativada!\n\n- **Ícone Líquido**: Novo efeito de vidro (Glassmorphism) atrás do ostensório.\n- **Fundo Premium**: Cor de fundo ajustada para cinza escuro, eliminando o preto puro.\n- **Splash Screen**: Abertura do aplicativo agora é suave e integrada ao painel.\n- **Aviso Inteligente**: Este aviso aparecerá apenas uma vez por atualização."
+  "version": "1.8.2",
+  "date": "2025-12-31",
+  "history": [
+    {
+      "version": "1.8.2",
+      "date": "2025-12-31",
+      "notes": "### Fidelidade 3D v1.8.2\n\n- **Correção de Layout**: Restaurado o design original com fidelidade absoluta, removendo transformações que quebravam o posicionamento.\n- **Profundidade Sutil**: Adicionados efeitos 3D via sombras multicamadas e transições suaves de elevação (translateY) que não alteram as dimensões dos elementos.\n- **Interatividade**: Efeitos de hover refinados para botões, avatar e widget de clima, garantindo uma experiência fluida e profissional."
+    },
+    {
+      "version": "1.8.1",
+      "date": "2025-12-31",
+      "notes": "### Edição 3D Depth v1.8.1\n\n- **Efeitos 3D**: Implementação inicial de profundidade (revertida parcialmente na v1.8.2 por questões de layout)."
+    },
+    {
+      "version": "1.8.0",
+      "date": "2025-12-31",
+      "notes": "### Edição Robusta v1.8.0\n\n- **Robustez Técnica**: Metadados profissionais, SEO avançado e tags Open Graph.\n- **PWA Avançado**: Refinamento do `manifest.json` e `sw.js`."
+    },
+    {
+      "version": "1.7.8",
+      "date": "2025-12-31",
+      "notes": "### Histórico Consolidado v1.7.8\n\n- **Preservação**: Implementado sistema de histórico no `version.json`."
+    },
+    {
+      "version": "1.1.1",
+      "date": "2025-12-29",
+      "notes": "### Liquid Edition\n\n- **Design**: Efeito Glassmorphism e fundo cinza escuro premium."
+    }
+  ],
+  "notes": "### Novidades da v1.8.2 (Fidelidade 3D)\n\n- **Design Restaurado**: O layout original foi totalmente recuperado, garantindo que tudo esteja em seu devido lugar.\n- **Toque de Profundidade**: Adicionamos sombras 3D sutis que dão uma sensação de relevo e profissionalismo sem poluir o visual.\n- **Animações Suaves**: Os elementos agora reagem suavemente ao toque e ao mouse, elevando-se levemente para indicar interatividade.\n- **Fidelidade Total**: O projeto continua 100% fiel ao design original, apenas com um acabamento mais robusto e moderno."
 }

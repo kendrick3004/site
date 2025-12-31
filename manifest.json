@@ -1,13 +1,20 @@
 {
   "name": "Suite",
   "short_name": "Suite",
-  "description": "Dashboard pessoal com informações de clima, calendário litúrgico e links úteis.",
+  "description": "Dashboard pessoal com informações de clima, calendário litúrgico e links úteis. Desenvolvido com foco em precisão e tecnologia.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#1a1a1a",
   "theme_color": "#1a1a1a",
   "orientation": "portrait",
-  "categories": ["productivity", "utilities"],
+  "categories": [
+    "productivity",
+    "utilities",
+    "lifestyle"
+  ],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "database/favicon/icon-192.png",
@@ -32,6 +39,14 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "database/templates/dark_mode.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "label": "Modo Escuro da Suite"
     }
   ]
 }

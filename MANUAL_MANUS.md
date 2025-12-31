@@ -1,61 +1,81 @@
-# 📘 Manual de Diretrizes - Projeto Suite
+# 📘 Guia Mestre de Operação - Projeto Suite
 
-Este documento serve como guia mestre para o **Manus AI** (ou qualquer desenvolvedor) realizar manutenções e atualizações no projeto Suite. Siga estas regras rigorosamente em cada nova interação.
+> **⚠️ INSTRUÇÃO MANDATÓRIA PARA IA:** Toda vez que este projeto for carregado ou uma nova tarefa for solicitada, a IA **DEVE LER ESTE ARQUIVO INTEGRALMENTE** antes de realizar qualquer ação. Este manual contém as diretrizes fundamentais que se sobrepõem a qualquer interpretação automática, servindo como o guia mestre de operação do código.
 
 ---
 
 ## 🚀 1. Controle de Versão (Versionamento)
 
-Sempre que houver uma alteração, o número da versão deve ser atualizado seguindo o padrão **X.Y.Z**:
+O projeto utiliza um sistema de versionamento semântico rigoroso. **Sempre** incremente a versão após qualquer modificação.
 
 - **PATCH (Z)**: Pequenas correções, ajustes de texto ou comentários.
-  - *Exemplo: 1.1.1 → 1.1.2*
+  - *Exemplo: 1.7.5 → 1.7.6*
 - **MINOR (Y)**: Novas funcionalidades pequenas ou melhorias visuais.
-  - *Exemplo: 1.1.2 → 1.2.0*
+  - *Exemplo: 1.7.5 → 1.8.0*
 - **MAJOR (X)**: Grandes mudanças estruturais, novo design ou atualizações críticas.
-  - *Exemplo: 1.2.0 → 2.0.0*
+  - *Exemplo: 1.7.5 → 2.0.0*
 
-**Onde atualizar:**
-1. No arquivo `src/app/version.json` (para o usuário ver).
-2. No arquivo `src/app/update.js` (variável `CURRENT_VERSION`).
-3. Nos comentários de cabeçalho dos arquivos modificados.
-
----
-
-## 🎨 2. Identidade Visual e Design
-
-- **Efeito Líquido**: Ícones e elementos principais devem usar o efeito de vidro (Glassmorphism) com fundo translúcido e blur.
-- **Cores**: 
-  - Fundo Modo Escuro: `#1a1a1a` (Cinza Escuro Premium).
-  - Fundo Modo Claro: `#ffffff`.
-  - Elementos: Devem usar transparência (`rgba`) e `backdrop-filter: blur()`.
-- **Fidelidade**: Nunca altere o design original (paddings, margens, tamanhos) a menos que solicitado explicitamente.
+**Onde atualizar (Obrigatório):**
+1. `src/app/version.json`: Atualize a chave `"version"`, a `"date"` e detalhe **todas** as mudanças em `"notes"`. Este arquivo é o log oficial de alterações para desenvolvedores e usuários.
+2. `src/app/update.js`: Atualize a constante `CURRENT_VERSION`.
+3. **Cabeçalhos de Arquivos**: Atualize a versão nos comentários iniciais dos arquivos modificados.
 
 ---
 
-## 📂 3. Estrutura de Pastas
+## 🛠️ 2. Operação e Manutenção do Código
 
-Mantenha a organização profissional:
-- `/src/app/`: Lógica, estilos e controle de versão exclusivos do Aplicativo (Atalho).
-- `/src/scripts/`: Scripts globais do site.
-- `/src/styles/`: Estilos globais do site.
-- `/pages/`: Estrutura de páginas e módulos específicos (Suite, Weather, Login).
-- `/database/`: Apenas arquivos de dados (Imagens, JSONs, Favicons).
-
----
-
-## 📝 4. Padrão de Programação
-
-- **Comentários**: Todo código deve ser 100% comentado em português, explicando o "porquê" de cada função.
-- **Standalone**: O sistema de notificação de melhorias deve funcionar **apenas** no modo atalho instalado.
-- **Memória**: Use `localStorage` para garantir que avisos de atualização apareçam apenas uma vez por versão.
-- **Cache (PWA)**: O arquivo `sw.js` na raiz gerencia o cache. Mantenha a lógica de limpeza de cache antigo ao atualizar a versão (`CACHE_NAME`).
+### Regras de Ouro para o Desenvolvedor:
+- **Análise Prévia**: Antes de alterar, leia o arquivo inteiro para entender o contexto e a lógica existente.
+- **Preservação de Estilo**: Mantenha o padrão de indentação, nomenclatura de variáveis e estilo de comentários.
+- **Comentários Explicativos**: Todo código novo ou alterado deve ser 100% comentado em português, focando no "porquê" daquela implementação.
+- **Limpeza**: Não crie arquivos de relatório ou teste (`.md`, `.txt`) na raiz do projeto. Todas as informações de mudanças devem ir para o `version.json`.
 
 ---
 
-## 🤖 5. Instrução para o Manus
+## 📂 3. Estrutura de Pastas e Organização
 
-> "Manus, analise o projeto Suite e siga as diretrizes do `MANUAL_MANUS.md`. Realize a atualização [DESCREVER AQUI] e incremente a versão conforme a regra."
+Mantenha a organização profissional e modular:
+- `/pages/`: **Raiz das páginas HTML**. Todos os arquivos `.html` devem residir aqui (ex: `login.html`, `login-index.html`).
+- `/pages/[modulo]/`: Arquivos de suporte específicos (CSS, JS, JSON) de cada módulo (ex: `/pages/login/login.js`).
+- `/src/app/`: Lógica de sistema, controle de versão e estilos exclusivos do modo "App Instalado".
+- `/src/scripts/`: Scripts globais e configurações (ex: `config.js`).
+- `/src/styles/`: Estilos globais (fontes, temas, modos).
+- `/database/`: Repositório de ativos estáticos (Imagens, JSON de dados, Favicons).
 
 ---
+
+## 🎨 4. Identidade Visual (Liquid Design)
+
+- **Glassmorphism**: Use `backdrop-filter: blur(12px)` e fundos translúcidos (`rgba`) para o efeito de vidro.
+- **Paleta de Cores**:
+  - **Dark Mode**: Fundo `#1a1a1a` (Cinza Escuro Premium).
+  - **Light Mode**: Fundo `#ffffff`.
+- **Responsividade**: O design deve ser impecável em dispositivos móveis e desktop.
+
+---
+
+## 🔐 5. Segurança e Persistência
+
+- **Bloqueio de Login**: O sistema de bloqueio deve ser persistente via `localStorage`. 
+- **Regras de Bloqueio**:
+  - Após 3 tentativas falhas, o usuário deve ser bloqueado por **10 segundos**.
+  - O bloqueio **DEVE** persistir mesmo que a página seja recarregada ou o navegador fechado.
+  - Use timestamps absolutos (`Date.now()`) salvos no `localStorage` para calcular o tempo restante.
+  - Após o desbloqueio, exiba a mensagem: "Tente novamente a senha correta".
+- **Estado do Usuário**: Use `localStorage` para salvar preferências de tema e estado de autenticação.
+
+---
+
+## 🤖 6. Protocolo de Atuação da IA
+
+Ao receber uma tarefa, a IA deve seguir este protocolo:
+1. **Leitura do Manual**: Ler o `MANUAL_MANUS.md` antes de qualquer outra coisa.
+2. **Identificação**: Localizar a versão atual e entender o impacto da mudança solicitada.
+3. **Execução**: Realizar a alteração seguindo os padrões de design e código.
+4. **Registro**: Documentar as mudanças diretamente no `src/app/version.json`.
+5. **Limpeza**: Remover qualquer arquivo temporário criado durante o processo.
+
+---
+
 **Desenvolvido com foco em precisão, fé e tecnologia.** 🚀
+**Versão Atual do Manual: 1.8.2**
