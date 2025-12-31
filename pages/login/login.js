@@ -24,7 +24,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     }
 
     try {
-        const res = await fetch('/pages/login/users.json', { cache: 'no-store' });
+        const res = await fetch('./login/users.json', { cache: 'no-store' });
         if (!res.ok) throw new Error('Não foi possível carregar usuários.');
         const data = await res.json();
 
@@ -60,7 +60,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         // Autenticação bem-sucedida
         localStorage.setItem('auth_user', JSON.stringify({ id: found.id, name: found.name, role: found.role }));
         // Redireciona para a raiz do site atualizado
-        window.location.href = "/";
+        window.location.href = "../index.html";
 
     } catch (err) {
         console.error(err);

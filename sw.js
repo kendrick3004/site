@@ -7,19 +7,19 @@
 const CACHE_NAME = 'suite-cache-v1.0.1';
 const ASSETS_TO_CACHE = [
     '/',
-    '/index.html',
-    '/manifest.json',
-    '/pages/suite/suite.css',
-    '/pages/suite/suite.js',
-    '/pages/suite/santo-do-dia.js',
-    '/pages/suite/weather/weather.css',
-    '/pages/suite/weather/weather.js',
-    '/src/styles/fonts.css',
-    '/src/styles/modes.css',
-    '/src/app/update.css',
-    '/src/app/update.js',
-    '/database/avatar/avatar.jpg',
-    '/database/calendario.json'
+    'index.html',
+    'manifest.json',
+    'pages/suite/suite.css',
+    'pages/suite/suite.js',
+    'pages/suite/santo-do-dia.js',
+    'pages/suite/weather/weather.css',
+    'pages/suite/weather/weather.js',
+    'src/styles/fonts.css',
+    'src/styles/modes.css',
+    'src/app/update.css',
+    'src/app/update.js',
+    'database/avatar/avatar.jpg',
+    'database/calendario.json'
 ];
 
 // Instalação do Service Worker e cache de recursos

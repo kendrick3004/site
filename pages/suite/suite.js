@@ -48,7 +48,7 @@ const SuiteModule = (function() {
                 loginButton.textContent = 'Login';
                 
                 loginButton.addEventListener('click', () => {
-                    window.location.href = 'pages/login';
+                    window.location.href = 'pages/login.html';
                 });
                 
                 linksContainer.appendChild(loginButton);
