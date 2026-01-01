@@ -1,0 +1,32 @@
+{
+  "version": "2.2.0",
+  "date": "2025-12-31",
+  "history": [
+    {
+      "version": "2.2.0",
+      "date": "2025-12-31",
+      "notes": "### Autossuficiência Cromática Local v2.2.0\n\n- **Migração Total**: Removidas todas as cores estáticas dos arquivos CSS e JS.\n- **Injeção Dinâmica**: O projeto agora utiliza exclusivamente o banco de dados local de 16.7M de cores para definir seu estilo visual.\n- **Variáveis CSS Gerenciadas**: Implementado sistema de mapeamento que resolve cores HEX em RGB através da base de dados própria."
+    },
+    {
+      "version": "2.1.0",
+      "date": "2025-12-31",
+      "notes": "### Sistema de Cores Infinitas v2.1.0\n\n- **Banco de Dados de 16.7M Cores**: Gerado banco de dados local contendo todas as combinações possíveis de HEX e RGB.\n- **Módulo ColorSystem**: Criado o `colors.js` para busca e conversão de cores sob demanda."
+    },
+    {
+      "version": "2.0.0",
+      "date": "2025-12-31",
+      "notes": "### Auditoria Total e Documentação Interna v2.0.0\n\n- **Verificação de Integridade**: Auditoria completa de todos os arquivos, imagens e links.\n- **Código Autodocumentado**: Todos os arquivos CSS e JS comentados linha a linha."
+    },
+    {
+      "version": "1.9.1",
+      "date": "2025-12-31",
+      "notes": "### Correção de Caminhos de Fontes v1.9.1\n\n- **Correção de 404**: Ajustados os caminhos dos arquivos `.woff2` nos arquivos CSS das fontes."
+    },
+    {
+      "version": "1.1.1",
+      "date": "2025-12-29",
+      "notes": "### Liquid Edition\n\n- **Design**: Efeito Glassmorphism e fundo cinza escuro premium."
+    }
+  ],
+  "notes": "### Novidades da v2.2.0 (Autossuficiência Cromática)\n\n- **Cores Próprias**: O projeto agora usa apenas cores da sua própria base de dados.\n- **Design Inteligente**: Estilos CSS agora são alimentados dinamicamente pelo banco de dados local.\n- **Independência Total**: Zero dependência de cores externas ou fixas no código."
+}
