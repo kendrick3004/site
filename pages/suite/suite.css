@@ -1,9 +1,11 @@
 /*
-    ARQUIVO: suite.css
-    DESCRIÇÃO: Estilos visuais restaurados com fidelidade absoluta e efeitos 3D sutis.
-    VERSÃO: 1.8.2
-*/
+ * ARQUIVO: suite.css
+ * DESCRIÇÃO: Estilos visuais restaurados com fidelidade absoluta e efeitos 3D sutis.
+ * FUNCIONALIDADES: Gerencia o layout da página principal, avatar, links e widget do santo do dia.
+ * VERSÃO: 2.0.0 - Auditoria Total e Comentários Detalhados
+ */
 
+/* Configurações básicas de altura e largura para garantir que o conteúdo ocupe a tela toda */
 html, body {
     height: 100%;
     width: 100%;
@@ -11,218 +13,268 @@ html, body {
     padding: 0;
 }
 
+/* Estilização do corpo da página */
 body {
-    background-color: #ffffff;
-    color: #000000;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centralização total para desktop */
-    min-height: 100vh;
+    background-color: #ffffff;                  /* Cor de fundo padrão (Light Mode) */
+    color: #000000;                             /* Cor de texto padrão (Preto) */
+    font-family: var(--font-inter), sans-serif; /* Fonte principal do sistema */
+    display: flex;                              /* Flexbox para centralização */
+    justify-content: center;                    /* Centraliza horizontalmente */
+    align-items: center;                        /* Centraliza verticalmente (Desktop) */
+    min-height: 100vh;                          /* Altura mínima de 100% da viewport */
 }
 
+/* Container principal que agrupa todos os elementos da página */
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 600px; /* Limite para manter o design elegante */
+    flex-direction: column;                     /* Organiza elementos em coluna vertical */
+    align-items: center;                        /* Centraliza elementos horizontalmente */
+    width: 100%;                                /* Ocupa toda a largura disponível */
+    max-width: 600px;                           /* Limita a largura para manter a elegância */
 }
 
 /* 
    SEÇÃO DO AVATAR 
+   Agrupa a imagem de perfil e o nome do usuário.
 */
 .avatar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 50px;                           /* Espaço superior generoso */
+    margin-bottom: 20px;                        /* Espaço inferior */
 }
 
+/* Estilização da imagem do avatar */
 .avatar-img img {
-    width: 112px;
-    height: 140px;
-    border-radius: 25px;
-    border: 1.5px solid #00000080;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Sombra 3D sutil */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 112px;                               /* Largura fixa */
+    height: 140px;                              /* Altura fixa (proporção 4:5) */
+    border-radius: 25px;                        /* Bordas arredondadas modernas */
+    border: 1.5px solid #00000080;              /* Borda preta translúcida */
+    object-fit: cover;                          /* Garante que a imagem preencha o espaço sem distorcer */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);    /* Sombra 3D sutil para profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para hover */
 }
 
+/* Efeito ao passar o mouse sobre a imagem do avatar */
 .avatar-img img:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    transform: translateY(-5px) scale(1.02);    /* Eleva e aumenta levemente a imagem */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);    /* Intensifica a sombra */
 }
 
+/* Estilização do nome abaixo do avatar (estilo pílula) */
 .avatar-name.link-item {
-    margin-top: 12px;
-    padding: 6px 20px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #fff;
-    background: #0000001a;
-    border-radius: 8px;
-    border: 1px solid #00000080;
-    backdrop-filter: blur(8px);
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: var(--font-righteous), cursive; /* Fonte display moderna */
+    margin-top: 12px;                           /* Espaço acima do nome */
+    padding: 6px 20px;                          /* Espaçamento interno horizontal e vertical */
+    font-size: 15px;                            /* Tamanho da fonte ajustado */
+    font-weight: 400;                           /* Peso normal para Righteous */
+    letter-spacing: 1px;                        /* Espaçamento entre letras */
+    color: #fff;                                /* Texto sempre branco neste elemento */
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); /* Fundo gradiente sutil */
+    border-radius: 12px;                        /* Bordas arredondadas */
+    border: 1px solid rgba(255,255,255,0.2);    /* Borda translúcida */
+    backdrop-filter: blur(10px);                /* Efeito Glassmorphism */
+    text-align: center;                         /* Centraliza o texto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);     /* Sombra para destaque */
+    transition: all 0.3s ease;                  /* Transição suave */
+}
+
+/* Efeito hover no nome do avatar */
+.avatar-name.link-item:hover {
+    transform: scale(1.05);                     /* Aumenta levemente o tamanho */
+    background: rgba(255,255,255,0.2);          /* Fundo fica mais opaco */
+    border-color: rgba(255,255,255,0.4);        /* Borda fica mais visível */
 }
 
 /* 
-   SWITCH 
+   SWITCH DE TEMA (DARK/LIGHT)
+   Componente personalizado para alternar entre os modos.
 */
 .switch {
-    width: 64px;
-    height: 32px;
-    position: relative;
-    margin: 10px 0;
-    cursor: pointer;
+    width: 64px;                                /* Largura total do switch */
+    height: 32px;                               /* Altura total do switch */
+    position: relative;                         /* Necessário para posicionamento absoluto interno */
+    margin: 10px 0;                             /* Margens verticais */
+    cursor: pointer;                            /* Cursor de mão */
     display: flex;
     align-items: center;
 }
 
+/* Fundo do trilho do switch */
 .switch-bg {
     width: 64px;
     height: 24px;
-    background: #0000001a;
-    border-radius: 999px;
-    border: 1px solid #00000080;
-    backdrop-filter: blur(8px);
+    background: #0000001a;                      /* Fundo escuro translúcido */
+    border-radius: 999px;                       /* Formato de pílula perfeito */
+    border: 1px solid #00000080;                /* Borda preta translúcida */
+    backdrop-filter: blur(8px);                 /* Desfoque no trilho */
     position: absolute;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Sombra interna para profundidade */
 }
 
+/* O botão deslizante do switch */
 .switch-toggle {
     width: 32px;
     height: 32px;
-    background: #000000;
-    border-radius: 50%;
+    background: #000000;                        /* Cor do botão (Preto no Light Mode) */
+    border-radius: 50%;                         /* Círculo perfeito */
     position: absolute;
-    left: -5px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    left: -5px;                                 /* Posição inicial (Esquerda) */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Movimento suave com curva de aceleração */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Efeito 3D no botão */
+    z-index: 2;                                 /* Garante que o botão fique sobre o trilho */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);      /* Sombra 3D no botão */
 }
 
+/* Classe aplicada via JS para mover o switch para a direita */
 .switch-toggle-right {
-    transform: translateX(45px);
+    transform: translateX(45px);                /* Move o botão para a posição de ativado */
 }
 
+/* Ícones dentro do switch */
 .switch-icon {
     font-size: 16px;
 }
 
-.icon-sun, .icon-moon { display: none; }
-body:not(.dark-mode) .icon-sun { display: block; }
-body.dark-mode .icon-moon { display: block; }
+/* Lógica de exibição de ícones baseada na classe do body */
+.icon-sun, .icon-moon { display: none; }        /* Esconde ambos por padrão */
+body:not(.dark-mode) .icon-sun { display: block; } /* Mostra sol se NÃO for dark-mode */
+body.dark-mode .icon-moon { display: block; }      /* Mostra lua se FOR dark-mode */
 
 /* 
-   SANTO DO DIA 
+   WIDGET SANTO DO DIA 
+   Exibe informações religiosas diárias.
 */
 .santo-do-dia {
-    width: 85%;
-    max-width: 500px;
-    padding: 16px 20px;
-    margin: 15px 2px;
-    background: #0000001a;
-    border-radius: 12px;
-    border: 1px solid #00000080;
-    backdrop-filter: blur(12px);
-    color: #fff;
+    width: 85%;                                 /* Largura responsiva */
+    max-width: 500px;                           /* Limite de largura */
+    padding: 16px 20px;                         /* Espaçamento interno */
+    margin: 15px 2px;                           /* Margens externas */
+    background: #0000001a;                      /* Fundo translúcido */
+    border-radius: 12px;                        /* Bordas arredondadas */
+    border: 1px solid #00000080;                /* Borda sutil */
+    backdrop-filter: blur(12px);                /* Efeito de vidro */
+    color: #fff;                                /* Texto branco para contraste */
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Profundidade 3D */
-    transition: transform 0.3s ease;
+    gap: 8px;                                   /* Espaço entre linhas de informação */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);    /* Profundidade 3D */
+    transition: transform 0.3s ease;            /* Transição para hover */
 }
 
+/* Efeito hover no widget do santo */
 .santo-do-dia:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    transform: translateY(-3px);                /* Elevação sutil */
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);    /* Sombra mais profunda */
 }
 
+/* Cabeçalho do widget do santo */
 .santo-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;             /* Nome à esquerda, fita à direita */
     align-items: center;
     gap: 10px;
 }
 
+/* Estilização do nome do santo */
 .santo-name {
-    font-size: 16px;
-    font-weight: 600;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 15px;
+    font-weight: 800;                           /* Negrito extra para destaque */
+    text-transform: uppercase;                  /* Maiúsculas */
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);     /* Sombra no texto para legibilidade */
 }
 
+/* Estilização do tipo de celebração */
+.santo-type {
+    font-family: var(--font-dancing), cursive;  /* Fonte cursiva elegante */
+    font-size: 16px;
+    color: #ffd700;                             /* Cor dourada para destaque */
+    margin-top: -5px;                           /* Ajuste de posição vertical */
+}
+
+/* Fita colorida indicando o tempo litúrgico */
 .santo-ribbon {
     width: 12px;
     height: 24px;
     border-radius: 3px;
-    background: #9370DB;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    background: #9370DB;                        /* Cor padrão (Roxo) */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);      /* Sombra na fita */
 }
 
 /* 
-   LINKS 
+   SEÇÃO DE LINKS 
+   Lista de botões de navegação.
 */
 .links {
     width: 90%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 12px;                                  /* Espaço entre os botões */
     margin-bottom: 30px;
 }
 
+/* Estilização individual de cada botão de link */
 .link-item {
+    font-family: var(--font-poppins), sans-serif; /* Fonte moderna e amigável */
     width: 100%;
-    padding: 14px;
-    background: #0000001a;
-    border-radius: 10px;
-    border: 1px solid #00000080;
-    backdrop-filter: blur(8px);
-    color: #fff !important;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    box-sizing: border-box;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: all 0.2s ease;
+    padding: 14px;                              /* Espaçamento interno */
+    background: rgba(255, 255, 255, 0.05);      /* Fundo quase transparente */
+    border-radius: 15px;                        /* Bordas arredondadas estilo pílula */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda translúcida */
+    backdrop-filter: blur(12px);                /* Efeito Glassmorphism */
+    color: #fff !important;                     /* Força a cor branca no texto */
+    text-align: center;                         /* Centraliza o texto */
+    font-size: 14px;
+    font-weight: 600;                           /* Semi-negrito */
+    letter-spacing: 0.5px;
+    text-decoration: none;                      /* Remove sublinhado de links */
+    box-sizing: border-box;                     /* Inclui padding na largura total */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);    /* Sombra para profundidade */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação elástica moderna */
 }
 
+/* Efeito hover nos botões de link */
 .link-item:hover {
-    transform: translateY(-2px);
-    background: #0000002a;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    transform: translateY(-5px) scale(1.02);    /* Eleva e aumenta levemente o botão */
+    background: rgba(255, 255, 255, 0.15);      /* Fundo fica mais claro */
+    border-color: rgba(255, 255, 255, 0.3);     /* Borda fica mais visível */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);    /* Sombra mais intensa */
 }
 
 /* 
-   MODO ESCURO 
+   MODO ESCURO (DARK MODE)
+   Sobrescreve cores para o tema escuro.
 */
 body.dark-mode {
-    background-color: #1a1a1a;
-    color: #ffffff;
+    background-color: #1a1a1a;                  /* Fundo cinza escuro premium */
+    color: #ffffff;                             /* Texto branco */
 }
 
+/* Ajustes de cores para elementos específicos no Modo Escuro */
 body.dark-mode .avatar-img img { border-color: #ffffff80; }
 body.dark-mode .switch-bg { background: #ffffff1a; border-color: #ffffff80; }
-body.dark-mode .switch-toggle { background: #ffffff; }
-body.dark-mode .link-item, body.dark-mode .santo-do-dia { background: #ffffff1a; border-color: #ffffff80; }
+body.dark-mode .switch-toggle { background: #ffffff; } /* Botão do switch fica branco */
+body.dark-mode .link-item, body.dark-mode .santo-do-dia { 
+    background: #ffffff1a;                      /* Fundo mais claro para contraste */
+    border-color: #ffffff80;                    /* Borda branca translúcida */
+}
 
 /* 
    RESPONSIVIDADE MOBILE 
+   Ajustes para telas menores.
 */
 @media (max-width: 600px) {
     body {
-        align-items: flex-start; /* Permite rolagem natural no mobile */
+        align-items: flex-start;                /* Alinha ao topo para permitir rolagem natural */
     }
     
     .avatar {
-        margin-top: 20px;
+        margin-top: 20px;                       /* Reduz margem superior no mobile */
     }
 }

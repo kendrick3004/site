@@ -3,7 +3,7 @@
     DESCRIÇÃO: Página principal do projeto "Suite".
     ESTRUTURA: Contém o avatar, switch de tema, card do Santo do Dia, links e widget de clima.
     COMENTÁRIOS: Este arquivo serve como o esqueleto do site, conectando todos os estilos e scripts.
-    VERSÃO: 1.8.0
+    VERSÃO: 1.8.8
 -->
 <!DOCTYPE html>
 <html lang="pt-br"> <!-- Define o idioma do site como Português do Brasil para acessibilidade e SEO -->
@@ -12,34 +12,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Garante compatibilidade com versões antigas do Internet Explorer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Configura a escala inicial para dispositivos móveis -->
     
-    <!-- METADADOS PROFISSIONAIS E SEO -->
-    <meta name="description" content="Suite - Dashboard pessoal com informações de clima, calendário litúrgico e links úteis. Desenvolvido com foco em precisão e tecnologia.">
-    <meta name="author" content="Kendrick Nicoleti">
-    <meta name="keywords" content="Suite, Dashboard, Clima, Santo do Dia, PWA, Produtividade">
-    <meta name="robots" content="index, follow">
-    
-    <!-- OPEN GRAPH (Redes Sociais) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Suite">
-    <meta property="og:description" content="Dashboard pessoal com informações de clima, calendário litúrgico e links úteis.">
-    <meta property="og:image" content="database/favicon/Favicon.png">
-    <meta property="og:url" content="https://kendricknicoleti.com/">
-    
-    <!-- CONFIGURAÇÕES DE WEB APP -->
-    <meta name="mobile-web-app-capable" content="yes"> <!-- Padrão moderno para Web Apps -->
-    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Compatibilidade com iOS antigo -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Suite">
-    <meta name="format-detection" content="telephone=no">
+    <!-- SISTEMA DE FÁBRICA: Metadados e Configurações Offline -->
+    <script src="src/scripts/main/factory.js"></script>
     
     <title>Suite</title> <!-- Título que aparece na aba do navegador -->
     
     <!-- IMPORTAÇÃO DE FONTES EXTERNAS (Google Fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     
     <!-- IMPORTAÇÃO DE ESTILOS (CSS) -->
-    <link rel="stylesheet" href="src/styles/fonts.css"> <!-- Define as famílias de fontes personalizadas -->
+
     <script src="src/scripts/main/config.js"></script> <!-- Script de configuração global (ex: Favicon dinâmico) -->
     <link rel="stylesheet" href="pages/suite/suite.css"> <!-- Estilo principal da página (layout, cores, temas) -->
     <link rel="stylesheet" href="pages/suite/weather/weather.css"> <!-- Estilo específico do widget de clima -->
@@ -104,23 +86,6 @@
     <script src="pages/suite/weather/weather.js"></script> <!-- Integração com a API de clima (WeatherAPI) -->
     <script src="src/app/update.js"></script> <!-- Sistema de atualização (App) -->
 
-    <!-- REGISTRO DO SERVICE WORKER (Sistema de Cache) -->
-    <script>
-        /**
-         * Registra o Service Worker para habilitar funcionalidades de PWA (Cache/Offline).
-         * O registro é feito de forma segura, verificando se o navegador suporta a tecnologia.
-         */
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then((registration) => {
-                        console.log('[PWA] Service Worker registrado com sucesso:', registration.scope);
-                    })
-                    .catch((error) => {
-                        console.error('[PWA] Falha ao registrar o Service Worker:', error);
-                    });
-            });
-        }
-    </script>
+
 </body>
 </html>

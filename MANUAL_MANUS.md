@@ -4,9 +4,9 @@
 
 ---
 
-## 🚀 1. Controle de Versão (Versionamento)
+## 🚀 1. Controle de Versão (Versionamento Estruturado)
 
-O projeto utiliza um sistema de versionamento semântico rigoroso. **Sempre** incremente a versão após qualquer modificação.
+O projeto utiliza um sistema de versionamento semântico rigoroso e **documentação expandida**. Sempre incremente a versão após qualquer modificação.
 
 - **PATCH (Z)**: Pequenas correções, ajustes de texto ou comentários.
   - *Exemplo: 1.7.5 → 1.7.6*
@@ -16,9 +16,10 @@ O projeto utiliza um sistema de versionamento semântico rigoroso. **Sempre** in
   - *Exemplo: 1.7.5 → 2.0.0*
 
 **Onde atualizar (Obrigatório):**
-1. `src/app/version.json`: Atualize a chave `"version"`, a `"date"` e detalhe **todas** as mudanças em `"notes"`. Este arquivo é o log oficial de alterações para desenvolvedores e usuários.
+1. `src/app/version.json`: Atualize a chave `"version"`, a `"date"` e detalhe **todas** as mudanças em `"notes"`.
 2. `src/app/update.js`: Atualize a constante `CURRENT_VERSION`.
-3. **Cabeçalhos de Arquivos**: Atualize a versão nos comentários iniciais dos arquivos modificados.
+3. `src/app/versions/v[versão].md`: **Crie um novo arquivo Markdown** para cada versão, contendo a documentação detalhada (Resumo, Novidades, Arquivos Modificados, Benefícios e Detalhes Técnicos). Use parágrafos completos e quebras de linha adequadas.
+4. **Cabeçalhos de Arquivos**: Atualize a versão nos comentários iniciais dos arquivos modificados.
 
 ---
 
@@ -28,17 +29,19 @@ O projeto utiliza um sistema de versionamento semântico rigoroso. **Sempre** in
 - **Análise Prévia**: Antes de alterar, leia o arquivo inteiro para entender o contexto e a lógica existente.
 - **Preservação de Estilo**: Mantenha o padrão de indentação, nomenclatura de variáveis e estilo de comentários.
 - **Comentários Explicativos**: Todo código novo ou alterado deve ser 100% comentado em português, focando no "porquê" daquela implementação.
-- **Limpeza**: Não crie arquivos de relatório ou teste (`.md`, `.txt`) na raiz do projeto. Todas as informações de mudanças devem ir para o `version.json`.
+- **Documentação Expandida**: Os textos nos arquivos de versão devem ser estruturados, com parágrafos completos e explicações claras, evitando apenas listas de tópicos quando possível.
+- **Limpeza**: Não crie arquivos de relatório ou teste na raiz do projeto. Todas as informações de mudanças devem ir para o `version.json` e para o arquivo correspondente na pasta `/src/app/versions/`.
 
 ---
 
 ## 📂 3. Estrutura de Pastas e Organização
 
 Mantenha a organização profissional e modular:
-- `/pages/`: **Raiz das páginas HTML**. Todos os arquivos `.html` devem residir aqui (ex: `login.html`, `login-index.html`).
-- `/pages/[modulo]/`: Arquivos de suporte específicos (CSS, JS, JSON) de cada módulo (ex: `/pages/login/login.js`).
-- `/src/app/`: Lógica de sistema, controle de versão e estilos exclusivos do modo "App Instalado".
-- `/src/scripts/`: Scripts globais e configurações (ex: `config.js`).
+- `/pages/`: **Raiz das páginas HTML**. Todos os arquivos `.html` devem residir aqui.
+- `/pages/[modulo]/`: Arquivos de suporte específicos (CSS, JS, JSON) de cada módulo.
+- `/src/app/`: Lógica de sistema, controle de versão e estilos exclusivos.
+- `/src/app/versions/`: **Repositório de documentação de versões** (Arquivos .md individuais).
+- `/src/scripts/`: Scripts globais e configurações.
 - `/src/styles/`: Estilos globais (fontes, temas, modos).
 - `/database/`: Repositório de ativos estáticos (Imagens, JSON de dados, Favicons).
 
@@ -61,7 +64,6 @@ Mantenha a organização profissional e modular:
   - Após 3 tentativas falhas, o usuário deve ser bloqueado por **10 segundos**.
   - O bloqueio **DEVE** persistir mesmo que a página seja recarregada ou o navegador fechado.
   - Use timestamps absolutos (`Date.now()`) salvos no `localStorage` para calcular o tempo restante.
-  - Após o desbloqueio, exiba a mensagem: "Tente novamente a senha correta".
 - **Estado do Usuário**: Use `localStorage` para salvar preferências de tema e estado de autenticação.
 
 ---
@@ -72,10 +74,13 @@ Ao receber uma tarefa, a IA deve seguir este protocolo:
 1. **Leitura do Manual**: Ler o `MANUAL_MANUS.md` antes de qualquer outra coisa.
 2. **Identificação**: Localizar a versão atual e entender o impacto da mudança solicitada.
 3. **Execução**: Realizar a alteração seguindo os padrões de design e código.
-4. **Registro**: Documentar as mudanças diretamente no `src/app/version.json`.
+4. **Registro e Documentação**: 
+   - Atualizar `src/app/version.json`.
+   - Criar o arquivo de documentação detalhada em `src/app/versions/v[versão].md`.
+   - Atualizar o índice no `src/app/versions/README.md`.
 5. **Limpeza**: Remover qualquer arquivo temporário criado durante o processo.
 
 ---
 
 **Desenvolvido com foco em precisão, fé e tecnologia.** 🚀
-**Versão Atual do Manual: 1.8.2**
+**Versão Atual do Manual: 1.9.0**
