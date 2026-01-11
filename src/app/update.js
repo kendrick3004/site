@@ -13,7 +13,7 @@ const UpdateSystem = (function() {
     'use strict';
 
     // Versão atual do código em execução
-    const CURRENT_VERSION = '2.2.0'; 
+    const CURRENT_VERSION = '2.3.0'; 
     
     // URL do arquivo JSON que contém a versão mais recente disponível no servidor
     const VERSION_CHECK_URL = 'src/app/version.json'; 

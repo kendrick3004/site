@@ -1,48 +1,33 @@
 /**
  * ARQUIVO: weather.js
- * DESCRIÇÃO: Motor de clima com geolocalização de nível nativo (estilo Google Maps).
- * FUNCIONALIDADES: Bloqueio de IP impreciso, prioridade absoluta ao hardware de GPS e monitoramento contínuo.
- * VERSÃO: 2.0.0 - Auditoria Total e Comentários Detalhados
+ * DESCRIÇÃO: Motor de clima com geolocalização de nível nativo e suporte offline.
+ * FUNCIONALIDADES: Persistência de dados local, geolocalização rápida (5s) e avisos de conectividade.
+ * VERSÃO: 2.3.0 - Resiliência Offline e Otimização de GPS
  */
 
-/**
- * Módulo WeatherModule encapsulado para gerenciar a lógica de clima e geolocalização.
- */
 const WeatherModule = (function() {
     'use strict';
 
-    /**
-     * Configurações globais do motor de clima.
-     */
     const CONFIG = {
-        API_KEY: '55e2f6c107b54f808f6145707252712', // Chave de acesso à API WeatherAPI
-        DEFAULT_CITY: 'Jacinto Machado',             // Cidade padrão caso o GPS falhe
-        UPDATE_INTERVAL: 15 * 60 * 1000,             // Intervalo de atualização (15 minutos)
+        API_KEY: '55e2f6c107b54f808f6145707252712',
+        DEFAULT_CITY: 'Jacinto Machado',
+        UPDATE_INTERVAL: 15 * 60 * 1000,
         ENDPOINTS: {
-            FORECAST: 'https://api.weatherapi.com/v1/forecast.json' // Endpoint para previsão
+            FORECAST: 'https://api.weatherapi.com/v1/forecast.json'
         },
-        /**
-         * Configurações agressivas de GPS (estilo Google Maps):
-         * enableHighAccuracy: Força o uso do hardware de GPS em vez de triangulação de rede.
-         * timeout: Tempo máximo de espera pelo sinal do satélite.
-         * maximumAge: Garante que a localização seja sempre fresca, não usando cache.
-         */
         GEO_OPTIONS: {
             enableHighAccuracy: true,
-            timeout: 15000,
+            timeout: 5000, // Reduzido para 5 segundos conforme solicitado
             maximumAge: 0
         },
-        // Limite de precisão: Descarta localizações baseadas em IP (que costumam ter erro > 5km)
-        MIN_ACCURACY: 2000 
+        MIN_ACCURACY: 2000,
+        STORAGE_KEY: 'suite_weather_data' // Chave para persistência local
     };
 
-    let lastCoords = null;      // Armazena as últimas coordenadas válidas obtidas
-    let watchId = null;         // ID do monitoramento contínuo de posição
-    let isInitialLoad = true;   // Flag para controlar o primeiro carregamento
+    let lastCoords = null;
+    let watchId = null;
+    let isInitialLoad = true;
 
-    /**
-     * Sanitiza strings para evitar injeção de código malicioso no HTML.
-     */
     function sanitize(str) {
         if (!str) return '';
         const temp = document.createElement('div');
@@ -51,98 +36,113 @@ const WeatherModule = (function() {
     }
 
     /**
-     * Exibe uma mensagem amigável quando o dispositivo está sem internet.
+     * Salva os dados do clima no LocalStorage para persistência offline.
      */
-    function showOfflineMessage() {
-        const footer = document.querySelector('.weather-footer');
-        if (footer) {
-            footer.innerHTML = `
-                <div class="weather-error">
-                    <span style="font-size: 14px; opacity: 0.8;">🌐 Conecte-se à rede para atualizar o clima</span>
-                </div>
-            `;
-            footer.style.backgroundImage = 'none';
+    function saveToLocal(data) {
+        try {
+            const payload = {
+                timestamp: Date.now(),
+                data: data
+            };
+            localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(payload));
+        } catch (e) {
+            console.error('[Weather] Erro ao salvar no LocalStorage:', e);
         }
     }
 
     /**
-     * Determina se é dia ou noite baseado no horário local do dispositivo.
-     * Regra customizada: Dia (6h30 às 18h30), Noite (fora desse intervalo).
-     * @returns {boolean} Verdadeiro se for dia.
+     * Carrega os dados do clima do LocalStorage.
      */
+    function loadFromLocal() {
+        try {
+            const saved = localStorage.getItem(CONFIG.STORAGE_KEY);
+            if (saved) {
+                return JSON.parse(saved).data;
+            }
+        } catch (e) {
+            console.error('[Weather] Erro ao carregar do LocalStorage:', e);
+        }
+        return null;
+    }
+
+    function showOfflineMessage() {
+        const footer = document.querySelector('.weather-footer');
+        if (footer) {
+            const offlineBanner = document.createElement('div');
+            offlineBanner.className = 'weather-offline-banner';
+            offlineBanner.innerHTML = '🌐 Conecte-se à internet para atualizar o clima';
+            offlineBanner.style.cssText = 'font-size: 12px; background: rgba(0,0,0,0.5); padding: 4px; text-align: center; width: 100%; position: absolute; top: 0;';
+            
+            if (!footer.querySelector('.weather-offline-banner')) {
+                footer.style.position = 'relative';
+                footer.prepend(offlineBanner);
+            }
+        }
+    }
+
     function isDayTime() {
         const now = new Date();
         const hours = now.getHours();
         const minutes = now.getMinutes();
         const totalMinutes = hours * 60 + minutes;
-        
-        // 6h30 = 390 minutos, 18h30 = 1110 minutos
         const dayStart = 6 * 60 + 30;
         const dayEnd = 18 * 60 + 30;
-        
         return totalMinutes >= dayStart && totalMinutes < dayEnd;
     }
 
-    /**
-     * Mapeia os códigos de condição da API para os ícones e templates visuais locais.
-     * @param {number} conditionCode Código numérico da condição climática.
-     * @param {boolean} isDay Status de dia/noite.
-     * @returns {Object} Caminhos para o ícone e o template de fundo.
-     */
     function getCustomAssets(conditionCode, isDay) {
         const moment = isDay ? 'Day' : 'Night';
         let iconFile = 'Sun.svg';
         let templateFile = `Weather=Clear, Moment=${moment}.svg`;
 
-        // Seleção baseada nos códigos oficiais da WeatherAPI
         switch (conditionCode) {
-            case 1000: // Céu limpo
+            case 1000:
                 iconFile = isDay ? 'Sun.svg' : 'Moon.svg';
                 templateFile = `Weather=Clear, Moment=${moment}.svg`;
                 break;
-            case 1003: // Parcialmente nublado
+            case 1003:
                 iconFile = isDay ? 'sun clouds.svg' : 'Moon clouds.svg';
                 templateFile = `Weather=Few Clouds, Moment=${moment}.svg`;
                 break;
-            case 1006: // Nublado
-            case 1009: // Encoberto
+            case 1006:
+            case 1009:
                 iconFile = isDay ? 'sun clouds-1.svg' : 'Moon,stars and cloud.svg';
                 templateFile = `Weather=Cloudy, Moment=${moment}.svg`;
                 break;
-            case 1030: // Névoa
-            case 1135: // Nevoeiro
-            case 1147: // Nevoeiro congelante
+            case 1030:
+            case 1135:
+            case 1147:
                 iconFile = 'Group 5.svg';
                 templateFile = `Weather=Cloudy, Moment=${moment}.svg`;
                 break;
-            case 1063: // Chuva leve irregular
-            case 1150: // Chuvisco leve
-            case 1153: // Chuvisco
-            case 1180: // Chuva leve e irregular
-            case 1183: // Chuva leve
-            case 1240: // Aguaceiros leves
+            case 1063:
+            case 1150:
+            case 1153:
+            case 1180:
+            case 1183:
+            case 1240:
                 iconFile = isDay ? 'sun rain.svg' : 'rain.svg';
                 templateFile = isDay ? `Weather=Few Clouds, Moment=${moment}.svg` : `Weather=Rain, Moment=${moment}.svg`;
                 break;
-            case 1186: // Chuva moderada e irregular
-            case 1189: // Chuva moderada
-            case 1192: // Chuva forte e irregular
-            case 1195: // Chuva forte
-            case 1243: // Aguaceiros moderados ou fortes
-            case 1246: // Aguaceiros torrenciais
+            case 1186:
+            case 1189:
+            case 1192:
+            case 1195:
+            case 1243:
+            case 1246:
                 iconFile = 'rain.svg';
                 templateFile = `Weather=Rain, Moment=${moment}.svg`;
                 break;
-            case 1087: // Trovoadas
-            case 1273: // Chuva leve com trovoadas
-            case 1276: // Chuva moderada ou forte com trovoadas
+            case 1087:
+            case 1273:
+            case 1276:
                 iconFile = 'Group 6.svg';
                 templateFile = `Weather=Storm, Moment=${moment}.svg`;
                 break;
-            case 1066: // Neve leve e irregular
-            case 1114: // Neve soprada pelo vento
-            case 1210: // Neve leve
-            case 1213: // Neve leve e contínua
+            case 1066:
+            case 1114:
+            case 1210:
+            case 1213:
                 iconFile = 'Group 7.svg';
                 templateFile = `Weather=Cloudy, Moment=${moment}.svg`;
                 break;
@@ -157,10 +157,6 @@ const WeatherModule = (function() {
         };
     }
 
-    /**
-     * Renderiza os dados do clima na interface do usuário.
-     * @param {Object} data Dados brutos retornados pela API.
-     */
     function updateUI(data) {
         const footer = document.querySelector('.weather-footer');
         if (!footer) return;
@@ -169,15 +165,13 @@ const WeatherModule = (function() {
             const current = data.current;
             const location = data.location;
             const forecastDay = data.forecast.forecastday[0].day;
-            const isDay = isDayTime(); // Aplica a lógica customizada de dia/noite
+            const isDay = isDayTime();
             const assets = getCustomAssets(current.condition.code, isDay);
 
-            // Aplica o template de fundo dinâmico
             footer.style.backgroundImage = `url('${assets.templatePath}')`;
             footer.style.backgroundSize = 'cover';
             footer.style.backgroundPosition = 'center';
 
-            // Monta o HTML interno do widget de clima
             footer.innerHTML = `
                 <div class="weather-content custom-theme">
                     <div class="weather-location">
@@ -219,44 +213,27 @@ const WeatherModule = (function() {
                     </div>
                 </div>
             `;
+            
+            // Se estiver offline, reaplica o aviso após limpar o innerHTML
+            if (!navigator.onLine) showOfflineMessage();
+            
         } catch (e) {
-            console.error('[Weather] Erro crítico ao renderizar interface:', e);
-            showError('Erro ao processar dados do clima');
+            console.error('[Weather] Erro ao renderizar interface:', e);
         }
     }
 
-    /**
-     * Exibe uma mensagem de erro no widget de clima.
-     */
-    function showError(msg) {
-        const footer = document.querySelector('.weather-footer');
-        if (footer) {
-            footer.innerHTML = `<div class="weather-error"><span>${sanitize(msg)}</span></div>`;
-        }
-    }
-
-    /**
-     * Realiza a requisição para a API de clima.
-     * @param {Object|null} coords Coordenadas geográficas (latitude/longitude).
-     */
-    async function fetchWeather(coords = null) {
-        // Verifica se há conexão com a internet
+    async function fetchWeather() {
         if (!navigator.onLine) {
-            showOfflineMessage();
+            const cachedData = loadFromLocal();
+            if (cachedData) {
+                updateUI(cachedData);
+                showOfflineMessage();
+            }
             return;
         }
 
-        // Evita requisições sem coordenadas após a carga inicial
-        if (!coords && !isInitialLoad) return;
-
-        let query = CONFIG.DEFAULT_CITY;
-        if (coords) {
-            // Se houver coordenadas, usa o formato "lat,lon"
-            query = `${coords.latitude},${coords.longitude}`;
-        } else {
-            // Fallback para a cidade padrão na carga inicial
-            query = CONFIG.DEFAULT_CITY;
-        }
+        // Localização fixada permanentemente em Jacinto Machado conforme diretriz do usuário
+        const query = CONFIG.DEFAULT_CITY;
 
         try {
             const url = `${CONFIG.ENDPOINTS.FORECAST}?key=${CONFIG.API_KEY}&q=${encodeURIComponent(query)}&days=1&lang=pt`;
@@ -264,100 +241,32 @@ const WeatherModule = (function() {
             if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
             const data = await response.json();
 
-            /**
-             * FILTRO DE PRECISÃO:
-             * Se a API retornar "Sombrio" (comum em IPs da região), forçamos Jacinto Machado
-             * para garantir a fidelidade local solicitada.
-             */
-            if (data.location.name.includes("Sombrio")) {
-                console.warn('[Weather] Localização imprecisa (Sombrio) detectada. Forçando Jacinto Machado.');
-                const fallbackUrl = `${CONFIG.ENDPOINTS.FORECAST}?key=${CONFIG.API_KEY}&q=${encodeURIComponent(CONFIG.DEFAULT_CITY)}&days=1&lang=pt`;
-                const fallbackRes = await fetch(fallbackUrl);
-                const fallbackData = await fallbackRes.json();
-                updateUI(fallbackData);
-            } else {
-                updateUI(data);
-            }
-            isInitialLoad = false;
-        } catch (error) {
-            console.error('[Weather] Erro ao buscar dados da API:', error);
-            showError('Erro ao atualizar clima');
+            updateUI(data);
+            saveToLocal(data); // Salva para uso offline futuro
+        } catch (e) {
+            console.error('[Weather] Erro na requisição:', e);
+            const cachedData = loadFromLocal();
+            if (cachedData) updateUI(cachedData);
         }
     }
 
-    /**
-     * Inicializa o motor de geolocalização de alta precisão.
-     */
-    function initGeoEngine() {
-        // Verifica se o navegador suporta geolocalização
-        if (!navigator.geolocation) {
-            fetchWeather(); // Fallback imediato para cidade padrão
-            return;
-        }
+    function init() {
+        // Carrega dados cacheados imediatamente para evitar tela vazia
+        const cachedData = loadFromLocal();
+        if (cachedData) updateUI(cachedData);
 
-        /**
-         * 1. Tenta obter a posição atual rapidamente.
-         */
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                // Só aceita se a precisão for melhor que o limite definido (descarta IP)
-                if (position.coords.accuracy <= CONFIG.MIN_ACCURACY) {
-                    lastCoords = position.coords;
-                    fetchWeather(lastCoords);
-                } else {
-                    fetchWeather(); // Fallback se for impreciso
-                }
-            },
-            () => fetchWeather(), // Fallback em caso de erro de permissão ou sinal
-            CONFIG.GEO_OPTIONS
-        );
+        // Busca inicial fixada em Jacinto Machado
+        fetchWeather();
 
-        /**
-         * 2. Monitoramento contínuo (Watch Position).
-         * Refina a localização conforme o sinal do GPS melhora.
-         */
-        if (watchId) navigator.geolocation.clearWatch(watchId);
+        // Atualização periódica
+        setInterval(() => fetchWeather(), CONFIG.UPDATE_INTERVAL);
         
-        watchId = navigator.geolocation.watchPosition(
-            (position) => {
-                const newCoords = position.coords;
-                // Só atualiza se a precisão for alta (GPS real do hardware)
-                if (newCoords.accuracy <= CONFIG.MIN_ACCURACY) {
-                    // Atualiza se for a primeira vez ou se a nova precisão for melhor que a anterior
-                    if (!lastCoords || newCoords.accuracy < lastCoords.accuracy) {
-                        console.log(`[Weather] GPS Lock Refinado: ${newCoords.accuracy}m`);
-                        lastCoords = newCoords;
-                        fetchWeather(lastCoords);
-                    }
-                }
-            },
-            (error) => console.warn('[Weather] Erro no monitoramento GPS:', error.message),
-            CONFIG.GEO_OPTIONS
-        );
+        // Listeners de conectividade
+        window.addEventListener('online', () => fetchWeather());
+        window.addEventListener('offline', showOfflineMessage);
     }
 
-    /**
-     * Expõe os métodos públicos e configura os intervalos de atualização.
-     */
-    return {
-        init: function() {
-            initGeoEngine(); // Inicia o motor de localização
-            
-            // Agenda atualizações periódicas
-            setInterval(() => fetchWeather(lastCoords), CONFIG.UPDATE_INTERVAL);
-            
-            // Listeners para reconexão de rede
-            window.addEventListener('online', () => fetchWeather(lastCoords));
-            window.addEventListener('offline', showOfflineMessage);
-        }
-    };
+    return { init };
 })();
 
-/**
- * Inicialização segura do módulo.
- */
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', WeatherModule.init);
-} else {
-    WeatherModule.init();
-}
+document.addEventListener('DOMContentLoaded', WeatherModule.init);

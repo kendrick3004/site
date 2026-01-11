@@ -116,6 +116,7 @@ cronológica do projeto, consulte os arquivos em ordem crescente de versão.
 
 | Versão | Nome | Data | Tipo | Arquivo |
 |--------|------|------|------|---------|
+| 2.3.0 | Resiliência Offline e Otimização de GPS | 2025-12-31 | MINOR | v2.3.0.md |
 | 2.2.0 | Autossuficiência Cromática Local | 2025-12-31 | MINOR | v2.2.0.md |
 | 2.1.0 | Sistema de Cores Infinitas | 2025-12-31 | MINOR | v2.1.0.md |
 | 2.0.0 | Auditoria Total e Documentação Interna | 2025-12-31 | MAJOR | v2.0.0.md |

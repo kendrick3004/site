@@ -1,23 +1,20 @@
 /**
  * ARQUIVO: sw.js
- * DESCRIÇÃO: Service Worker para o PWA "Suite".
- * FUNCIONALIDADES: Cache de arquivos estáticos para funcionamento offline e gerenciamento de ativos.
- * VERSÃO: 2.0.0 - Auditoria Total e Comentários Detalhados
+ * DESCRIÇÃO: Service Worker otimizado para resiliência offline e recarregamento de página.
+ * FUNCIONALIDADES: Cache agressivo de ativos e suporte a recarregamento sem internet.
+ * VERSÃO: 2.3.0 - Resiliência Offline Aprimorada
  */
 
-/**
- * Nome do cache. Ao atualizar esta versão, o navegador entenderá que deve renovar os arquivos.
- */
-const CACHE_NAME = 'suite-cache-v2.0.0';
+const CACHE_NAME = 'suite-cache-v2.3.0';
 
 /**
- * Lista de arquivos essenciais que serão armazenados localmente no dispositivo do usuário.
- * Isso permite que o aplicativo abra instantaneamente, mesmo sem conexão com a internet.
+ * Lista expandida de ativos para garantir que todas as páginas internas funcionem offline.
  */
 const ASSETS_TO_CACHE = [
     '/',
     'index.html',
     'manifest.json',
+    '404.html',
     'pages/login.html',
     'pages/login-index.html',
     'pages/suite/suite.css',
@@ -31,6 +28,7 @@ const ASSETS_TO_CACHE = [
     'src/app/update.js',
     'src/scripts/main/config.js',
     'src/scripts/main/factory.js',
+    'src/scripts/main/colors.js',
     'database/avatar/avatar.jpg',
     'database/calendario.json',
     'database/templates/dark_mode.jpg',
@@ -40,77 +38,68 @@ const ASSETS_TO_CACHE = [
     'database/favicon/icon-512.png'
 ];
 
-/**
- * EVENTO: INSTALL
- * Ocorre quando o Service Worker é registrado pela primeira vez.
- * Aqui abrimos o cache e salvamos todos os arquivos da lista ASSETS_TO_CACHE.
- */
 self.addEventListener('install', (event) => {
-    console.log('[SW] Instalando Service Worker v2.0.0...');
+    console.log('[SW] Instalando Service Worker v2.3.0...');
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            console.log('[SW] Cache aberto e ativos sendo armazenados localmente');
+            console.log('[SW] Cacheando ativos para suporte offline...');
             return cache.addAll(ASSETS_TO_CACHE);
         }).then(() => {
-            // Força o Service Worker a se tornar ativo imediatamente
             return self.skipWaiting();
         })
     );
 });
 
-/**
- * EVENTO: ACTIVATE
- * Ocorre após a instalação. É o momento ideal para limpar caches de versões antigas
- * e garantir que o aplicativo use apenas os arquivos mais recentes.
- */
 self.addEventListener('activate', (event) => {
-    console.log('[SW] Ativando Service Worker v2.0.0...');
+    console.log('[SW] Ativando Service Worker v2.3.0...');
     event.waitUntil(
         caches.keys().then((cacheNames) => {
             return Promise.all(
                 cacheNames.map((cacheName) => {
-                    // Se o nome do cache encontrado for diferente do atual, ele é deletado
                     if (cacheName !== CACHE_NAME) {
-                        console.log('[SW] Removendo cache antigo e obsoleto:', cacheName);
+                        console.log('[SW] Removendo cache antigo:', cacheName);
                         return caches.delete(cacheName);
                     }
                 })
             );
         }).then(() => {
-            // Permite que o Service Worker controle as páginas abertas imediatamente
             return self.clients.claim();
         })
     );
 });
 
 /**
- * EVENTO: FETCH
- * Intercepta todas as requisições de rede feitas pelo aplicativo.
- * ESTRATÉGIA: Stale-While-Revalidate
- * 1. Tenta servir o arquivo do cache imediatamente (velocidade máxima).
- * 2. Ao mesmo tempo, busca uma versão atualizada na rede.
- * 3. Se a rede retornar um arquivo novo, atualiza o cache para a próxima vez.
+ * Estratégia: Cache First para ativos estáticos, Network First para dados dinâmicos.
+ * Isso garante que o aplicativo carregue instantaneamente ao recarregar, mesmo offline.
  */
 self.addEventListener('fetch', (event) => {
+    // Ignora requisições para a API de clima (elas são tratadas pelo weather.js com LocalStorage)
+    if (event.request.url.includes('api.weatherapi.com')) {
+        return;
+    }
+
     event.respondWith(
         caches.match(event.request).then((cachedResponse) => {
-            // Inicia a busca na rede
-            const fetchPromise = fetch(event.request).then((networkResponse) => {
-                // Se a resposta da rede for válida, atualizamos o cache
+            if (cachedResponse) {
+                // Se estiver no cache, retorna imediatamente (suporte offline ao recarregar)
+                return cachedResponse;
+            }
+
+            return fetch(event.request).then((networkResponse) => {
+                // Se não estiver no cache, busca na rede e salva para a próxima vez
                 if (networkResponse && networkResponse.status === 200) {
-                    const responseToCache = networkResponse.clone(); // Clonamos pois a resposta só pode ser lida uma vez
+                    const responseToCache = networkResponse.clone();
                     caches.open(CACHE_NAME).then((cache) => {
                         cache.put(event.request, responseToCache);
                     });
                 }
                 return networkResponse;
             }).catch(() => {
-                // Silencia erros de rede (o usuário está offline)
-                console.log('[SW] Dispositivo offline, servindo do cache se disponível.');
+                // Se falhar a rede e não tiver no cache, retorna a página inicial ou 404
+                if (event.request.mode === 'navigate') {
+                    return caches.match('index.html');
+                }
             });
-
-            // Retorna a resposta do cache se existir, caso contrário aguarda a rede
-            return cachedResponse || fetchPromise;
         })
     );
 });
