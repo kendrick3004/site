@@ -34,6 +34,29 @@ body {
     background-attachment: fixed;
 }
 
+/* ============================================================
+   CORREÇÃO MOBILE — background-attachment: fixed não funciona
+   em iOS Safari e Chrome Android. Sobrescreve com scroll.
+   ============================================================ */
+@media screen and (max-width: 1024px) {
+    body {
+        background-attachment: scroll !important;
+    }
+}
+
+@media (pointer: coarse) {
+    body {
+        background-attachment: scroll !important;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: scroll !important;
+        min-height: -webkit-fill-available;
+    }
+}
+
 .login-container {
     width: 100%;
     max-width: 340px;

@@ -2,58 +2,102 @@
  * ARQUIVO: modes.css
  * DESCRIÇÃO: Gerencia os planos de fundo e estilos específicos para os modos Claro e Escuro.
  * FUNCIONALIDADES: Define as imagens de fundo dinâmicas e garante a consistência visual do layout.
- * VERSÃO: 2.1.0 - Correção de Background Mobile
+ * VERSÃO: 2.2.0 - Correção Definitiva de Background Mobile (iOS Safari + Chrome Android)
+ *
+ * PROBLEMA CORRIGIDO:
+ * O `background-attachment: fixed` é amplamente ignorado ou mal suportado em navegadores
+ * móveis (iOS Safari, Chrome Android). Isso fazia com que a imagem de fundo não aparecesse
+ * no mobile. A solução é usar `background-attachment: scroll` para mobile via media query,
+ * garantindo que a regra sobrescreva os seletores de maior especificidade.
  */
 
-/**
- * ESTILOS PARA O MODO CLARO (LIGHT MODE)
- * Aplicado quando o body NÃO possui a classe .dark-mode.
- */
-body:not(.dark-mode) {
-    /* Define a imagem de fundo clara (Igreja durante o dia) */
-    background-image: url("../../assets/DEVS/templates/light_mode.jpg");
-    background-size: cover;                     /* Cobre toda a área disponível */
-    background-position: center;                /* Centraliza a imagem */
-    background-repeat: no-repeat;               /* Impede a repetição da imagem */
-    background-attachment: fixed;               /* Mantém o fundo fixo ao rolar a página */
+/* ============================================================
+   CONFIGURAÇÕES GLOBAIS DO CORPO (BODY)
+   Propriedades base que se aplicam a ambos os modos.
+   Definidas ANTES dos seletores de tema para permitir herança.
+   ============================================================ */
+html {
+    height: 100%;
 }
 
-/**
- * ESTILOS PARA O MODO ESCURO (DARK MODE)
- * Aplicado quando o body possui a classe .dark-mode.
- */
-body.dark-mode {
-    /* Define a imagem de fundo escura (Igreja durante a noite) */
-    background-image: url("../../assets/DEVS/templates/dark_mode.jpg");
-    background-size: cover;                     /* Cobre toda a área disponível */
-    background-position: center;                /* Centraliza a imagem */
-    background-repeat: no-repeat;               /* Impede a repetição da imagem */
-    background-attachment: fixed;               /* Mantém o fundo fixo ao rolar a página */
-}
-
-/**
- * CONFIGURAÇÕES GLOBAIS DO CORPO (BODY)
- * Propriedades que se aplicam a ambos os modos.
- */
 body {
-    background-attachment: fixed;               /* Reforça o fundo fixo para evitar saltos visuais */
-    background-size: cover;                     /* Garante cobertura total */
-    min-height: 100vh;                          /* Altura mínima de 100% da tela */
-    overflow-y: auto;                           /* Permite rolagem vertical se necessário */
-    overflow-x: hidden;                         /* Impede a rolagem horizontal indesejada */
+    min-height: 100%;
+    min-height: 100dvh;                           /* Dynamic Viewport Height — mais preciso em mobile */
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;                 /* Desktop: fundo fixo ao rolar */
 }
 
-/**
- * AJUSTES DE RESPONSIVIDADE
- * Garante que o fundo se comporte corretamente em telas menores (tablets e celulares).
- */
-@media (max-width: 1000px) {
-    body {
-        /* Correção para Mobile: background-attachment: fixed é problemático em muitos navegadores móveis */
+/* ============================================================
+   MODO CLARO (LIGHT MODE)
+   Aplicado quando o body NÃO possui a classe .dark-mode.
+   ============================================================ */
+body:not(.dark-mode) {
+    background-image: url("../../assets/DEVS/templates/light_mode.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ============================================================
+   MODO ESCURO (DARK MODE)
+   Aplicado quando o body possui a classe .dark-mode.
+   ============================================================ */
+body.dark-mode {
+    background-image: url("../../assets/DEVS/templates/dark_mode.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ============================================================
+   CORREÇÃO MOBILE — TODOS OS BREAKPOINTS
+   
+   O `background-attachment: fixed` é o culpado no mobile.
+   Em iOS Safari e Chrome Android, ele causa:
+     1. A imagem de fundo não ser renderizada (aparece só a cor de fundo)
+     2. Comportamento de parallax quebrado
+     3. Repaint excessivo causando travamentos
+   
+   SOLUÇÃO: Sobrescrever com `scroll` em mobile usando !important
+   para garantir que vença a especificidade dos seletores acima.
+   ============================================================ */
+
+/* Tablets e celulares (até 1024px) */
+@media screen and (max-width: 1024px) {
+    body,
+    body:not(.dark-mode),
+    body.dark-mode {
         background-attachment: scroll !important;
-        background-size: cover;
-        background-position: center;
-        /* Garante que o fundo cubra todo o conteúdo mesmo com scroll */
-        background-repeat: no-repeat;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+}
+
+/* Detecção de touch device via pointer: coarse */
+@media (pointer: coarse) {
+    body,
+    body:not(.dark-mode),
+    body.dark-mode {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+}
+
+/* iOS Safari específico: usa -webkit-overflow-scrolling */
+@supports (-webkit-touch-callout: none) {
+    body,
+    body:not(.dark-mode),
+    body.dark-mode {
+        background-attachment: scroll !important;
+        /* Garante que o background cubra o safe-area do iPhone */
+        background-size: cover !important;
+        min-height: -webkit-fill-available;
     }
 }

@@ -27,12 +27,25 @@
     <script src="/src/app/update.js"></script>
     
     <style>
-        /* Fundo fixo */
+        /* Fundo fixo no desktop */
         body {
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+        }
+        /* CORREÇÃO MOBILE: background-attachment fixed não funciona em iOS/Android */
+        @media screen and (max-width: 1024px) {
+            body { background-attachment: scroll !important; }
+        }
+        @media (pointer: coarse) {
+            body { background-attachment: scroll !important; }
+        }
+        @supports (-webkit-touch-callout: none) {
+            body {
+                background-attachment: scroll !important;
+                min-height: -webkit-fill-available;
+            }
         }
         /* Garantir que o botão seja clicável e visível */
         #firebaseLoginBtn {
