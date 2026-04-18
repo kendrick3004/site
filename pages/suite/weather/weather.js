@@ -2,14 +2,14 @@
  * ARQUIVO: weather.js
  * DESCRIÇÃO: Motor de clima com geolocalização de nível nativo e suporte offline.
  * FUNCIONALIDADES: Persistência de dados local, geolocalização rápida (5s) e avisos de conectividade.
- * VERSÃO: 2.3.0 - Resiliência Offline e Otimização de GPS
+ * VERSÃO: 2.5.0 - Layout de Informações Corrigido (Mín, Hum, Chuva mm, Prob %)
  */
 
 const WeatherModule = (function() {
     'use strict';
 
     const CONFIG = {
-        API_KEY: '55e2f6c107b54f808f6145707252712',
+        API_KEY: ENV.get('WEATHER_API_KEY'), // Carregado de forma segura via env-loader.js
         DEFAULT_CITY: 'Jacinto Machado',
         UPDATE_INTERVAL: 15 * 60 * 1000,
         ENDPOINTS: {
@@ -17,11 +17,11 @@ const WeatherModule = (function() {
         },
         GEO_OPTIONS: {
             enableHighAccuracy: true,
-            timeout: 5000, // Reduzido para 5 segundos conforme solicitado
+            timeout: 5000,
             maximumAge: 0
         },
         MIN_ACCURACY: 2000,
-        STORAGE_KEY: 'suite_weather_data' // Chave para persistência local
+        STORAGE_KEY: 'suite_weather_data'
     };
 
     let lastCoords = null;
@@ -35,9 +35,6 @@ const WeatherModule = (function() {
         return temp.innerHTML;
     }
 
-    /**
-     * Salva os dados do clima no LocalStorage para persistência offline.
-     */
     function saveToLocal(data) {
         try {
             const payload = {
@@ -50,9 +47,6 @@ const WeatherModule = (function() {
         }
     }
 
-    /**
-     * Carrega os dados do clima do LocalStorage.
-     */
     function loadFromLocal() {
         try {
             const saved = localStorage.getItem(CONFIG.STORAGE_KEY);
@@ -152,8 +146,8 @@ const WeatherModule = (function() {
         }
 
         return {
-            iconPath: `./database/Weather/icon/${iconFile}`,
-            templatePath: `./database/Weather/templates/${templateFile}`
+            iconPath: `../../../assets/ICON/WEATHER/${iconFile}`,
+            templatePath: `../../../assets/DEVS/TEMPLATES_WEATHER/${templateFile}`
         };
     }
 
@@ -183,38 +177,39 @@ const WeatherModule = (function() {
                         </div>
                         <div class="weather-temp-current">
                             <div class="weather-temp-line">
-                                <span class="weather-temp-value">${Math.round(current.temp_c)}</span>
-                                <span class="weather-temp-unit">°C</span>
+                                <span class="weather-temp-value">${Math.round(current.temp_c)}°</span>
                             </div>
-                            <span class="weather-feels-like">Sensação: ${Math.round(current.feelslike_c)}°C</span>
+                            <div class="weather-feels-like-line">
+                                <span class="weather-feels-like-label">Sensação:</span>
+                                <span class="weather-feels-like-value">${Math.round(current.feelslike_c)}°C</span>
+                            </div>
                         </div>
                     </div>
                     <div class="weather-details">
                         <div class="weather-detail-item">
                             <span class="weather-detail-label">Máx.</span>
-                            <span class="weather-detail-value">${Math.round(forecastDay.maxtemp_c)}°C</span>
+                            <span class="weather-detail-value">${Math.round(forecastDay.maxtemp_c)}°</span>
                         </div>
                         <div class="weather-detail-item">
                             <span class="weather-detail-label">Mín.</span>
-                            <span class="weather-detail-value">${Math.round(forecastDay.mintemp_c)}°C</span>
+                            <span class="weather-detail-value">${Math.round(forecastDay.mintemp_c)}°</span>
                         </div>
                         <div class="weather-detail-item">
                             <span class="weather-detail-label">Humid.</span>
                             <span class="weather-detail-value">${current.humidity}%</span>
                         </div>
                         <div class="weather-detail-item">
-                            <span class="weather-detail-label">Nuvens</span>
-                            <span class="weather-detail-value">${current.cloud}%</span>
-                        </div>
-                        <div class="weather-detail-item">
                             <span class="weather-detail-label">Chuva</span>
                             <span class="weather-detail-value">${current.precip_mm}mm</span>
+                        </div>
+                        <div class="weather-detail-item">
+                            <span class="weather-detail-label">Prob.</span>
+                            <span class="weather-detail-value">${forecastDay.daily_chance_of_rain}%</span>
                         </div>
                     </div>
                 </div>
             `;
             
-            // Se estiver offline, reaplica o aviso após limpar o innerHTML
             if (!navigator.onLine) showOfflineMessage();
             
         } catch (e) {
@@ -232,7 +227,6 @@ const WeatherModule = (function() {
             return;
         }
 
-        // Localização fixada permanentemente em Jacinto Machado conforme diretriz do usuário
         const query = CONFIG.DEFAULT_CITY;
 
         try {
@@ -242,7 +236,7 @@ const WeatherModule = (function() {
             const data = await response.json();
 
             updateUI(data);
-            saveToLocal(data); // Salva para uso offline futuro
+            saveToLocal(data);
         } catch (e) {
             console.error('[Weather] Erro na requisição:', e);
             const cachedData = loadFromLocal();
@@ -251,17 +245,10 @@ const WeatherModule = (function() {
     }
 
     function init() {
-        // Carrega dados cacheados imediatamente para evitar tela vazia
         const cachedData = loadFromLocal();
         if (cachedData) updateUI(cachedData);
-
-        // Busca inicial fixada em Jacinto Machado
         fetchWeather();
-
-        // Atualização periódica
         setInterval(() => fetchWeather(), CONFIG.UPDATE_INTERVAL);
-        
-        // Listeners de conectividade
         window.addEventListener('online', () => fetchWeather());
         window.addEventListener('offline', showOfflineMessage);
     }

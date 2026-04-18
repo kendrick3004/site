@@ -1,105 +1,233 @@
 /**
- * ARQUIVO: sw.js
- * DESCRIÇÃO: Service Worker otimizado para resiliência offline e recarregamento de página.
- * FUNCIONALIDADES: Cache agressivo de ativos e suporte a recarregamento sem internet.
- * VERSÃO: 2.3.0 - Resiliência Offline Aprimorada
+ * ARQUIVO: sw.js (NOVO)
+ * DESCRIÇÃO: Service Worker com limpeza completa de cache e splash customizado
+ * VERSÃO: 4.0.0
+ * FEATURE: Limpeza total de cache antigo, sem guardar dados do PWA anterior
+ * FEATURE: Suporte a splash screen customizado (React) apenas no PWA
+ * FEATURE: Versioning automático com timestamp
  */
 
-const CACHE_NAME = 'suite-cache-v2.3.0';
+// Gera versão única com timestamp para forçar limpeza de cache
+const TIMESTAMP = new Date().getTime();
+const CACHE_NAME = `suite-cache-v4.0.0-${TIMESTAMP}`;
+const CACHE_VERSION_KEY = 'suite_cache_version_4';
 
-/**
- * Lista expandida de ativos para garantir que todas as páginas internas funcionem offline.
- */
 const ASSETS_TO_CACHE = [
     '/',
-    'index.html',
-    'manifest.json',
-    '404.html',
-    'pages/login.html',
-    'pages/login-index.html',
-    'pages/suite/suite.css',
-    'pages/suite/suite.js',
-    'pages/suite/santo-do-dia.js',
-    'pages/suite/weather/weather.css',
-    'pages/suite/weather/weather.js',
-    'src/styles/fonts-manager.css',
-    'src/styles/modes.css',
-    'src/app/update.css',
-    'src/app/update.js',
-    'src/scripts/main/config.js',
-    'src/scripts/main/factory.js',
-    'src/scripts/main/colors.js',
-    'database/avatar/avatar.jpg',
-    'database/calendario.json',
-    'database/templates/dark_mode.jpg',
-    'database/templates/light_mode.jpg',
-    'database/favicon/Favicon.png',
-    'database/favicon/icon-192.png',
-    'database/favicon/icon-512.png'
+    '/index.html',
+    '/index',
+    '/manifest.json',
+    '/404.html',
+    '/callback.html',
+    '/pages/login.html',
+    '/pages/login',
+    '/pages/login/login.css',
+    '/pages/login/login-firebase.js',
+    '/pages/calendar.html',
+    '/pages/calendar',
+    '/pages/calendar/calendar.css',
+    '/pages/calendar/calendar.js',
+    '/pages/suite/suite.css',
+    '/pages/suite/suite.js',
+    '/pages/suite/santo-do-dia.js',
+    '/pages/suite/weather/weather.css',
+    '/pages/suite/weather/weather.js',
+    '/pages/suite/liturgy.js',
+    '/pages/error-pages/error-pages.css',
+    '/src/styles/fonts-manager.css',
+    '/src/styles/modes.css',
+    '/src/app/update.css',
+    '/src/app/update.js',
+    '/src/app/SplashScreen.jsx',
+    '/src/app/SplashScreen.css',
+    '/src/js/main/config.js',
+    '/src/js/main/env-loader.js',
+    '/src/js/main/factory.js',
+    '/src/js/main/colors.js',
+    '/src/js/main/firebase-config.js',
+    '/src/js/main/firebase-sync.js',
+    '/assets/DEVS/avatar/avatar.jpg',
+    '/assets/DEVS/DATA/calendario.json',
+    '/assets/DEVS/templates/dark_mode.jpg',
+    '/assets/DEVS/templates/light_mode.jpg',
+    '/assets/DEVS/favicon/Favicon.png',
+    '/assets/DEVS/favicon/Favicon_R.png',
+    '/assets/DEVS/favicon/icon-192.png',
+    '/assets/DEVS/favicon/icon-512.png'
 ];
 
+/**
+ * INSTALL EVENT
+ * Cacheia os arquivos necessários
+ */
 self.addEventListener('install', (event) => {
-    console.log('[SW] Instalando Service Worker v2.3.0...');
+    console.log('[SW] 🚀 Instalando Service Worker v4.0.0...');
+    console.log('[SW] 📦 Cache name:', CACHE_NAME);
+    
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            console.log('[SW] Cacheando ativos para suporte offline...');
+        // Limpa TODOS os caches antigos primeiro
+        caches.keys().then((cacheNames) => {
+            console.log('[SW] 🧹 Limpando caches antigos...');
+            return Promise.all(
+                cacheNames.map((cacheName) => {
+                    console.log('[SW] ❌ Deletando cache antigo:', cacheName);
+                    return caches.delete(cacheName);
+                })
+            );
+        }).then(() => {
+            // Cria novo cache
+            console.log('[SW] ✅ Criando novo cache:', CACHE_NAME);
+            return caches.open(CACHE_NAME);
+        }).then((cache) => {
+            console.log('[SW] 📥 Adicionando arquivos ao cache...');
             return cache.addAll(ASSETS_TO_CACHE);
         }).then(() => {
+            console.log('[SW] ⏭️ Pulando wait...');
             return self.skipWaiting();
+        }).catch((error) => {
+            console.error('[SW] ❌ Erro durante install:', error);
         })
     );
 });
 
+/**
+ * ACTIVATE EVENT
+ * Limpa caches antigos e reclama clientes
+ */
 self.addEventListener('activate', (event) => {
-    console.log('[SW] Ativando Service Worker v2.3.0...');
+    console.log('[SW] 🔄 Ativando Service Worker v4.0.0...');
+    
     event.waitUntil(
         caches.keys().then((cacheNames) => {
+            console.log('[SW] 🔍 Caches encontrados:', cacheNames);
             return Promise.all(
                 cacheNames.map((cacheName) => {
+                    // Remove qualquer cache que não seja o atual
                     if (cacheName !== CACHE_NAME) {
-                        console.log('[SW] Removendo cache antigo:', cacheName);
+                        console.log('[SW] 🗑️ Removendo cache antigo:', cacheName);
                         return caches.delete(cacheName);
                     }
                 })
             );
         }).then(() => {
+            console.log('[SW] ✅ Todos os caches antigos foram removidos');
+            
+            // Notifica todos os clientes sobre a atualização
+            return self.clients.matchAll().then(clients => {
+                clients.forEach(client => {
+                    console.log('[SW] 📢 Notificando cliente sobre atualização');
+                    client.postMessage({ 
+                        type: 'CACHE_UPDATED',
+                        version: '4.0.0',
+                        timestamp: TIMESTAMP
+                    });
+                });
+            });
+        }).then(() => {
+            console.log('[SW] 👥 Reclamando clientes...');
             return self.clients.claim();
+        }).catch((error) => {
+            console.error('[SW] ❌ Erro durante activate:', error);
         })
     );
 });
 
 /**
- * Estratégia: Cache First para ativos estáticos, Network First para dados dinâmicos.
- * Isso garante que o aplicativo carregue instantaneamente ao recarregar, mesmo offline.
+ * MESSAGE EVENT
+ * Listener para mensagens do cliente
+ */
+self.addEventListener('message', (event) => {
+    console.log('[SW] 💬 Mensagem recebida:', event.data);
+    
+    if (event.data === 'SKIP_WAITING') {
+        console.log('[SW] ⏭️ SKIP_WAITING solicitado');
+        self.skipWaiting();
+    }
+    
+    if (event.data === 'CLEAR_ALL_CACHE') {
+        console.log('[SW] 🧹 Limpeza completa de cache solicitada');
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cacheName) => {
+                    console.log('[SW] ❌ Deletando:', cacheName);
+                    return caches.delete(cacheName);
+                })
+            );
+        }).then(() => {
+            console.log('[SW] ✅ Cache completamente limpo');
+            event.ports[0].postMessage({ success: true });
+        });
+    }
+});
+
+/**
+ * FETCH EVENT
+ * Estratégia: Cache First, Network Fallback
  */
 self.addEventListener('fetch', (event) => {
-    // Ignora requisições para a API de clima (elas são tratadas pelo weather.js com LocalStorage)
-    if (event.request.url.includes('api.weatherapi.com')) {
+    const url = new URL(event.request.url);
+    
+    // ❌ NÃO CACHEAR: Google, APIs externas, OAuth
+    if (url.hostname.includes('accounts.google.com') || 
+        url.hostname.includes('googleapis.com') || 
+        url.hostname.includes('gstatic.com') ||
+        url.pathname.includes('callback.html') ||
+        url.hostname.includes('api.weatherapi.com')) {
+        console.log('[SW] 🌐 Pulando cache para:', url.hostname);
         return;
     }
 
+    // ❌ NÃO CACHEAR: Requisições de outro domínio
+    if (url.origin !== self.location.origin) {
+        console.log('[SW] 🚫 Origem diferente:', url.origin);
+        return;
+    }
+
+    // ✅ CACHEAR: Requisições do mesmo domínio
     event.respondWith(
         caches.match(event.request).then((cachedResponse) => {
+            // Se tem no cache, retorna do cache
             if (cachedResponse) {
-                // Se estiver no cache, retorna imediatamente (suporte offline ao recarregar)
+                console.log('[SW] 💾 Servindo do cache:', url.pathname);
                 return cachedResponse;
             }
 
+            // Se não tem no cache, tenta buscar da rede
             return fetch(event.request).then((networkResponse) => {
-                // Se não estiver no cache, busca na rede e salva para a próxima vez
-                if (networkResponse && networkResponse.status === 200) {
-                    const responseToCache = networkResponse.clone();
-                    caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(event.request, responseToCache);
-                    });
+                // Se for 404 e for navegação, tenta .html fallback
+                if (networkResponse.status === 404 && event.request.mode === 'navigate') {
+                    const cleanPath = url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : url.pathname;
+                    
+                    if (!cleanPath.endsWith('.html')) {
+                        return caches.match(cleanPath + '.html').then(htmlCached => {
+                            if (htmlCached) {
+                                console.log('[SW] 📄 Usando .html fallback do cache:', cleanPath);
+                                return htmlCached;
+                            }
+                            return fetch(cleanPath + '.html').then(htmlNet => {
+                                if (htmlNet.ok) {
+                                    console.log('[SW] 🌐 Usando .html fallback da rede:', cleanPath);
+                                    return htmlNet;
+                                }
+                                return caches.match('/404.html');
+                            }).catch(() => caches.match('/404.html'));
+                        });
+                    }
+                    return caches.match('/404.html');
                 }
+                
+                console.log('[SW] 🌐 Servindo da rede:', url.pathname);
                 return networkResponse;
             }).catch(() => {
-                // Se falhar a rede e não tiver no cache, retorna a página inicial ou 404
+                // Se falhar, tenta cache como fallback
+                console.log('[SW] ⚠️ Erro na rede, tentando cache:', url.pathname);
                 if (event.request.mode === 'navigate') {
-                    return caches.match('index.html');
+                    const cleanPath = url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : url.pathname;
+                    return caches.match(cleanPath + '.html') || caches.match('/404.html') || caches.match('/index.html');
                 }
             });
         })
     );
 });
+
+console.log('[SW] ✅ Service Worker v4.0.0 carregado');

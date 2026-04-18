@@ -85,15 +85,25 @@ const SaintModule = (function() {
 
     /**
      * Calcula a data litúrgica correta seguindo as normas da Igreja.
-     * Regra especial: Aos domingos, após as 15h (Vésperas), a liturgia já pertence ao dia seguinte (Segunda-feira).
+     * Regras especiais (v2.4.0):
+     * - Aos SABADOS, após as 15h (Vésperas), a liturgia já pertence ao DOMINGO seguinte.
+     * - Aos DOMINGOS, após as 15h (Vésperas), a liturgia já pertence à SEGUNDA-FEIRA seguinte.
      * @returns {string} Data formatada como YYYY-MM-DD.
      */
     function getLiturgicalDate() {
         const now = new Date();
+        const dayOfWeek = now.getDay(); // 0=Domingo, 1=Segunda, ..., 6=Sábado
+        const hours = now.getHours();
         
-        // Se for Domingo (0) e passar das 15h, adianta a data em 1 dia
-        if (now.getDay() === 0 && now.getHours() >= 15) {
+        // Se for SABADO (6) e passar das 15h, adianta para DOMINGO
+        if (dayOfWeek === 6 && hours >= 15) {
             now.setDate(now.getDate() + 1);
+            console.log('[SaintModule] Sábado após 15h detectado - avançando para Domingo');
+        }
+        // Se for DOMINGO (0) e passar das 15h, adianta para SEGUNDA-FEIRA
+        else if (dayOfWeek === 0 && hours >= 15) {
+            now.setDate(now.getDate() + 1);
+            console.log('[SaintModule] Domingo após 15h detectado - avançando para Segunda-feira');
         }
         
         const year = now.getFullYear();
@@ -114,7 +124,7 @@ const SaintModule = (function() {
 
         try {
             // Busca o arquivo JSON contendo o calendário anual
-            const response = await fetch('./database/calendario.json');
+            const response = await fetch('/assets/DEVS/DATA/calendario.json');
             if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
             
             const calendar = await response.json();

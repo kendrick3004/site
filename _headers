@@ -1,11 +1,19 @@
 /*
   Cache-Control: public, max-age=0, must-revalidate
   X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
 
 /database/*
   Cache-Control: public, max-age=31536000, immutable
+
+/src/app/update.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/src/app/splash.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/src/app/version.json
+  Cache-Control: public, max-age=0, must-revalidate
 
 /src/*
   Cache-Control: public, max-age=31536000, immutable

@@ -1,77 +1,152 @@
 <!--
-    ARQUIVO: index.html
-    DESCRIÇÃO: Página principal do projeto "Suite".
+    ARQUIVO: index.html (MODIFICADO)
+    DESCRIÇÃO: Página principal do projeto "Suite" com redirecionamento para splash no PWA.
     ESTRUTURA: Contém o avatar, switch de tema, card do Santo do Dia, links e widget de clima.
-    COMENTÁRIOS: Este arquivo serve como o esqueleto do site, conectando todos os estilos e scripts.
-    VERSÃO: 1.8.8
+    VERSÃO: 4.1.0 - Correção de Lógica de Redirecionamento PWA
 -->
 <!DOCTYPE html>
-<html lang="pt-br"> <!-- Define o idioma do site como Português do Brasil para acessibilidade e SEO -->
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 para suportar acentos -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Garante compatibilidade com versões antigas do Internet Explorer -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Configura a escala inicial para dispositivos móveis -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Suite">
+    <meta name="application-name" content="Suite">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/DEVS/favicon/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/DEVS/favicon/icon-192.png">
+    
+    <!-- Script para redirecionar para splash no PWA (Executado IMEDIATAMENTE no head) -->
+    <script>
+        (function() {
+            /**
+             * Detecta se está rodando como PWA instalado (standalone)
+             */
+            function isStandalone() {
+                // Verificação 1: display-mode: browser (navegador web comum) - NEGA PWA
+                if (window.matchMedia && window.matchMedia('(display-mode: browser)').matches) {
+                    return false;
+                }
+
+                // Verificação 2: display-mode: standalone (padrão W3C - Android Chrome) - CONFIRMA PWA
+                if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+                    return true;
+                }
+
+                // Verificação 3: navigator.standalone (iOS Safari) - CONFIRMA PWA
+                if (window.navigator.standalone === true) {
+                    return true;
+                }
+
+                // Verificação 4: referrer de app Android - CONFIRMA PWA
+                if (document.referrer && document.referrer.includes('android-app://')) {
+                    return true;
+                }
+
+                return false;
+            }
+
+            // Verifica se é a primeira carga nesta sessão
+            const hasVisited = sessionStorage.getItem('suite_visited');
+            
+            if (!hasVisited && isStandalone()) {
+                console.log('[PWA] 🎨 PWA Detectado - Redirecionando para splash-pwa.html...');
+                sessionStorage.setItem('suite_visited', 'true');
+                // Usa replace para não deixar o index.html vazio no histórico
+                window.location.replace('splash-pwa.html');
+            } else {
+                sessionStorage.setItem('suite_visited', 'true');
+                console.log('[PWA] 🌐 Modo normal ou volta ao app - Mantendo index.html');
+            }
+        })();
+    </script>
+
     <!-- SISTEMA DE FÁBRICA: Metadados e Configurações Offline -->
-    <script src="src/scripts/main/factory.js"></script>
+    <script src="src/js/main/env-loader.js"></script>
+    <script src="src/js/main/factory.js"></script>
     
-    <title>Suite</title> <!-- Título que aparece na aba do navegador -->
+    <title>Suite</title>
     
-    <!-- IMPORTAÇÃO DE FONTES EXTERNAS (Google Fonts) -->
-
-    
-    <!-- IMPORTAÇÃO DE ESTILOS (CSS) -->
-
-    <script src="src/scripts/main/config.js"></script> <!-- Script de configuração global (ex: Favicon dinâmico) -->
-    <link rel="stylesheet" href="pages/suite/suite.css"> <!-- Estilo principal da página (layout, cores, temas) -->
-    <link rel="stylesheet" href="pages/suite/weather/weather.css"> <!-- Estilo específico do widget de clima -->
-    <link rel="stylesheet" href="src/app/update.css"> <!-- Estilo do sistema de atualização (App) -->
+    <!-- Estilos da página -->
+    <link rel="stylesheet" href="src/styles/modes.css">
+    <link rel="stylesheet" href="pages/suite/suite.css">
+    <link rel="stylesheet" href="pages/suite/weather/weather.css">
+    <link rel="stylesheet" href="src/app/update.css">
+    <script src="src/app/update.js"></script>
 </head>
 <body>
-    <!-- Contêiner principal que centraliza e organiza todo o conteúdo da página -->
+
     <div class="container">
         
-        <!-- SEÇÃO DO AVATAR: Exibe a foto de perfil e o nome do usuário -->
+        <!-- SEÇÃO DO AVATAR -->
         <div class="avatar">
             <div class="avatar-img">
-                <!-- Imagem do perfil carregada da pasta database -->
-                <img src="database/avatar/avatar.jpg" alt="Avatar" referrerpolicy="no-referrer">
+                <img src="assets/DEVS/avatar/avatar.jpg" alt="Avatar" referrerpolicy="no-referrer">
             </div>
-            <!-- Nome de usuário ou identificador -->
             <div class="avatar-name link-item">@kendricknicoleti</div>
         </div>
 
-        <!-- SEÇÃO DO SWITCH: Botão deslizante para alternar entre Modo Claro e Modo Escuro -->
+        <!-- SEÇÃO DO SWITCH DE TEMA -->
         <div class="switch">
-            <div class="switch-bg"></div> <!-- Fundo do trilho do botão -->
-            <div class="switch-toggle"> <!-- O círculo que desliza para os lados -->
+            <div class="switch-bg"></div>
+            <div class="switch-toggle">
                 <div class="switch-icon">
-                    <span class="icon-sun">☀️</span> <!-- Ícone visível no modo claro -->
-                    <span class="icon-moon">🌙</span> <!-- Ícone visível no modo escuro -->
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
                 </div>
             </div>
         </div>
 
-        <!-- SEÇÃO SANTO DO DIA: Card dinâmico que mostra informações litúrgicas -->
+        <!-- SEÇÃO SANTO DO DIA -->
         <div class="santo-do-dia">
             <div class="santo-header">
-                <span class="santo-name">Carregando...</span> <!-- Nome do santo (preenchido via JS) -->
-                <span class="santo-ribbon"></span> <!-- Faixa colorida que indica a cor litúrgica do dia -->
+                <span class="santo-name">Carregando...</span>
+                <span class="santo-ribbon"></span>
             </div>
-            <div class="santo-type">--</div> <!-- Tipo da celebração (ex: Memória, Festa, Solenidade) -->
-            <div class="santo-description">Aguarde...</div> <!-- Descrição ou biografia breve do santo -->
+            <div class="santo-type">--</div>
+            <div class="santo-description">Aguarde...</div>
         </div>
 
-        <!-- SEÇÃO DE LINKS: Lista de botões para navegação externa ou interna -->
+        <!-- SEÇÃO DE LINKS -->
         <div class="links">
             <div class="link-item">Meu Currículo</div>
             <div class="link-item">Arquivos para Missas</div>
-            <div class="link-item">Conheça o Explorer</div>
+            
+            <!-- Menu da Liturgia das Horas -->
+            <div class="liturgy-card">
+                <div class="liturgy-menu">
+                    <div class="liturgy-title">
+                        <span>Liturgia das Horas</span>
+                        <a href="/pages/calendar" class="calendar-link-small">Calendário</a>
+                    </div>
+                    <div class="liturgy-prayers">
+                        <button class="prayer-item" data-prayer="laudes">
+                            <span class="prayer-name">Laudes</span>
+                        </button>
+                        <button class="prayer-item" data-prayer="hora-media">
+                            <span class="prayer-name">Hora Média</span>
+                        </button>
+                        <button class="prayer-item" data-prayer="vesperas">
+                            <span class="prayer-name">Vésperas</span>
+                        </button>
+                        <button class="prayer-item" data-prayer="completas">
+                            <span class="prayer-name">Completas</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- SEÇÃO DE CLIMA: Widget no rodapé que exibe informações meteorológicas -->
+        <!-- SECAO DE CLIMA -->
         <div class="weather-footer">
-            <!-- Estado inicial de carregamento -->
             <div class="weather-loading">
                 <span>Carregando informações de clima...</span>
             </div>
@@ -79,13 +154,28 @@
 
     </div>
     
-    <!-- IMPORTAÇÃO DE SCRIPTS (JavaScript) -->
-    <!-- Os scripts são carregados no final para não travar a renderização visual da página -->
-    <script src="pages/suite/suite.js"></script> <!-- Gerencia temas (Dark/Light) e interações básicas -->
-    <script src="pages/suite/santo-do-dia.js"></script> <!-- Busca e exibe os dados do calendário litúrgico -->
-    <script src="pages/suite/weather/weather.js"></script> <!-- Integração com a API de clima (WeatherAPI) -->
-    <script src="src/app/update.js"></script> <!-- Sistema de atualização (App) -->
+    <!-- Proteção contra Ataques de Negação de Serviço -->
+    <script src="src/js/main/rate-limiter.js"></script>
+    
+    <!-- Firebase Core e Configuração -->
+    <script src="src/js/main/firebase-config.js"></script>
+    <script src="src/js/main/firebase-sync.js"></script>
+    
+    <!-- Scripts da Aplicação -->
+    <script src="pages/suite/suite.js"></script>
+    <script src="pages/suite/santo-do-dia.js"></script>
+    <script src="pages/suite/weather/weather.js"></script>
+    <script src="pages/suite/liturgy.js"></script>
+    
+    <script>
+        // Atalho de teclado para acessar admin: Ctrl+Shift+A
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                window.location.href = '/pages/login';
+            }
+        });
 
-
+        // O registro do Service Worker agora é centralizado em factory.js
+    </script>
 </body>
 </html>

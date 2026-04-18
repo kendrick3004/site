@@ -10,10 +10,17 @@ const SuiteModule = (function() {
 
     // Chave para persistência de estado na sessão atual
     const SESSION_KEY = 'suite_session_state';
+    const THEME_KEY = 'suite_theme'; // Persistência entre páginas
     
+    /**
+     * Estado inicial da aplicação.
+     * isDarkMode: Inicia em true (Dark Mode é o padrão a partir da v2.4.0)
+     * darkModeToggleCount: Contador para Easter Egg (desativado)
+     * isLoginRevealed: Controla se o botão de login foi revelado
+     */
     let state = {
         darkModeToggleCount: 0,
-        isDarkMode: true,
+        isDarkMode: true,  // Dark Mode é o padrão agora
         isLoginRevealed: false
     };
 
@@ -45,6 +52,32 @@ const SuiteModule = (function() {
         return false;
     }
 
+    /**
+     * Carrega o tema salvo em localStorage para sincronizar entre páginas.
+     * Se não houver tema salvo, define o Dark Mode como padrão (v2.4.0).
+     */
+    function loadThemeFromStorage() {
+        try {
+            const savedTheme = localStorage.getItem(THEME_KEY);
+            if (savedTheme) {
+                state.isDarkMode = savedTheme === 'dark';
+            } else {
+                // Se não houver tema salvo, o padrão é Dark Mode
+                state.isDarkMode = true;
+                localStorage.setItem(THEME_KEY, 'dark');
+            }
+            return true;
+        } catch (e) {
+            console.error('[Suite] Erro ao carregar tema do localStorage:', e);
+        }
+        return false;
+    }
+
+    /**
+     * Inicializa o sistema de alternância de temas (Dark/Light).
+     * Carrega o tema salvo do localStorage e aplica com transição suave.
+     * Adiciona delay na mudança de tema para efeito visual melhorado.
+     */
     function initThemeSwitch() {
         const switchBtn = document.querySelector('.switch');
         const toggle = document.querySelector('.switch-toggle');
@@ -52,7 +85,10 @@ const SuiteModule = (function() {
 
         if (!switchBtn || !toggle) return;
 
-        // Aplica o estado carregado ou o padrão
+        // Carrega tema do localStorage (sincroniza entre páginas)
+        loadThemeFromStorage();
+
+        // Aplica o estado carregado ou o padrão (Dark Mode)
         if (state.isDarkMode) {
             body.classList.add('dark-mode');
             toggle.classList.add('switch-toggle-right');
@@ -67,23 +103,27 @@ const SuiteModule = (function() {
         }
 
         switchBtn.addEventListener('click', () => {
+            // Mudança de tema instantânea (sem delay)
             state.isDarkMode = body.classList.toggle('dark-mode');
             toggle.classList.toggle('switch-toggle-right');
             
             if (state.isDarkMode) {
                 state.darkModeToggleCount++;
-                checkEasterEgg();
+               checkEasterEgg();
             }
             
             saveState();
+            // Salvar tema em localStorage para sincronizar entre páginas
+            localStorage.setItem(THEME_KEY, state.isDarkMode ? 'dark' : 'light');
             console.log(`[Suite] Tema alterado para: ${state.isDarkMode ? 'Escuro' : 'Claro'}`);
         });
     }
 
     function checkEasterEgg() {
-        if (state.darkModeToggleCount >= 2 && !state.isLoginRevealed) {
-            revealLoginButton();
-        }
+        // Easter Egg desativado temporariamente
+        // if (state.darkModeToggleCount >= 2 && !state.isLoginRevealed) {
+        //     revealLoginButton();
+        // }
     }
 
     /**
@@ -92,23 +132,23 @@ const SuiteModule = (function() {
     function revealLoginButton(isRestoring = false) {
         const linksContainer = document.querySelector('.links');
         
-        if (linksContainer && !document.querySelector('.link-item.login')) {
-            const loginButton = document.createElement('div');
-            loginButton.className = 'link-item login';
-            loginButton.textContent = 'Login';
-            
-            loginButton.addEventListener('click', () => {
-                window.location.href = 'pages/';
-            });
-            
-            linksContainer.appendChild(loginButton);
-            state.isLoginRevealed = true;
-            
-            if (!isRestoring) {
-                saveState();
-                console.log('[Suite] Easter Egg ativado: Botão de Login revelado!');
-            }
-        }
+    //    if (linksContainer && !document.querySelector('.link-item.login')) {
+    //        const loginButton = document.createElement('div');
+    //        loginButton.className = 'link-item login';
+    //        loginButton.textContent = 'Login';
+    //        
+    //        loginButton.addEventListener('click', () => {
+    //            window.location.href = 'pages';
+    //        });
+    //        
+    //        linksContainer.appendChild(loginButton);
+    //        state.isLoginRevealed = true;
+    //        
+    //        if (!isRestoring) {
+    //            saveState();
+    //            console.log('[Suite] Easter Egg ativado: Botão de Login revelado!');
+    //        }
+    //    }
     }
 
     return {

@@ -1,87 +1,173 @@
 /**
  * ARQUIVO: update.js
  * LOCAL: /src/app/
- * DESCRIÇÃO: Sistema de notificação de melhorias exclusivo para o App instalado (PWA).
- * FUNCIONALIDADES: Verifica novas versões, compara com a atual e exibe um modal informativo.
- * VERSÃO: 2.0.0 - Auditoria Total e Comentários Detalhados
+ * DESCRIÇÃO: Sistema de atualização automática para o PWA com limpeza seletiva de dados.
+ * FUNCIONALIDADES: Detecta novas versões, recarrega automaticamente e limpa dados de interface sem deslogar.
+ * VERSÃO: 3.2.0
  */
 
-/**
- * Módulo UpdateSystem encapsulado para gerenciar notificações de atualização.
- */
 const UpdateSystem = (function() {
     'use strict';
 
     // Versão atual do código em execução
-    const CURRENT_VERSION = '2.3.0'; 
-    
-    // URL do arquivo JSON que contém a versão mais recente disponível no servidor
-    const VERSION_CHECK_URL = 'src/app/version.json'; 
-    
-    // Chave do localStorage para rastrear qual foi a última versão que o usuário visualizou
+    const CURRENT_VERSION = '3.3.0'; 
+    const VERSION_CHECK_URL = '/src/app/version.json'; 
     const STORAGE_KEY = 'suite_last_seen_version';
 
-    /**
-     * Verifica se o site está sendo executado como um aplicativo instalado (PWA).
-     * @returns {boolean} Verdadeiro se estiver em modo standalone.
-     */
+    // Dados que DEVEM ser preservados em qualquer atualização
+    const PRESERVE_KEYS = [
+        'auth_user',              // Dados do usuário autenticado
+        'auth_timestamp',         // Timestamp da autenticação
+        'firebase_token',         // Token Firebase (se existir)
+        'suite_last_seen_version' // Versão vista pelo usuário
+    ];
+
     function isStandalone() {
         return (window.matchMedia('(display-mode: standalone)').matches) || 
                (window.navigator.standalone) || 
                document.referrer.includes('android-app://');
     }
 
-    /**
-     * Inicializa o sistema de verificação de atualizações.
-     * Só executa se o app estiver instalado para evitar popups desnecessários no navegador comum.
-     */
     function init() {
-        if (!isStandalone()) return;
+        // Verifica Service Worker para atualizações de assets
+        setupServiceWorkerUpdate();
         
-        // Aguarda 1 segundo após o carregamento para não interferir na performance inicial
-        setTimeout(checkVersion, 1000);
+        // Verifica version.json para atualizações de conteúdo/lógica
+        if (isStandalone()) {
+            setTimeout(checkVersion, 2000);
+        }
     }
 
     /**
-     * Busca o arquivo de versão no servidor e decide se deve exibir o modal de novidades.
+     * Monitora o Service Worker para detectar quando uma nova versão foi instalada.
+     */
+    function setupServiceWorkerUpdate() {
+        if (!('serviceWorker' in navigator)) return;
+
+        navigator.serviceWorker.ready.then(registration => {
+            // Verifica se já existe um SW esperando (waiting)
+            if (registration.waiting) {
+                updateReady(registration.waiting);
+            }
+
+            // Ouve por novos SWs que chegam ao estado 'waiting'
+            registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing;
+                newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed') {
+                        if (navigator.serviceWorker.controller) {
+                            updateReady(newWorker);
+                        }
+                    }
+                });
+            });
+        });
+
+        // Recarrega a página quando o novo SW assumir o controle
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (refreshing) return;
+            refreshing = true;
+            
+            // Limpa dados de interface antes de recarregar
+            clearInterfaceData();
+            
+            // Aguarda um pouco para garantir que a limpeza foi concluída
+            setTimeout(() => {
+                window.location.reload();
+            }, 100);
+        });
+
+        // Ouve mensagens do Service Worker
+        navigator.serviceWorker.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'CACHE_UPDATED') {
+                console.log('[App] Cache atualizado! Preparando para recarregar...');
+            }
+        });
+    }
+
+    /**
+     * Chamado quando uma atualização do Service Worker está pronta.
+     */
+    function updateReady(worker) {
+        console.log('[App] Nova versão detectada! Atualizando...');
+        // Envia mensagem para o SW fazer skipWaiting
+        worker.postMessage('SKIP_WAITING');
+    }
+
+    /**
+     * Limpa dados de interface e estado, preservando a sessão de login.
+     */
+    function clearInterfaceData() {
+        console.log('[App] Limpando dados de interface...');
+        
+        // Preserva os dados de autenticação
+        const preservedData = {};
+        PRESERVE_KEYS.forEach(key => {
+            const value = localStorage.getItem(key);
+            if (value) {
+                preservedData[key] = value;
+            }
+        });
+
+        // Limpa TODO o localStorage
+        localStorage.clear();
+
+        // Restaura apenas os dados preservados
+        Object.entries(preservedData).forEach(([key, value]) => {
+            localStorage.setItem(key, value);
+        });
+
+        // Limpa IndexedDB (se usado para cache de dados)
+        if (window.indexedDB) {
+            try {
+                const dbs = ['suite_db', 'firebaseLocalStorageDb'];
+                dbs.forEach(dbName => {
+                    const req = window.indexedDB.deleteDatabase(dbName);
+                    req.onsuccess = () => console.log(`[App] ${dbName} limpo`);
+                    req.onerror = () => console.warn(`[App] Erro ao limpar ${dbName}`);
+                });
+            } catch (e) {
+                console.warn('[App] Erro ao limpar IndexedDB:', e);
+            }
+        }
+
+        // Limpa sessionStorage completamente (dados temporários)
+        sessionStorage.clear();
+
+        console.log('[App] Dados de interface limpos. Login preservado.');
+    }
+
+    /**
+     * Busca o arquivo de versão no servidor.
      */
     async function checkVersion() {
         try {
-            // Adiciona um timestamp (t=Date.now()) para evitar que o navegador use uma versão em cache do JSON
             const response = await fetch(`${VERSION_CHECK_URL}?t=${Date.now()}`);
             if (!response.ok) return;
 
             const data = await response.json();
-            const lastSeenVersion = localStorage.getItem(STORAGE_KEY);
 
-            /**
-             * Lógica de exibição:
-             * 1. A versão no servidor (data.version) deve ser maior que a versão atual (CURRENT_VERSION).
-             * 2. A versão no servidor deve ser maior que a última versão que o usuário "viu" (lastSeenVersion).
-             */
-            if (isNewerVersion(data.version, CURRENT_VERSION) && 
-                isNewerVersion(data.version, lastSeenVersion || '0.0.0')) {
-                showUpdateModal(data);
+            // Se houver uma versão nova no JSON, força a atualização do Service Worker
+            if (isNewerVersion(data.version, CURRENT_VERSION)) {
+                if ('serviceWorker' in navigator) {
+                    const reg = await navigator.serviceWorker.getRegistration();
+                    if (reg) {
+                        reg.update(); // Força o navegador a checar o sw.js no servidor
+                    }
+                }
+                // O modal de novidades foi removido a pedido do usuário para uma atualização 100% silenciosa.
+                localStorage.setItem(STORAGE_KEY, data.version);
             }
         } catch (error) {
             console.error('[App] Erro na verificação de atualizações:', error);
         }
     }
 
-    /**
-     * Compara duas strings de versão (ex: '1.8.9' vs '1.9.0').
-     * @param {string} newVer Versão candidata a ser mais nova.
-     * @param {string} currentVer Versão de referência.
-     * @returns {boolean} Verdadeiro se newVer for maior que currentVer.
-     */
     function isNewerVersion(newVer, currentVer) {
         if (!newVer) return false;
-        
-        // Divide a string por pontos e converte cada parte em número
         const v1 = newVer.split('.').map(Number);
         const v2 = currentVer.split('.').map(Number);
-        
-        // Compara cada segmento da versão (Major, Minor, Patch)
         for (let i = 0; i < Math.max(v1.length, v2.length); i++) {
             const num1 = v1[i] || 0;
             const num2 = v2[i] || 0;
@@ -91,79 +177,9 @@ const UpdateSystem = (function() {
         return false;
     }
 
-    /**
-     * Cria e exibe o modal de atualização na tela.
-     * @param {Object} data Dados vindos do version.json.
-     */
-    function showUpdateModal(data) {
-        // Evita criar múltiplos modais se um já estiver aberto
-        if (document.querySelector('.update-overlay')) return;
-
-        // Cria o fundo escurecido (overlay)
-        const overlay = document.createElement('div');
-        overlay.className = 'update-overlay';
-        
-        // Converte as notas em Markdown simples para HTML
-        const htmlNotes = formatMarkdown(data.notes);
-
-        // Define a estrutura interna do modal
-        overlay.innerHTML = `
-            <div class="update-modal">
-                <div class="update-header">
-                    <h2 class="update-title">O que melhorou</h2>
-                    <span class="update-version">v${data.version}</span>
-                </div>
-                <div class="update-content">
-                    ${htmlNotes}
-                </div>
-                <div class="update-actions">
-                    <button class="update-btn update-btn-primary" id="btn-close-update">Entendido</button>
-                </div>
-            </div>
-        `;
-
-        // Adiciona o modal ao corpo da página
-        document.body.appendChild(overlay);
-        
-        // Ativa a animação de entrada no próximo frame de renderização
-        requestAnimationFrame(() => overlay.classList.add('active'));
-
-        // Configura o botão de fechar
-        document.getElementById('btn-close-update').onclick = () => {
-            // Salva que o usuário já viu esta versão para não mostrar novamente
-            localStorage.setItem(STORAGE_KEY, data.version);
-            
-            // Remove a classe ativa para disparar a animação de saída
-            overlay.classList.remove('active');
-            
-            // Remove o elemento do DOM após o término da animação (400ms)
-            setTimeout(() => overlay.remove(), 400);
-        };
-    }
-
-    /**
-     * Mini-parser de Markdown para converter as notas de versão em HTML básico.
-     * @param {string} text Texto em formato Markdown.
-     * @returns {string} Texto convertido em HTML.
-     */
-    function formatMarkdown(text) {
-        if (!text) return '';
-        return text
-            .replace(/^### (.*$)/gim, '<h3>$1</h3>')             // Converte ### em <h3>
-            .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')   // Converte ** em <strong>
-            .replace(/^\- (.*$)/gim, '<li>$1</li>')              // Converte - em <li>
-            .replace(/(<li>.*<\/li>)/gim, '<ul>$1</ul>')         // Envolve <li> em <ul>
-            .replace(/<\/ul>\s*<ul>/gim, '')                     // Remove <ul> duplicados entre itens
-            .replace(/\n/g, '<br>');                             // Converte quebras de linha em <br>
-    }
-
-    // Expõe apenas o método de inicialização
     return { init: init };
 })();
 
-/**
- * Inicialização do sistema de atualização baseada no estado do documento.
- */
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', UpdateSystem.init);
 } else {
