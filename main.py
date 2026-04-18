@@ -6,6 +6,10 @@ app = Flask(__name__, template_folder='.', static_folder='.', static_url_path=''
 def favicon():
     return send_file('assets/DEVS/favicon/Favicon.ico', mimetype='image/x-icon')
 
+@app.route('/<path:path>/favicon.ico')
+def favicon_nested(path):
+    return send_file('assets/DEVS/favicon/Favicon.ico', mimetype='image/x-icon')
+
 @app.route('/')
 def index():
     return render_template('index.html')
