@@ -1,6 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 
 app = Flask(__name__, template_folder='.', static_folder='.', static_url_path='')
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_file('assets/DEVS/favicon/Favicon.ico', mimetype='image/x-icon')
 
 @app.route('/')
 def index():
