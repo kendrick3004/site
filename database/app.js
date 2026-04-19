@@ -32,6 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
     loadAndRenderFileStructure();
 });
 
+// Escuta mudanças na URL (botão voltar do navegador)
+window.addEventListener('popstate', (event) => {
+    const path = event.state?.path || getPathFromUrl() || "root";
+    loadFilesFromPath(path, false);
+});
+
 function initializeEventListeners() {
     if (elements.gridViewBtn) elements.gridViewBtn.addEventListener("click", () => setViewMode("grid"));
     if (elements.listViewBtn) elements.listViewBtn.addEventListener("click", () => setViewMode("list"));
@@ -47,6 +53,11 @@ function initializeEventListeners() {
     }
 }
 
+function getPathFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('path');
+}
+
 async function loadAndRenderFileStructure() {
     try {
         const response = await fetch("file_structure.json");
@@ -55,8 +66,9 @@ async function loadAndRenderFileStructure() {
         fileStructure = await response.json();
         calculateFolderSizes();
         
-        // Define o caminho inicial como 'root'
-        loadFilesFromPath("root");
+        // Define o caminho inicial baseado na URL ou 'root'
+        const initialPath = getPathFromUrl() || "root";
+        loadFilesFromPath(initialPath, false);
     } catch (error) {
         console.error("Erro:", error);
         displayEmptyState("Erro ao carregar a estrutura de arquivos.");
@@ -100,7 +112,7 @@ function getFolderSize(path) {
     return fileStructure[path]?.totalSize || 0;
 }
 
-function loadFilesFromPath(path) {
+function loadFilesFromPath(path, pushState = true) {
     currentPath = path;
     const entry = fileStructure[path];
     
@@ -116,33 +128,83 @@ function loadFilesFromPath(path) {
     selectedFiles = [];
     updateBreadcrumb();
     renderFiles();
+
+    // Atualiza a URL sem recarregar a página
+    if (pushState) {
+        const newUrl = path === "root" ? "/database" : `/database?path=${path}`;
+        window.history.pushState({ path: path }, "", newUrl);
+    }
 }
 
 function updateBreadcrumb() {
-    if (currentPath === "root") {
-        elements.breadcrumbPath.innerHTML = "<span onclick=\"loadFilesFromPath('root')\" style='cursor:pointer; color:#3b82f6;'>database</span>";
-    } else {
-        let html = "<span onclick=\"loadFilesFromPath('root')\" style='cursor:pointer; color:#3b82f6;'>database</span>";
+    elements.breadcrumbPath.innerHTML = ""; // Limpa para reconstruir com segurança
+    
+    // Botão Voltar (Home do Site)
+    const homeBtn = document.createElement("span");
+    homeBtn.textContent = "🏠";
+    homeBtn.style.cursor = "pointer";
+    homeBtn.style.color = "#666";
+    homeBtn.style.marginRight = "10px";
+    homeBtn.title = "Voltar para o Início";
+    homeBtn.onclick = () => window.location.href = '/';
+    elements.breadcrumbPath.appendChild(homeBtn);
+    
+    // Database Root
+    const rootBtn = document.createElement("span");
+    rootBtn.textContent = "database";
+    rootBtn.style.cursor = "pointer";
+    rootBtn.style.color = "#3b82f6";
+    rootBtn.onclick = () => loadFilesFromPath('root');
+    elements.breadcrumbPath.appendChild(rootBtn);
+    
+    if (currentPath !== "root") {
         const parts = currentPath.split("/");
         let pathBuild = "";
         parts.forEach(part => {
             if (part && part !== "root") {
                 pathBuild += (pathBuild ? "/" : "") + part;
-                html += ` / <span onclick="loadFilesFromPath('${pathBuild}')" style='cursor:pointer; color:#3b82f6;'>${part}</span>`;
+                const currentPathBuild = pathBuild;
+                
+                const separator = document.createTextNode(" / ");
+                elements.breadcrumbPath.appendChild(separator);
+                
+                const partBtn = document.createElement("span");
+                partBtn.textContent = part;
+                partBtn.style.cursor = "pointer";
+                partBtn.style.color = "#3b82f6";
+                partBtn.onclick = () => loadFilesFromPath(currentPathBuild);
+                elements.breadcrumbPath.appendChild(partBtn);
             }
         });
-        elements.breadcrumbPath.innerHTML = html;
     }
 }
 
 function displayEmptyState(message = "Nenhum arquivo encontrado.") {
-    elements.fileContainer.innerHTML = `
-        <div style="text-align: center; padding: 60px 20px; color: #999;">
-            <div style="font-size: 48px; margin-bottom: 20px;">📁</div>
-            <h2 style="color: #666; margin: 0 0 10px 0;">Vazio</h2>
-            <p style="margin: 0; font-size: 14px;">${message}</p>
-        </div>
-    `;
+    elements.fileContainer.innerHTML = "";
+    const emptyDiv = document.createElement("div");
+    emptyDiv.style.textAlign = "center";
+    emptyDiv.style.padding = "60px 20px";
+    emptyDiv.style.color = "#999";
+    
+    const icon = document.createElement("div");
+    icon.style.fontSize = "48px";
+    icon.style.marginBottom = "20px";
+    icon.textContent = "📁";
+    
+    const title = document.createElement("h2");
+    title.style.color = "#666";
+    title.style.margin = "0 0 10px 0";
+    title.textContent = "Vazio";
+    
+    const text = document.createElement("p");
+    text.style.margin = "0";
+    text.style.fontSize = "14px";
+    text.textContent = message;
+    
+    emptyDiv.appendChild(icon);
+    emptyDiv.appendChild(title);
+    emptyDiv.appendChild(text);
+    elements.fileContainer.appendChild(emptyDiv);
 }
 
 function renderFiles() {
@@ -160,26 +222,40 @@ function renderFiles() {
             const card = document.createElement("div");
             card.className = `file-card ${file.isDirectory ? "directory" : ""} ${selectedFiles.includes(file.id) ? "selected" : ""}`;
             
-            let content = "";
-            if (file.isDirectory) {
-                const size = getFolderSize(file.id);
-                content = `
-                    <div class="file-icon">${getFileIcon(file)}</div>
-                    <div class="file-name">${file.name}</div>
-                    <div class="file-info">${formatFileSize(size)}</div>
-                `;
+            // Checkbox
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.className = "file-checkbox";
+            checkbox.checked = selectedFiles.includes(file.id);
+            card.appendChild(checkbox);
+
+            // Icon/Preview
+            const iconDiv = document.createElement("div");
+            if (!file.isDirectory && file.type === "image" && file.preview) {
+                iconDiv.className = "file-preview";
+                const img = document.createElement("img");
+                img.src = file.preview;
+                img.onerror = () => { img.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Ctext x=%2212%22 y=%2216%22 text-anchor=%22middle%22 font-size=%2210%22 fill=%22%23999%22%3E?%3C/text%3E%3C/svg%3E'; };
+                iconDiv.appendChild(img);
             } else {
-                const preview = (file.type === "image" && file.preview) 
-                    ? `<div class="file-preview"><img src="${file.preview}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Ctext x=%2212%22 y=%2216%22 text-anchor=%22middle%22 font-size=%2210%22 fill=%22%23999%22%3E?%3C/text%3E%3C/svg%3E'"></div>`
-                    : `<div class="file-icon">${getFileIcon(file)}</div>`;
-                content = `
-                    ${preview}
-                    <div class="file-name">${file.name}</div>
-                    <div class="file-info">${formatFileSize(file.size)}</div>
-                `;
+                iconDiv.className = "file-icon";
+                iconDiv.innerHTML = getFileIcon(file); // getFileIcon retorna SVG seguro
             }
+            card.appendChild(iconDiv);
+
+            // Name
+            const nameDiv = document.createElement("div");
+            nameDiv.className = "file-name";
+            nameDiv.textContent = file.name;
+            card.appendChild(nameDiv);
+
+            // Info
+            const infoDiv = document.createElement("div");
+            infoDiv.className = "file-info";
+            const size = file.isDirectory ? getFolderSize(file.id) : file.size;
+            infoDiv.textContent = formatFileSize(size);
+            card.appendChild(infoDiv);
             
-            card.innerHTML = `<input type="checkbox" class="file-checkbox" ${selectedFiles.includes(file.id) ? "checked" : ""}>${content}`;
             card.onclick = (e) => handleFileClick(file, e);
             grid.appendChild(card);
         });
@@ -187,19 +263,47 @@ function renderFiles() {
     } else {
         const table = document.createElement("table");
         table.className = "file-list";
-        let tbody = "<tbody>";
+        
+        const thead = document.createElement("thead");
+        thead.innerHTML = "<tr><th></th><th>Nome</th><th>Tamanho</th><th>Modificado</th></tr>";
+        table.appendChild(thead);
+
+        const tbody = document.createElement("tbody");
         files.forEach(file => {
+            const tr = document.createElement("tr");
+            if (selectedFiles.includes(file.id)) tr.className = "selected";
+            
+            // Checkbox Cell
+            const tdCheck = document.createElement("td");
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.checked = selectedFiles.includes(file.id);
+            tdCheck.appendChild(checkbox);
+            tr.appendChild(tdCheck);
+
+            // Name Cell
+            const tdName = document.createElement("td");
+            const iconSpan = document.createElement("span");
+            iconSpan.innerHTML = getFileIcon(file, true);
+            tdName.appendChild(iconSpan);
+            tdName.appendChild(document.createTextNode(" " + file.name));
+            tr.appendChild(tdName);
+
+            // Size Cell
+            const tdSize = document.createElement("td");
             const size = file.isDirectory ? getFolderSize(file.id) : file.size;
-            tbody += `
-                <tr class="${selectedFiles.includes(file.id) ? "selected" : ""}" onclick='handleFileClick(${JSON.stringify(file).replace(/'/g, "&apos;")}, event)'>
-                    <td><input type="checkbox" ${selectedFiles.includes(file.id) ? "checked" : ""}></td>
-                    <td>${getFileIcon(file, true)} ${file.name}</td>
-                    <td>${formatFileSize(size)}</td>
-                    <td>${file.modified ? new Date(file.modified).toLocaleDateString() : "-"}</td>
-                </tr>
-            `;
+            tdSize.textContent = formatFileSize(size);
+            tr.appendChild(tdSize);
+
+            // Date Cell
+            const tdDate = document.createElement("td");
+            tdDate.textContent = file.modified ? new Date(file.modified).toLocaleDateString() : "-";
+            tr.appendChild(tdDate);
+
+            tr.onclick = (e) => handleFileClick(file, e);
+            tbody.appendChild(tr);
         });
-        table.innerHTML = `<thead><tr><th></th><th>Nome</th><th>Tamanho</th><th>Modificado</th></tr></thead>${tbody}</tbody>`;
+        table.appendChild(tbody);
         elements.fileContainer.appendChild(table);
     }
     updateSelectionInfo();
@@ -266,9 +370,32 @@ function formatFileSize(bytes) {
 
 function openPreview(file) {
     elements.previewTitle.textContent = file.name;
-    elements.previewContent.innerHTML = file.type === "image" 
-        ? `<img src="${file.path}" style="max-width:100%; max-height:70vh; display:block; margin:0 auto;">`
-        : `<div style="text-align:center; padding:40px;"><div style="font-size:64px;">📄</div><p>Sem pré-visualização.</p></div>`;
+    elements.previewContent.innerHTML = ""; // Limpa conteúdo anterior
+    
+    if (file.type === "image") {
+        const img = document.createElement("img");
+        img.src = file.path;
+        img.style.maxWidth = "100%";
+        img.style.maxHeight = "70vh";
+        img.style.display = "block";
+        img.style.margin = "0 auto";
+        elements.previewContent.appendChild(img);
+    } else {
+        const div = document.createElement("div");
+        div.style.textAlign = "center";
+        div.style.padding = "40px";
+        
+        const icon = document.createElement("div");
+        icon.style.fontSize = "64px";
+        icon.textContent = "📄";
+        
+        const text = document.createElement("p");
+        text.textContent = "Sem pré-visualização.";
+        
+        div.appendChild(icon);
+        div.appendChild(text);
+        elements.previewContent.appendChild(div);
+    }
     elements.previewModal.style.display = "flex";
 }
 

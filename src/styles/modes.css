@@ -76,6 +76,7 @@ body.dark-mode {
         background-attachment: scroll !important;
         background-size: cover !important;
         background-position: center center !important;
+        background-image: inherit; /* Garante que a imagem seja herdada */
     }
 }
 
@@ -100,4 +101,13 @@ body.dark-mode {
         background-size: cover !important;
         min-height: -webkit-fill-available;
     }
+}
+
+/* Correção para navegadores mobile que ignoram background-image se background-color for definido depois */
+body.dark-mode {
+    background-image: url("../../database/assets/dev/templates/dark_mode.jpg") !important;
+}
+
+body:not(.dark-mode) {
+    background-image: url("../../database/assets/dev/templates/light_mode.jpg") !important;
 }

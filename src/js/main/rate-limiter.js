@@ -10,9 +10,9 @@ const RateLimiter = (function() {
 
     // Configurações
     const CONFIG = {
-        MAX_REQUESTS: 10,          // Máximo de cliques permitidos
-        TIME_WINDOW: 2000,         // Janela de tempo em milissegundos (2 segundos)
-        BLOCK_DURATION: 10000,     // Duração do bloqueio em milissegundos (10 segundos)
+        MAX_REQUESTS: 3,           // Máximo de cliques/recarregamentos permitidos
+        TIME_WINDOW: 5000,         // Janela de tempo em milissegundos (5 segundos)
+        BLOCK_DURATION: 30000,     // Duração do bloqueio aumentada para 30 segundos
         STORAGE_KEY: 'rate_limiter_data'
     };
 

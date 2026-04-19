@@ -16,13 +16,14 @@ html, body {
 /* Estilização do corpo da página */
 body {
     /* Cores puxadas do banco de dados local via ColorSystem */
-    background-color: var(--text-primary, #ffffff);
+    /* background-color: var(--text-primary, #ffffff);  <- Removido para não sobrepor a imagem */
     color: var(--bg-dark, #000000);
     font-family: var(--font-inter), sans-serif; /* Fonte principal do sistema */
     display: flex;                              /* Flexbox para centralização */
     justify-content: center;                    /* Centraliza horizontalmente */
     align-items: center;                        /* Centraliza verticalmente (Desktop) */
     min-height: 100vh;                          /* Altura mínima de 100% da viewport */
+    background-color: transparent;              /* Garante que a imagem de fundo em modes.css apareça */
 }
 
 /* Container principal que agrupa todos os elementos da página */
