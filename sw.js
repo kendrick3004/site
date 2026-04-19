@@ -46,14 +46,18 @@ const ASSETS_TO_CACHE = [
     '/src/js/main/colors.js',
     '/src/js/main/firebase-config.js',
     '/src/js/main/firebase-sync.js',
-    '/assets/DEVS/avatar/avatar.jpg',
-    '/assets/DEVS/DATA/calendario.json',
-    '/assets/DEVS/templates/dark_mode.jpg',
-    '/assets/DEVS/templates/light_mode.jpg',
-    '/assets/DEVS/favicon/Favicon.png',
-    '/assets/DEVS/favicon/Favicon_R.png',
-    '/assets/DEVS/favicon/icon-192.png',
-    '/assets/DEVS/favicon/icon-512.png'
+    '/database/assets/dev/avatar/avatar.jpg',
+    '/database/assets/dev/DATA/calendario.json',
+    '/database/assets/dev/templates/dark_mode.jpg',
+    '/database/assets/dev/templates/light_mode.jpg',
+    '/database/assets/dev/favicon/Favicon.png',
+    '/database/assets/dev/favicon/Favicon_R.png',
+    '/database/assets/dev/favicon/icon-192.png',
+    '/database/assets/dev/favicon/icon-512.png'
+    '/database/assets/dev/icons/diversos/WEATHER/Sun.svg',
+    '/database/assets/dev/icons/diversos/WEATHER/Moon.svg',
+    '/database/assets/dev/TEMPLATES_WEATHER/Weather=Clear, Moment=Day.svg',
+    '/database/assets/dev/TEMPLATES_WEATHER/Weather=Clear, Moment=Night.svg',
 ];
 
 /**

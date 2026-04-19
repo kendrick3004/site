@@ -10,80 +10,80 @@
    ======================================== */
 
 /* Oswald - Fonte display moderna, condensada e impactante */
-@import url('../../assets/DEVS/FONTE/oswald/oswald.css');
+@import url('../../database/assets/dev/fonts/oswald/oswald.css');
 
 /* Ysabeau SC - Fonte elegante com estilo Small Caps (letras maiúsculas pequenas) */
-@import url('../../assets/DEVS/FONTE/ysabeau_sc/ysabeau_sc.css');
+@import url('../../database/assets/dev/fonts/ysabeau_sc/ysabeau_sc.css');
 
 /* ========================================
    IMPORTAÇÃO DE FONTES SANS-SERIF (Sem serifa)
    ======================================== */
 
 /* Roboto - Fonte padrão do Android, extremamente versátil */
-@import url('../../assets/DEVS/FONTE/roboto/roboto.css');
+@import url('../../database/assets/dev/fonts/roboto/roboto.css');
 
 /* Open Sans - Fonte humanista com excelente legibilidade */
-@import url('../../assets/DEVS/FONTE/open_sans/open_sans.css');
+@import url('../../database/assets/dev/fonts/open_sans/open_sans.css');
 
 /* Montserrat - Fonte geométrica moderna e elegante */
-@import url('../../assets/DEVS/FONTE/montserrat/montserrat.css');
+@import url('../../database/assets/dev/fonts/montserrat/montserrat.css');
 
 /* Lato - Fonte humanista com traços elegantes e amigáveis */
-@import url('../../assets/DEVS/FONTE/lato/lato.css');
+@import url('../../database/assets/dev/fonts/lato/lato.css');
 
 /* Poppins - Fonte geométrica popular com design equilibrado */
-@import url('../../assets/DEVS/FONTE/poppins/poppins.css');
+@import url('../../database/assets/dev/fonts/poppins/poppins.css');
 
 /* Inter - Fonte otimizada especificamente para interfaces de usuário digitais */
-@import url('../../assets/DEVS/FONTE/inter/inter.css');
+@import url('../../database/assets/dev/fonts/inter/inter.css');
 
 /* Nunito - Fonte com terminações arredondadas, transmitindo suavidade */
-@import url('../../assets/DEVS/FONTE/nunito/nunito.css');
+@import url('../../database/assets/dev/fonts/nunito/nunito.css');
 
 /* ========================================
    IMPORTAÇÃO DE FONTES SERIF (Com serifa)
    ======================================== */
 
 /* Playfair Display - Fonte serif de alto contraste para títulos sofisticados */
-@import url('../../assets/DEVS/FONTE/playfair_display/playfair_display.css');
+@import url('../../database/assets/dev/fonts/playfair_display/playfair_display.css');
 
 /* Merriweather - Fonte serif projetada para ser lida confortavelmente em telas */
-@import url('../../assets/DEVS/FONTE/merriweather/merriweather.css');
+@import url('../../database/assets/dev/fonts/merriweather/merriweather.css');
 
 /* Lora - Fonte serif contemporânea com raízes caligráficas */
-@import url('../../assets/DEVS/FONTE/lora/lora.css');
+@import url('../../database/assets/dev/fonts/lora/lora.css');
 
 /* PT Serif - Fonte serif funcional e universal */
-@import url('../../assets/DEVS/FONTE/pt_serif/pt_serif.css');
+@import url('../../database/assets/dev/fonts/pt_serif/pt_serif.css');
 
 /* ========================================
    IMPORTAÇÃO DE FONTES MONOESPAÇADAS (Código)
    ======================================== */
 
 /* Roboto Mono - Versão monoespaçada da família Roboto */
-@import url('../../assets/DEVS/FONTE/roboto_mono/roboto_mono.css');
+@import url('../../database/assets/dev/fonts/roboto_mono/roboto_mono.css');
 
 /* Source Code Pro - Fonte profissional para ambientes de programação */
-@import url('../../assets/DEVS/FONTE/source_code_pro/source_code_pro.css');
+@import url('../../database/assets/dev/fonts/source_code_pro/source_code_pro.css');
 
 /* Fira Code - Fonte monoespaçada famosa por suas ligaduras de programação */
-@import url('../../assets/DEVS/FONTE/fira_code/fira_code.css');
+@import url('../../database/assets/dev/fonts/fira_code/fira_code.css');
 
 /* ========================================
    IMPORTAÇÃO DE FONTES DISPLAY E DECORATIVAS
    ======================================== */
 
 /* Dancing Script - Fonte cursiva fluida e elegante */
-@import url('../../assets/DEVS/FONTE/dancing_script/dancing_script.css');
+@import url('../../database/assets/dev/fonts/dancing_script/dancing_script.css');
 
 /* Pacifico - Fonte script inspirada na cultura do surf dos anos 50 */
-@import url('../../assets/DEVS/FONTE/pacifico/pacifico.css');
+@import url('../../database/assets/dev/fonts/pacifico/pacifico.css');
 
 /* Bebas Neue - Fonte display condensada, ideal para chamadas e cabeçalhos */
-@import url('../../assets/DEVS/FONTE/bebas_neue/bebas_neue.css');
+@import url('../../database/assets/dev/fonts/bebas_neue/bebas_neue.css');
 
 /* Righteous - Fonte display geométrica inspirada na Art Déco */
-@import url('../../assets/DEVS/FONTE/righteous/righteous.css');
+@import url('../../database/assets/dev/fonts/righteous/righteous.css');
 
 /* ========================================
    VARIÁVEIS CSS PARA FACILITAR O USO

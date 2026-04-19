@@ -10,13 +10,13 @@
   "theme_color": "#1a1a1a",
   "icons": [
     {
-      "src": "assets/DEVS/favicon/Favicon_R.png",
+      "src": "database/assets/dev/favicon/Favicon_R.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "assets/DEVS/favicon/Favicon_R.png",
+      "src": "database/assets/dev/favicon/Favicon_R.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

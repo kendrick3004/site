@@ -95,7 +95,7 @@ const SplashManager = (function() {
     function forceFaviconR() {
         const logoImg = document.querySelector('.splash-logo');
         if (logoImg) {
-            logoImg.src = 'assets/DEVS/favicon/Favicon_R.png';
+            logoImg.src = 'database/assets/dev/dev/favicon/Favicon_R.png';
             logoImg.alt = 'Suite Logo';
             logoImg.style.setProperty('width', '80px', 'important');
             logoImg.style.setProperty('height', '80px', 'important');

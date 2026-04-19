@@ -14,7 +14,7 @@ const SiteFactory = (function() {
         author: "Kendrick Nicoleti",
         keywords: "Suite, Dashboard, Clima, Santo do Dia, PWA, Produtividade",
         themeColor: "#000000",
-        favicon: "/assets/DEVS/favicon/Favicon.png"
+        favicon: "/database/assets/dev/favicon/Favicon.png"
     };
 
     function injectMetadata() {
