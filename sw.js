@@ -9,8 +9,8 @@
 
 // Gera versão única com timestamp para forçar limpeza de cache
 const TIMESTAMP = new Date().getTime();
-const CACHE_NAME = `suite-cache-v4.0.0-${TIMESTAMP}`;
-const CACHE_VERSION_KEY = 'suite_cache_version_4';
+const CACHE_NAME = `suite-cache-v4.1.0-${TIMESTAMP}`;
+const CACHE_VERSION_KEY = 'suite_cache_version_4_1';
 
 const ASSETS_TO_CACHE = [
     '/',
@@ -18,6 +18,7 @@ const ASSETS_TO_CACHE = [
     '/index',
     '/database',
     '/database/index.html',
+    '/database/file_structure.json',
     '/manifest.json',
     '/404.html',
     '/403.html',
@@ -71,7 +72,7 @@ const ASSETS_TO_CACHE = [
  * Cacheia os arquivos necessários
  */
 self.addEventListener('install', (event) => {
-    console.log('[SW] 🚀 Instalando Service Worker v4.0.0...');
+    console.log('[SW] 🚀 Instalando Service Worker v4.1.0...');
     console.log('[SW] 📦 Cache name:', CACHE_NAME);
     
     event.waitUntil(
@@ -105,7 +106,7 @@ self.addEventListener('install', (event) => {
  * Limpa caches antigos e reclama clientes
  */
 self.addEventListener('activate', (event) => {
-    console.log('[SW] 🔄 Ativando Service Worker v4.0.0...');
+    console.log('[SW] 🔄 Ativando Service Worker v4.1.0...');
     
     event.waitUntil(
         caches.keys().then((cacheNames) => {
@@ -128,7 +129,7 @@ self.addEventListener('activate', (event) => {
                     console.log('[SW] 📢 Notificando cliente sobre atualização');
                     client.postMessage({ 
                         type: 'CACHE_UPDATED',
-                        version: '4.0.0',
+                        version: '4.1.0',
                         timestamp: TIMESTAMP
                     });
                 });
@@ -209,18 +210,30 @@ self.addEventListener('fetch', (event) => {
                     const cleanPath = url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : url.pathname;
                     
                     if (!cleanPath.endsWith('.html')) {
+                        // Tenta primeiro o arquivo .html (ex: /pages/calendar -> /pages/calendar.html)
                         return caches.match(cleanPath + '.html').then(htmlCached => {
                             if (htmlCached) {
                                 console.log('[SW] 📄 Usando .html fallback do cache:', cleanPath);
                                 return htmlCached;
                             }
-                            return fetch(cleanPath + '.html').then(htmlNet => {
-                                if (htmlNet.ok) {
-                                    console.log('[SW] 🌐 Usando .html fallback da rede:', cleanPath);
-                                    return htmlNet;
+                            
+                            // Se não achar .html, tenta index.html dentro da pasta (ex: /database -> /database/index.html)
+                            const indexPath = cleanPath.endsWith('/') ? cleanPath + 'index.html' : cleanPath + '/index.html';
+                            return caches.match(indexPath).then(indexCached => {
+                                if (indexCached) {
+                                    console.log('[SW] 📂 Usando index.html fallback do cache:', indexPath);
+                                    return indexCached;
                                 }
-                                return caches.match('/404.html');
-                            }).catch(() => caches.match('/404.html'));
+
+                                // Se não estiver no cache, tenta buscar da rede
+                                return fetch(cleanPath + '.html').then(htmlNet => {
+                                    if (htmlNet.ok) return htmlNet;
+                                    return fetch(indexPath).then(indexNet => {
+                                        if (indexNet.ok) return indexNet;
+                                        return caches.match('/404.html');
+                                    }).catch(() => caches.match('/404.html'));
+                                }).catch(() => caches.match('/404.html'));
+                            });
                         });
                     }
                     return caches.match('/404.html');
@@ -240,4 +253,4 @@ self.addEventListener('fetch', (event) => {
     );
 });
 
-console.log('[SW] ✅ Service Worker v4.0.0 carregado');
+console.log('[SW] ✅ Service Worker v4.1.0 carregado');

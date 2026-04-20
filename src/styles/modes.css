@@ -70,36 +70,52 @@ body.dark-mode {
 
 /* Tablets e celulares (até 1024px) */
 @media screen and (max-width: 1024px) {
-    body,
-    body:not(.dark-mode),
-    body.dark-mode {
+    body {
         background-attachment: scroll !important;
         background-size: cover !important;
         background-position: center center !important;
-        background-image: inherit; /* Garante que a imagem seja herdada */
+    }
+    
+    body:not(.dark-mode) {
+        background-image: url("../../database/assets/dev/templates/light_mode.jpg") !important;
+    }
+    
+    body.dark-mode {
+        background-image: url("../../database/assets/dev/templates/dark_mode.jpg") !important;
     }
 }
 
 /* Detecção de touch device via pointer: coarse */
 @media (pointer: coarse) {
-    body,
-    body:not(.dark-mode),
-    body.dark-mode {
+    body {
         background-attachment: scroll !important;
         background-size: cover !important;
         background-position: center center !important;
+    }
+    
+    body:not(.dark-mode) {
+        background-image: url("../../database/assets/dev/templates/light_mode.jpg") !important;
+    }
+    
+    body.dark-mode {
+        background-image: url("../../database/assets/dev/templates/dark_mode.jpg") !important;
     }
 }
 
 /* iOS Safari específico: usa -webkit-overflow-scrolling */
 @supports (-webkit-touch-callout: none) {
-    body,
-    body:not(.dark-mode),
-    body.dark-mode {
+    body {
         background-attachment: scroll !important;
-        /* Garante que o background cubra o safe-area do iPhone */
         background-size: cover !important;
         min-height: -webkit-fill-available;
+    }
+    
+    body:not(.dark-mode) {
+        background-image: url("../../database/assets/dev/templates/light_mode.jpg") !important;
+    }
+    
+    body.dark-mode {
+        background-image: url("../../database/assets/dev/templates/dark_mode.jpg") !important;
     }
 }
 
